@@ -1,0 +1,4 @@
+﻿This is the default LOG location.
+You can change this location by editing the log settings on the logging tab in your settings screen. 
+Choose a location with plenty of space and where the user of TrackManager has write permission.
+You can also set "Database" as the loglocation. All logging will be written to the database in stead of to a file.

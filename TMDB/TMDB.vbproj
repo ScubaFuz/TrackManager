@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EEF08819-E858-4AE1-BF91-F97C390DAE17}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TMDB</RootNamespace>
+    <AssemblyName>TMDB</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>TMDB.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>TMDB.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBRef.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\01 Create Database.sql" />
+    <EmbeddedResource Include="Database\01_Tables\01 dbo.tbl_Arguments.sql" />
+    <EmbeddedResource Include="Database\01_Tables\01 dbo.tbl_Config.sql" />
+    <EmbeddedResource Include="Database\01_Tables\01 dbo.tbl_Groups.sql" />
+    <EmbeddedResource Include="Database\01_Tables\01 dbo.tbl_LessonTypes.sql" />
+    <EmbeddedResource Include="Database\01_Tables\01 dbo.tbl_Levels.sql" />
+    <EmbeddedResource Include="Database\01_Tables\01 dbo.tbl_Logins.sql" />
+    <EmbeddedResource Include="Database\01_Tables\01 dbo.tbl_PrContacts.sql" />
+    <EmbeddedResource Include="Database\01_Tables\01 dbo.tbl_Reports.sql" />
+    <EmbeddedResource Include="Database\01_Tables\01 dbo.tbl_Tax.sql" />
+    <EmbeddedResource Include="Database\01_Tables\01 dbo.tbl_Tracks.sql" />
+    <EmbeddedResource Include="Database\01_Tables\02 dbo.tbl_Clients.sql" />
+    <EmbeddedResource Include="Database\01_Tables\02 dbo.tbl_Products.sql" />
+    <EmbeddedResource Include="Database\01_Tables\02 dbo.tbl_Memo.sql" />
+    <EmbeddedResource Include="Database\01_Tables\02 dbo.tbl_ReportArguments.sql" />
+    <EmbeddedResource Include="Database\01_Tables\02 dbo.tbl_ReportFields.sql" />
+    <EmbeddedResource Include="Database\01_Tables\03 dbo.tbl_Appointment.sql" />
+    <EmbeddedResource Include="Database\01_Tables\03 dbo.tbl_ClientLevels.sql" />
+    <EmbeddedResource Include="Database\01_Tables\03 dbo.tbl_Invoice.sql" />
+    <EmbeddedResource Include="Database\01_Tables\04 dbo.tbl_InvoiceLine.sql" />
+    <EmbeddedResource Include="Database\01_Tables\04 dbo.tbl_InvoicePayment.sql" />
+    <EmbeddedResource Include="Database\03_Functions\dbo.udf_LevelColorGet.sql" />
+    <EmbeddedResource Include="Database\03_Functions\dbo.udf_Weekday.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\02 dbo.usp_AppointmentCreate.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\02 dbo.usp_AppointmentDelete.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_AppointmentHandle.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\02 dbo.usp_AppointmentMove.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_ClientHandle.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_ClientLessonHandle.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_ClientLessonLevelGet.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_ClientLessonLevelGet2.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_ConfigHandle.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_DayAppGet.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_ProductHandle.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\02 dbo.usp_FinanceHandle.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_GroupHandle.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_InvoiceHandle.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_InvoiceLineHandle.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_InvoicePaymentHandle.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_LessonTypeHandle.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_LevelHandle.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\02 dbo.usp_LoginHandle.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_MemoHandle.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_PrContactHandle.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_PrimaryContactSet.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_ReportArgumentHandle.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_ReportFieldHandle.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_ReportFieldsGet.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_ReportHandle.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_Search.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_TaxHandle.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_TrackHandle.sql" />
+    <EmbeddedResource Include="Database\05_Logins\02 TrackMan User.sql" />
+    <EmbeddedResource Include="Database\06_Data\ClearReportTables.sql" />
+    <EmbeddedResource Include="Database\06_Data\Correct Appointment LessonCount.sql" />
+    <EmbeddedResource Include="Database\06_Data\Insert Report Arguments.sql" />
+    <EmbeddedResource Include="Database\06_Data\WeekDays.sql" />
+    <EmbeddedResource Include="Database\07_Reports\01 dbo.usp_Report_Lessons_Lessons.sql" />
+    <EmbeddedResource Include="Database\07_Reports\01 Report_Lessons_Lessons Data.sql" />
+    <EmbeddedResource Include="Database\07_Reports\02 dbo.usp_Report_Finance_OpenBills.sql" />
+    <EmbeddedResource Include="Database\07_Reports\02 Report_Finance_OpenBills Data.sql" />
+    <EmbeddedResource Include="Database\07_Reports\03 dbo.usp_Report_Finance_Payments.sql" />
+    <EmbeddedResource Include="Database\07_Reports\03 Report_Finance_Payments Data.sql" />
+    <EmbeddedResource Include="Database\07_Reports\14 dbo.usp_Report_Lessons_Monthly.sql" />
+    <EmbeddedResource Include="Database\07_Reports\14 Report_Lessons_Monthly Data.sql" />
+    <EmbeddedResource Include="Database\Test Scripts\DemoData.sql">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Database\03_Functions\dbo.udf_EmailPrefix.sql" />
+    <EmbeddedResource Include="Database\03_Functions\dbo.udf_ValidEmail.sql" />
+    <EmbeddedResource Include="Database\03_Functions\dbo.udf_EmailDomain.sql" />
+    <EmbeddedResource Include="Database\01_Tables\01 dbo.tbl_Logging.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_LoggingHandle.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_CorrectLessonCount.sql" />
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_BackupHandle.sql" />
+    <EmbeddedResource Include="Database\05_Logins\01 TrackMan Login.sql" />
+    <EmbeddedResource Include="Database\05_Logins\03 TrackMan AddRole.sql" />
+    <EmbeddedResource Include="Database\06_Data\LogFile.sql" />
+    <EmbeddedResource Include="Database\07_Reports\11 Report_Other_Logfile Data.sql" />
+    <EmbeddedResource Include="Database\07_Reports\11 dbo.usp_Report_Other_Logfile.sql" />
+    <EmbeddedResource Include="Database\07_Reports\12 Report_Clients_EmailAddresses Data.sql" />
+    <EmbeddedResource Include="Database\07_Reports\12 dbo.usp_Report_Clients_EmailAddresses.sql" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database\02_Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\08 Updates\Update40020A.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\08 Updates\Update40020C.sql" />
+    <EmbeddedResource Include="Database\08 Updates\Update40020B.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\08 Updates\Update4012A.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\01_Tables\01 dbo.tbl_PaymentMethods.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\08 Updates\Update4013A.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\08 Updates\Update4015A.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\07_Reports\13 dbo.usp_Report_Lessons_Overview.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\07_Reports\13 Report_Lessons_Overview Data.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\07_Reports\04 dbo.usp_Report_Finance_Overbooked.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\07_Reports\04 Report_Finance_Overbooked Data.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\04_StoredProcedures\02 dbo.usp_AppointmentUpdate.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\08 Updates\Update4100B.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_LanguageHandle.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\01_Tables\01 dbo.tbl_Language.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_LanguageListGet.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Language\EN.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Language\NL.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\08 Updates\Update4100A.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\07_Reports\15 dbo.usp_Report_Lessons_Appointments.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\07_Reports\15 Report_Lessons_Appointments Data.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\04_StoredProcedures\02 dbo.usp_AppointmentUnDelete.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\08 Updates\Update4120A.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\07_Reports\16 dbo.usp_Report_Finance_Invoices.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\07_Reports\16 Report_Finance_Invoices Data.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\07_Reports\05 dbo.usp_Report_Finance_Underbooked.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\07_Reports\05 Report_Finance_Underbooked Data.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\07_Reports\17 dbo.usp_Report_Finance_Products.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\07_Reports\17 Report_Finance_Products Data.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\07_Reports\18 dbo.usp_Report_Lessons_Children.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\07_Reports\18 Report_Lessons_Children Data.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\03_Functions\dbo.udf_GetAge.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\03_Functions\dbo.udf_GetShowAge.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\03_Functions\dbo.udf_FirstNameAge.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\04_StoredProcedures\01 dbo.usp_AppointmentFinanceGet.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\08 Updates\Update4140A.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\01_Tables\01 dbo.tbl_AppType.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\08 Updates\Update4150A.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\03_Functions\dbo.udf_DateFormat.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\08 Updates\Update4160A.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\08 Updates\Update4160C.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\08 Updates\Update4160B.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\01 Use TrackManager.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\08 Updates\Copy of Update4160D.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties BuildVersion_UseGlobalSettings="False" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

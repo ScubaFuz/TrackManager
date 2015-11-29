@@ -1,0 +1,166 @@
+Version 4.1.7
+Fixed: Future dates are no longer allowed as birthdays in the Client window
+Fixed: Future Birtdays no longer cause an error in the calendar.
+
+Version 4.1.6
+New: Added the option to display all Lessontypes of a Client in the Group overview.
+New: Added the option to not require a Lessontype when booking an appointment at the Bar.
+New: Added the option to display muliple lines of text for an Appointment
+New: Added the option to refresh all database objects except tables and data.
+New: Added the option to delete a maximum of 1 appointment at a time.
+Enhanced: The Overbooked report now counts/shows all apointments and finances for a whole season for clients that have an appointment in a given timeframe.
+Fixed: Invoicenumbers above 10000 all got number 10000
+fixed: The Logging report now shows the last 1000 rows in stead of the first 1000 rows for a given day.
+
+Version 4.1.5
+New: Added the option to show Open Bills information on the main calendar by underlining appointments.
+New: Added the option to display a "!" at a clients last appointment.
+New: Added the Option to select or unselect all clients in the appointment list at once.
+New: Added the option to choose a Date Format for reports
+Fixed: Doubleclick issue on several buttons is resolved
+
+Version 4.1.4
+New: Added the option to change the order of the main Application-buttons on the lower left side of the screen.
+New: Added the option to display a warning when overbooking (more appointments than invoiced).
+Enhanced: Client age now shows in most screens including * for birthday.
+Enhanced: Unpaid invoices from old season(s) are shown in invoice list.
+Fixed: In some cases ghost-appointments appear in reports that do not appear in the calendar.
+
+Version 4.1.3
+New: Added the menu item "Clear All Locks" to clear all locks from the selected day.
+Fixed: Cancelling emailing a report or emailing a report without emailaddress produces error.
+Fixed: After deleting a LessonType, you can update the appointments that had that lessontype.
+
+Version 4.1.2
+New: Undo function for deleted and moved appointments.
+New: Report Invoices for reporting statistics about invoices.
+New: Report Products for reporting statistics about sold products.
+New: Report 'Underbooked' for reporting sold lessons that have not been booked yet.
+New: Report Children for statistics about children's lessons
+Enhanced: improved functionality for (un)moved and (un)deleted appointments.
+Enhanced: setup.exe is renamed to SetupTrackManager.exe.
+Enhanced: Extended the report "Appointments" to include Group or Client names.
+Enhanced: Report headers are now translated.
+Fixed: No database version number after create new database.
+Fixed: TrackManager crashes after displaying login screen for 5 minutes without logging in.
+Fixed: After creating or moving appointment client data wasn't updated properly.
+Fixed: languagelist stops working when changing database name.
+Fixed: Report quickbuttons now show name of report even when there is no translation available.
+Fixed: Correct Lesson Count couldn'd handle deleted appointments.
+
+Version 4.1.1
+New: Report Appointments for reporting statistics about appointments.
+Enhanced: Email Report now shows correct subject and recepient.
+Fixed: Print button on Reports tab temporarily disables after click to prevent double printing.
+Fixed: Email report with empty fields in it is now possible.
+Fixed: Report Open Bills now only shows bills for clients on specified date and not invoices made that date.
+Fixed: Report Overbooked rewritten to prevent long running and crashes
+
+Version 4.1.0
+New: Report options to select which report is under which button. All reports are now on 1 tabpage.
+New: Ability to change, import or export Languages. Every button/list/report/label can be translated or renamed by the user.
+New: Group Search in Finance, Group and Client window.
+Enhanced: Rewritten all reports for better performance.
+Enhanced: Warning when deleting appointments to prevent accidental deletes.
+Enhanced: translated Appointmentchange window.
+Enhanced: Improved "Move Appointment" functionality.
+Fixed: Group Search funtion now works again.
+Fixed: Memo is saved before screen refreshes and accidentilly deletes non-saved Memo.
+Fixed: Memo was showing only client memos made the same day.
+Fixed: Check Invoices now skips deleted payments and invoicelines while checking.
+
+Version 4.0.4
+New: Option to enter an (alternate) Email Address when sending email. No need to select a client first.
+Enhanced: Default Sort Order for new products = Maximum + 1.
+Enhanced: Scaling of Groups and Finance screen improved.
+Fixed: Appoinment Delete didn't always work correctly.
+Fixed: Client Level was not always handled correctly.
+Fixed: Several Reports no longer report deleted appointments/clients/groups.
+Fixed: Client Memo on Groups tab is now the same as Client Memo on Finance tab.
+
+Version 4.0.3
+New: Implemented Checks for selecting the clients for which to Create/Move/Delete appointment.
+Enhanced: Scaling when resizing Tracks screen improved.
+Enhanced: Delete does not remove but render inactive on most objects.
+Ehnanced: SQL Server procedures have been rewritten for better performance.
+Enhanced: Level for appointment checks for future existing appointments first.
+Enhanced: Option to delete multiple appointments at once, using checks.
+Enhanced: Manual now points to new website http://trackmanager.nl/manual.
+Enhanced: Added totals to reports for better printing.
+Enhanced: Translated Report subtext to Dutch.
+Fixed: Memofield on CustomTab now holds Client Memo.
+Fixed: Left side of screen now properly scales when resizing window.
+Fixed: Overbooked now also shows when there are 0 lessons billed or booked.
+Fixed: Additional clients automatically add rows, but without lessontype or level.
+Fixed: Client information can now be deleted instead of only changed.
+Fixed: Error on first time install with new licensenumber and new database.
+
+Version 4.0.2
+New: Report on number of lessons booked versus number of lessons billed per group (Reports / Overbooked).
+New: Report on client lessons with Memotext (Custom / Lessons / Overview).
+New: Ability to update the client level all future appointments to the one just changed (Appointment Change window).
+Enhanced: Improved tab-selection methods.
+Fixed: TM crashes after updating license.
+Fixed: Set a minimum and maximum date for the calendar to disable selecting too small/large a year.
+Fixed: Error when changing column width without selecting an item in the list.
+Fixed: Set invoicename to maximum of 15 characters to avoid too long invoicenames.
+Fixed: Minor translation issues for Dutch.
+Fixed: Save Memo button didn't work under specific circumstances.
+Fixed: Updated Config value retrieval to better select the requested value in case of double values.
+
+Version 4.0.1.3
+Fixed: Pay Invoice button on Finance tab stopped functioning, due to added column open amount.
+Fixed: Search Tab clear button didn’t erase phone number.
+Fixed: Update database produced error in languages other than English.
+
+Version 4.0.1.2
+New: Added this version log.
+New: Memofield with Reportstab active shows memo for currently selected Client.
+New: Added Credit Card information to Client window.
+New: Manual update is now possible. Auto-update reduced to once a week.
+Fixed: In Settings windows, tab License was renamed correctly in Dutch (Licentie).
+Fixed: expired license now gives LicenseWindow in stead of shutting down TrackManager.
+
+Version 4.0.0.30
+New: Finance tab now shows open amount per invoice.
+Enhanced: Replaced logo’s on Splash, windows icons and login screen. (We love it).
+Enhanced: Show previously selected items better when clicking on a different list in the Finance Form.
+Enhanced: Close About window when clicking anywhere on the screen.
+Fixed: Edit Appointment Screen doesn’t show on 64bit windows.
+
+Version 4.0.0.28
+New: Added option to show Client age in appointment tab, up to specified age (Settings).
+Enhanced: It is no longer possible to enter/save the Settings twice when entering Demo data.
+Enhanced: Show existing License info on the License tab in Settings, if available.
+Enhanced: “Limit to Type” Group screen on “Custom” tab is wider to better accommodate the text.
+Enhanced: Replaced “Description” with “Product” in the Finance window.
+Fixed: Tabs are wider than screen when Language of the system is English, due to larger calendar.
+Fixed: TM crashes when Track1 does not fit on the current window.
+
+Version 4.0.0.24
+Enhanced: Do not show Change Appointment screen for Teacher or Bar.
+Fixed: Removed popup “Table Found” when clicking “Show Client Appointments” button.
+Fixed: Crash when selecting a report with attributes that do not yet exist. All selected attributes are now checked first.
+
+Version 4.0.0.22
+New:  Added option to remove log files/entries older than 1 day/week/month with auto delete.
+Fixed: When creating a new invoice for a group, update the total number of lessons bought for that group on the Groups tab.
+
+Version 4.0.0.20
+New: Added “Edit Appointment screen” with option to edit Lesson Level directly in calendar.
+New: Added place or reorder appointments on specific location on Track. (with move).
+New: Invoice Name & Invoice Number can now be provided by user (Settings window).
+Enhanced: Auto-check invoice after every change.
+Enhanced: Replaced text “Keep logs” with “Remove logs older than”.
+Fixed: Seasonend = seasonstart + seasonlenght => Seasonend = seasonstart + seasonlenght – 1 day.
+Fixed: Cannot move appointment with deviant start time.
+
+Version 4.0.0.0
+Complete rebuild with:
+ClickOnce application, installable over Internet.
+Auto-Update (non-optional).
+Latest dotNet version (4.5).
+Latest SQL version (2012) Also supports SQL 2008, 2008R2.
+
+
+

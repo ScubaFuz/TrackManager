@@ -1,0 +1,547 @@
+<?xml version="1.0" standalone="yes"?>
+<TrackManager>
+	<Language Name="NL">
+    <Form Name="Properties">
+      <Object Name="strGeneralError" Type="Prop">Er is een onbekende fout opgetreden.</Object>
+      <Object Name="strCheckLog" Type="Prop">Controleer de logfile voor meer informatie.</Object>
+      <Object Name="strCheckSettings" Type="Prop">Controleer uw instellingen</Object>
+      <Object Name="strWarning" Type="Prop">Waarschuwing</Object>
+      <Object Name="strAreYouSure" Type="Prop">Weet u het zeker?</Object>
+      <Object Name="strContinue" Type="Prop">Wilt u doorgaan?</Object>
+      <Object Name="strLogError" Type="Prop">Er was een fout bij het schrijven naar de logfile.</Object>
+      <Object Name="strDataError" Type="Prop">De database is niet gevonden. Controleer uw instellingen.</Object>
+      <Object Name="strXmlError" Type="Prop">Er was een fout bij het verbinden met de XML file.</Object>
+      <Object Name="strPreconfigured" Type="Prop">Alleen keuze waarden zijn toegestaan voor deze lijst</Object>
+      <Object Name="strNumeric" Type="Prop">Alleen numerieke waarden zijn toegestaan.</Object>
+      <Object Name="strPermanentDelete" Type="Prop">Dit verwijdert de selectie (en onderliggende waarden) permanent.</Object>
+      <Object Name="strDelete1" Type="Prop">Er kan slechts 1 item tegelijk worden verwijderd.</Object>
+      <Object Name="strAllData" Type="Prop">Voer alle verplichte data in voordat u op deze knop drukt.</Object>
+      <Object Name="strSettingReload" Type="Prop">Voor de meeste van deze instellingen moet u TrackManager herstarten.</Object>
+      <Object Name="strLongWait" Type="Prop">Door weinig selectie criteria kan dit rapport erg lang draaien.</Object>
+      <Object Name="strAll" Type="Prop">Alles</Object>
+      <Object Name="strTime" Type="Prop">Tijd</Object>
+      <Object Name="strBar" Type="Prop">Bar</Object>
+      <Object Name="strClient" Type="Prop">Klant</Object>
+      <Object Name="strGroup" Type="Prop">Groep</Object>
+      <Object Name="strTeacher" Type="Prop">Leraar</Object>
+      <Object Name="strAdd" Type="Prop">Toevoegen</Object>
+      <Object Name="strUpdate" Type="Prop">Toepassen</Object>
+      <Object Name="strTotal" Type="Prop">Totaal</Object>
+      <Object Name="strYes" Type="Prop">Ja</Object>
+      <Object Name="strNo" Type="Prop">Nee</Object>
+      <Object Name="strLanguage" Type="Prop">Taal</Object>
+      <Object Name="strReport" Type="Prop">Rapport</Object>
+      <Object Name="strGroupNotEmpty" Type="Prop">Alleen groepen zonder leden kunnen verwijderd worden.</Object>
+      <Object Name="strDeleteMax1Client" Type="Prop">U kunt slechts 1 afspraak tegelijk verwijderen.</Object>
+      <Object Name="strInvoiceNotEmpty" Type="Prop">Alleen facturen zonder inhoud kunnen verwijderd worden.</Object>
+      <Object Name="strWarningDemoData" Type="Prop">Dit voegt demo data toe aan uw huidige actieve database.</Object>
+      <Object Name="strUpdateDatabase" Type="Prop">Er is een update beschikbaar voor uw database.</Object>
+      <Object Name="strEnterEmailAddress" Type="Prop">Voer een geldig Email Adres in.</Object>
+      <Object Name="strInvallidEmailAddress" Type="Prop">Het Email Adres is niet geldig.</Object>
+      <Object Name="strOverbookClient" Type="Prop">U staat op het punt om een klant te overboeken.</Object>
+      <Object Name="strMissingLessontype" Type="Prop">U heeft een Lestype nodig om dit type afspraak te maken.</Object>
+      <Object Name="1" Type="WeekDays">Zo</Object>
+      <Object Name="2" Type="WeekDays">Ma</Object>
+      <Object Name="3" Type="WeekDays">Di</Object>
+      <Object Name="4" Type="WeekDays">Wo</Object>
+      <Object Name="5" Type="WeekDays">Do</Object>
+      <Object Name="6" Type="WeekDays">Vr</Object>
+      <Object Name="7" Type="WeekDays">Za</Object>
+    </Form>
+		<Form Name="frmTrackManager">
+			<Object Name="mnuMainFile" Type="Menu">Bestand</Object>
+			<Object Name="mnuMainFileLogOff" Type="Menu">Uitloggen</Object>
+			<Object Name="mnuMainFileReload" Type="Menu">Herstarten</Object>
+			<Object Name="mnuMainFileExit" Type="Menu">Afsluiten</Object>
+			<Object Name="mnuMainEdit" Type="Menu">Bewerken</Object>
+			<Object Name="mnuMainEditDay" Type="Menu">(De)Blokkeer Dag</Object>
+			<Object Name="mnuMainEditTrack" Type="Menu">(De)Blokkeer Baan</Object>
+			<Object Name="mnuMainEditHour" Type="Menu">(De)Blokkeer Les</Object>
+      <Object Name="mnuMainEditClearAllLocks" Type="Menu">Alle Blokkeringen Opheffen</Object>
+      <Object Name="mnuMainEditScreen" Type="Menu">Bewaar Scherm Positie</Object>
+			<Object Name="mnuMainWindow" Type="Menu">Venster</Object>
+			<Object Name="mnuMainWindowSettings" Type="Menu">Instellingen</Object>
+			<Object Name="mnuMainWindowSecurity" Type="Menu">Beveiliging</Object>
+      <Object Name="mnuMainWindowGroups" Type="Menu">Groepen</Object>
+      <Object Name="mnuMainWindowClients" Type="Menu">Klanten</Object>
+      <Object Name="mnuMainWindowFinance" Type="Menu">Facturen</Object>
+      <Object Name="mnuMainHelp" Type="Menu">Help</Object>
+			<Object Name="mnuMainHelpManual" Type="Menu">Handleiding</Object>
+			<Object Name="mnuMainHelpAbout" Type="Menu">Over TrackManager</Object>
+      <Object Name="mnuMainHelpUpdates" Type="Menu">Controleer op Updates</Object>
+
+      <Object Name="lvwAppClients_colAppClient" Type="List">Klant</Object>
+			<Object Name="lvwAppClients_colAppLessonType" Type="List">Les Type</Object>
+			<Object Name="lvwAppClients_colAppLessonCount" Type="List">Aantal</Object>
+      <Object Name="chkListClient" Type="Text">Klant</Object>
+
+      <Object Name="btnMemoSave" Type="Text">Memo Opslaan</Object>
+			<Object Name="lblStatus" Type="Text">Status</Object>
+			<Object Name="grpAppDetails" Type="Text">Afspraak Details</Object>
+			<Object Name="btnAppRemove" Type="Text">Verwijder uit Lijst</Object>
+			<Object Name="btnAppClear" Type="Text">Lijst Wissen</Object>
+			<Object Name="btnAppDelete" Type="Text">Afspraak Verwijderen</Object>
+			<Object Name="btnAppMove" Type="Text">Afspraak Verplaatsen</Object>
+			<Object Name="btnAppCreate" Type="Text">Afspraak Maken</Object>
+			<Object Name="lblAppDetailsTrack" Type="Text">Baan</Object>
+			<Object Name="lblAppDetailsTime" Type="Text">Tijd</Object>
+			<Object Name="lblAppDetailsDate" Type="Text">Datum</Object>
+			<Object Name="grpCurrentSelection" Type="Text">Huidige Selectie</Object>
+			<Object Name="lblCurrentSelectionClient" Type="Text">Klant</Object>
+			<Object Name="lblCurrentSelectionGroup" Type="Text">Groep</Object>
+      <Object Name="btnUndo" Type="Text">Terug</Object>
+
+      <Object Name="tpgTracks" Type="Text">Banen</Object>
+			<Object Name="lblTracksBar" Type="Text">Bar</Object>
+			<Object Name="lblTrackTeacher" Type="Text">Leraar</Object>
+			<Object Name="lblTrackClient" Type="Text">Klant</Object>
+
+			<Object Name="tpgGroups" Type="Text">Groepen</Object>
+			<Object Name="lvwGroups_colGroupName" Type="List">Groep Naam</Object>
+			<Object Name="lvwGroups_colGroupNumber" Type="List">Groep Nummer</Object>
+			<Object Name="grpGroupMembers" Type="Text">Groep Leden</Object>
+			<Object Name="lblGroupLessonsTotal" Type="Text">Totaal Aantal</Object>
+			<Object Name="lblGroupLessonsBilled" Type="Text">Gefactureerd</Object>
+			<Object Name="lblGroupClientLevel" Type="Text">Klant Niveau</Object>
+			<Object Name="lblGroupExtraCount" Type="Text">Extra Niveau</Object>
+			<Object Name="lblGroupLessonCount" Type="Text">Lessen Aantal</Object>
+			<Object Name="lblGroupLessonType" Type="Text">Les Type</Object>
+			<Object Name="lblGroupsFullName" Type="Text">Klant Naam</Object>
+			<Object Name="btnGrpAppClear" Type="Text">Lijst Wissen</Object>
+			<Object Name="btnGrpAppRemove" Type="Text">Verwijder uit Selectie</Object>
+			<Object Name="btnGrpAppAdd" Type="Text">Voeg toe aan Selectie</Object>
+			<Object Name="btnGroupUpdateLevel" Type="Text">Klant Opslaan</Object>
+			<Object Name="grpMainContact" Type="Text">Primair Contact</Object>
+			<Object Name="btnGroupsMainContact" Type="Text">Instellen als Primair Contact</Object>
+			<Object Name="btnGroupEditClient" Type="Text">Klanten</Object>
+			<Object Name="btnGroupManage" Type="Text">Groepen</Object>
+			<Object Name="btnCorrectLessonCount" Type="Text">Les Aantal Corrigeren</Object>
+
+			<Object Name="tpgFinance" Type="Text">Financien</Object>
+			<Object Name="lvwFinanceGroups_colGroupName" Type="List">Groep Naam</Object>
+			<Object Name="lvwFinanceGroups_colGroupNumber" Type="List">Groep Nummer</Object>
+			<Object Name="lvwFinanceClients_colFirstName" Type="List">Voornaam</Object>
+			<Object Name="lvwFinanceClients_colMiddleName" Type="List">Tussenvoegsel</Object>
+			<Object Name="lvwFinanceClients_colFamilyName" Type="List">Achternaam</Object>
+			<Object Name="lvwProduct_colProduct" Type="List">Producten</Object>
+			<Object Name="lvwProduct_colProductCounts" Type="List">Aantal</Object>
+			<Object Name="lvwProduct_colProductAmounts" Type="List">Bedrag</Object>
+			<Object Name="lvwProduct_colProductTax" Type="List">BTW</Object>
+			<Object Name="lvwFinance_colDate" Type="List">Datum</Object>
+			<Object Name="lvwFinance_colClient" Type="List">Klant</Object>
+			<Object Name="lvwFinance_colLogin" Type="List">Login</Object>
+			<Object Name="lvwFinance_colDescription" Type="List">Product</Object>
+			<Object Name="lvwFinance_colCount" Type="List">Aantal</Object>
+			<Object Name="lvwFinance_colBilledAmount" Type="List">Gefactureerd</Object>
+			<Object Name="lvwFinance_colPayedAmount" Type="List">Betaald</Object>
+			<Object Name="lvwFinance_colPayed" Type="List">Voldaan</Object>
+			<Object Name="lvwFinance_colPayDate" Type="List">Laatste Bet.</Object>
+			<Object Name="btnFinancePay" Type="Text">Betaal Factuur</Object>
+			<Object Name="btnFinanceDelete" Type="Text">Verwijder Factuur</Object>
+      <Object Name="lblFinanceProduct" Type="Text">Product</Object>
+      <Object Name="lblClientName" Type="Text">Klant Naam</Object>
+			<Object Name="lblGroupName" Type="Text">Groep Naam</Object>
+			<Object Name="btnFinanceAdd" Type="Text">Nieuwe Factuur</Object>
+			<Object Name="btnFinanceEdit" Type="Text">Facturen Beheren</Object>
+			<Object Name="grpFinanceGroupPayments" Type="Text">Facturen</Object>
+			<Object Name="lblFinancePayDue" Type="Text">Openstaand</Object>
+			<Object Name="lblFinancePayTotal" Type="Text">Totaal</Object>
+
+			<Object Name="tpgReports" Type="Text">Rapporten</Object>
+			<Object Name="btnRepLessons" Type="Text">Lessen</Object>
+			<Object Name="lblRepLimitSelection" Type="Text">Beperk tot Selectie:</Object>
+			<Object Name="rbnRepLimitSeason" Type="Text">Seizoen</Object>
+			<Object Name="rbnRepLimitDay" Type="Text">Dag</Object>
+			<Object Name="rbnRepLimitWeek" Type="Text">Week</Object>
+			<Object Name="rbnRepLimitMonth" Type="Text">Maand</Object>
+			<Object Name="chkRepLimitTrack" Type="Text">Baan</Object>
+			<Object Name="chkRepLimitGroup" Type="Text">Groep</Object>
+			<Object Name="chkRepLimitClient" Type="Text">Klant</Object>
+			<Object Name="chkRepLimitLessonType" Type="Text">Lestype</Object>
+      <Object Name="chkRepLimitInvoice" Type="Text">Factuur</Object>
+      <Object Name="grpRepLimitType" Type="Text">Beperk tot Type</Object>
+      <Object Name="rbnRepLimitTypeAll" Type="Text">Alles</Object>
+      <Object Name="rbnRepLimitTypeClient" Type="Text">Klant</Object>
+      <Object Name="rbnRepLimitTypeTeacher" Type="Text">Leraar</Object>
+      <Object Name="rbnRepLimitTypeBar" Type="Text">Bar</Object>
+      <Object Name="lblRepClients" Type="Text">Klanten</Object>
+      <Object Name="lblRepFinance" Type="Text">Financien</Object>
+      <Object Name="lblRepLessons" Type="Text">Lessen</Object>
+      <Object Name="lblRepOther" Type="Text">Overigen</Object>
+      <Object Name="btnRepReportCreate" Type="Text">Maak Rapport</Object>
+      <Object Name="btnRepEmail" Type="Text">Email Rapport</Object>
+      <Object Name="grpRepReportWidth" Type="Text">Print Breedte</Object>
+      <Object Name="chkRepReportWidth" Type="Text">Automatisch</Object>
+
+      <Object Name="tpgSearch" Type="Text">Zoeken</Object>
+			<Object Name="lbl2CharacterMinimum" Type="Text">2 tekens minimum</Object>
+			<Object Name="lblSearchFirstName" Type="Text">Voornaam</Object>
+			<Object Name="lblSearchLastName" Type="Text">Achternaam</Object>
+			<Object Name="lblSearchPostalCode" Type="Text">Postcode</Object>
+			<Object Name="lblSearchCity" Type="Text">Woonplaats</Object>
+			<Object Name="lblSearchGroupName" Type="Text">Groep Naam / Nr</Object>
+			<Object Name="lblSearchEmail" Type="Text">Email</Object>
+			<Object Name="lblSearchPhone" Type="Text">Telefoon Nummer</Object>
+			<Object Name="lblSearchDayOfBirth" Type="Text">Geboortedatum</Object>
+			<Object Name="grpMatchPerItem" Type="Text">Overeenkomsten</Object>
+			<Object Name="rbnPartialMatchLeft" Type="Text">Gedeeltelijk Links</Object>
+			<Object Name="rbnPartialMatchAny" Type="Text">Gedeeltelijk Overal</Object>
+			<Object Name="rbnExactMatch" Type="Text">Exacte Match</Object>
+			<Object Name="grpMatchNumber" Type="Text">Aantal Overeenkomsten</Object>
+			<Object Name="rbnMatchAll" Type="Text">Alles Matchen</Object>
+			<Object Name="rbnMatchAny" Type="Text">Elke Matchen</Object>
+			<Object Name="lblSearchMaximum" Type="Text">Maximum Aantal</Object>
+			<Object Name="btnSearch" Type="Text">Zoeken</Object>
+			<Object Name="btnSearchClear" Type="Text">Wissen</Object>
+			<Object Name="lvwSearchResult_colSearchName" Type="List">Naam</Object>
+			<Object Name="lvwSearchResult_colSearchAddress" Type="List">Adres</Object>
+			<Object Name="lvwSearchResult_colSearchPostalCode" Type="List">Postcode</Object>
+			<Object Name="lvwSearchResult_colSearchCity" Type="List">Woonplaats</Object>
+			<Object Name="lvwSearchResult_colSearchTelephone" Type="List">Telefoon</Object>
+			<Object Name="lvwSearchResult_colSearchMobile" Type="List">Mobiel</Object>
+			<Object Name="lvwSearchResult_colSearchEmail" Type="List">Email</Object>
+			<Object Name="lvwSearchResult_colSearchDayOfBirth" Type="List">Geboortedatum</Object>
+			<Object Name="lvwSearchResult_colSearchGroupName" Type="List">Group Naam</Object>
+			<Object Name="lvwSearchResult_colSearchCountry" Type="List">Land</Object>
+			<Object Name="lvwSearchResult_colSearchGroupId" Type="List">Groep Nummer</Object>
+		</Form>
+		<Form Name="frmSettings">
+			<Object Name="frmSettings" Type="Text">Instellingen</Object>
+			<Object Name="btnClose" Type="Text">Sluiten</Object>
+
+      <Object Name="tpgGeneral" Type="Text">Algemeen</Object>
+      <Object Name="btnSaveSettingsGeneral" Type="Text">Opslaan</Object>
+      <Object Name="lblInvoiceName" Type="Text">Factuur Naam (Max. 15)</Object>
+      <Object Name="lblInvoiceNumber" Type="Text">Factuur Start Nummer</Object>
+      <Object Name="chkSelectMultipleGroups" Type="Text">Selecteer klanten uit meerdere groepen</Object>
+      <Object Name="chkDeleteEmptyInvoice" Type="Text">Alleen Lege Facturen Verwijderen</Object>
+      <Object Name="chkDeleteMax1Client" Type="Text">Verwijder max 1 afspraak tegelijk</Object>
+      <Object Name="grpDisplayWarningOverbooked" Type="Text">Toon een waarschuwing bij overboeken</Object>
+      <Object Name="rbnOverbookingNone" Type="Text">Toon geen waarschuwing</Object>
+      <Object Name="rbnOverbookingGroup" Type="Text">Toon een waarschuwing op groepniveau</Object>
+      <Object Name="rbnOverbookingClient" Type="Text">Toon een waarschuwing op klantniveau</Object>
+      <Object Name="grpShowOpenBills" Type="Text">Toon Open Facturen in Agenda met onderstrepen</Object>
+      <Object Name="rbnShowOpenBillsNone" Type="Text">Toon geen Open Facturen</Object>
+      <Object Name="rbnShowOpenBillsGroup" Type="Text">Toon Open Facturen op groepniveau</Object>
+      <Object Name="rbnShowOpenBillsClient" Type="Text">Toon Open Facturen op klantniveau</Object>
+      <Object Name="chkShowLastAppointment" Type="Text">Toon een "!" bij de laatste afspraak van een klant</Object>
+      <Object Name="lblDateFormat" Type="Text">Datum Notatie</Object>
+      <Object Name="chkShowAllLessonTypes" Type="Text">Toon alle lestypen van elke klant</Object>
+      <Object Name="chkRequireLessontype" Type="Text">Lestype is verplicht voor de Bar</Object>
+
+      <Object Name="tpgTracks" Type="Text">Banen</Object>
+			<Object Name="btnClearTrack" Type="Text">Wissen</Object>
+			<Object Name="btnAddTrack" Type="Text">Toevoegen</Object>
+			<Object Name="btnDeleteTrack" Type="Text">Verwijderen</Object>
+			<Object Name="btnEditTrack" Type="Text">Bewerken</Object>
+			<Object Name="lvwTracks_colTrackName" Type="List">Baan</Object>
+			<Object Name="lvwTracks_colTrackOffset" Type="List">Baan Offset</Object>
+
+			<Object Name="tpgLessonTypes" Type="Text">Les Types</Object>
+			<Object Name="btnClearLessonType" Type="Text">Wissen</Object>
+			<Object Name="btnAddLessonType" Type="Text">Toevoegen</Object>
+			<Object Name="btnDeleteLessonType" Type="Text">Verwijderen</Object>
+			<Object Name="btnEditLessonType" Type="Text">Bewerken</Object>
+			<Object Name="lvwLessonTypes_colLessonTypeName" Type="List">Les Type</Object>
+			<Object Name="lvwLessonTypes_colLessonTypeColor" Type="List">Les Type Kleur</Object>
+
+			<Object Name="tpgLevels" Type="Text">Niveaus</Object>
+			<Object Name="btnClearLevel" Type="Text">Wissen</Object>
+			<Object Name="btnAddLevel" Type="Text">Toevoegen</Object>
+			<Object Name="btnDeleteLevel" Type="Text">Verwijderen</Object>
+			<Object Name="btnEditLevel" Type="Text">Bewerken</Object>
+			<Object Name="lvwLevels_colLevelName" Type="List">Niveau</Object>
+			<Object Name="lvwLevels_colLevelColor" Type="List">Niveau Kleur</Object>
+			<Object Name="lvwLevels_colLevelCount" Type="List">Aantal Lessen</Object>
+
+      <Object Name="tpgProducts" Type="Text">Producten</Object>
+      <Object Name="btnClearProduct" Type="Text">Wissen</Object>
+      <Object Name="btnAddProduct" Type="Text">Toevoegen</Object>
+      <Object Name="btnDeleteProduct" Type="Text">Verwijderen</Object>
+      <Object Name="btnEditProduct" Type="Text">Bewerken</Object>
+      <Object Name="lvwProducts_colProduct" Type="List">Product</Object>
+      <Object Name="lvwProducts_colProductCount" Type="List">Aantal</Object>
+      <Object Name="lvwProducts_colProductAmount" Type="List">Bedrag</Object>
+      <Object Name="lvwProducts_colProductTax" Type="List">BTW</Object>
+      <Object Name="lvwProducts_colProductSort" Type="List">Volgorde</Object>
+      
+			<Object Name="tpgPrContacts" Type="Text">Pr Contacten</Object>
+			<Object Name="btnClearPrContact" Type="Text">Wissen</Object>
+			<Object Name="btnAddPrContact" Type="Text">Toevoegen</Object>
+			<Object Name="btnDeletePrContact" Type="Text">Verwijderen</Object>
+			<Object Name="btnEditPrContact" Type="Text">Bewerken</Object>
+			<Object Name="lvwPrContacts_colPrContacts" Type="List">Pr Contacten</Object>
+
+      <Object Name="tpgTax" Type="Text">BTW</Object>
+      <Object Name="btnClearTax" Type="Text">Wissen</Object>
+      <Object Name="btnAddTax" Type="Text">Toevoegen</Object>
+      <Object Name="btnDeleteTax" Type="Text">Verwijderen</Object>
+      <Object Name="btnEditTax" Type="Text">Bewerken</Object>
+      <Object Name="lvwTax_colTaxValue" Type="List">Percentage</Object>
+      <Object Name="lvwTax_colTaxDescription" Type="List">Omschrijving</Object>
+
+      <Object Name="tpgLogging" Type="Text">Loggen</Object>
+			<Object Name="btnSaveSettingsLog" Type="Text">Opslaan</Object>
+			<Object Name="lblLogfileName" Type="Text">Naam Logbestand</Object>
+			<Object Name="lblLogfileLocation" Type="Text">Locatie Logbestand</Object>
+			<Object Name="rbtLoggingLevel5" Type="Text">Alles (Inclusief Database Queries)</Object>
+			<Object Name="lblLoggingLevel" Type="Text">Log Niveau</Object>
+			<Object Name="rbtLoggingLevel1" Type="Text">Laag (Alleen fouten)</Object>
+			<Object Name="rbtLoggingLevel2" Type="Text">Medium (Inclusief Programma Gebeurtenissen)</Object>
+			<Object Name="rbtLoggingLevel3" Type="Text">Medium-Hoog (Inclusief Gebruiker Handelingen)</Object>
+			<Object Name="rbtLoggingLevel4" Type="Text">Hoog (Ales Behalve Database Queries)</Object>
+			<Object Name="rbtLoggingLevel0" Type="Text">Uit (Alleen Programma Start en Beveiliging)</Object>
+			<Object Name="grpLogsToKeep" Type="Text">Verwijders logs ouder dan:</Object>
+			<Object Name="rbtKeepLogDay" Type="Text">Dag</Object>
+			<Object Name="rbtKeepLogWeek" Type="Text">Week</Object>
+			<Object Name="rbtKeepLogMonth" Type="Text">Maand</Object>
+			<Object Name="btnClearOldLogs" Type="Text">Verwijder Oude Logs</Object>
+      <Object Name="chkAutoDeleteOldLogs" Type="Text">Auto verwijder Oude Logs</Object>
+      <Object Name="btnLogToDatabase" Type="Text">Loggen naar Database</Object>
+      
+      <Object Name="tpgView" Type="Text">Uiterlijk</Object>
+      <Object Name="lblClientFieldWidth" Type="Text">Klant Veld Breedte</Object>
+      <Object Name="lblClientFieldHeight" Type="Text">Klant Veld Hoogte</Object>
+      <Object Name="lblClientsPerTrack" Type="Text">Klanten per Baan</Object>
+      <Object Name="lblClientsPerGroup" Type="Text">Aantal Klanten per Groep</Object>
+      <Object Name="lblDefFinanceRows" Type="Text">Minimum Financiele Regels</Object>
+      <Object Name="lblOpeningHour" Type="Text">Openings Tijd</Object>
+      <Object Name="lblClosingHour" Type="Text">Sluitings Tijd</Object>
+      <Object Name="lblTimeFrame" Type="Text">Tijd Spanne</Object>
+      <Object Name="lblOnHoursColor" Type="Text">Openings Tijden Kleur</Object>
+      <Object Name="lblOffHoursColor" Type="Text">Gesloten Tijden Kleur</Object>
+      <Object Name="lblReadOnlyBackColor" Type="Text">Alleen Lezen Achtergrond</Object>
+      <Object Name="btnSaveSettingsView" Type="Text">Opslaan</Object>
+      <Object Name="chkShowAge" Type="Text">Toon klant leeftijd tot aan leeftijd:</Object>
+      <Object Name="chkShowAgeAfter" Type="Text">Toon klant leeftijd achter de voornaam ipv ervoor</Object>
+      <Object Name="lblSeasonStart" Type="Text">Seizoen Start</Object>
+			<Object Name="lblSeasonLength" Type="Text">Seizoen Lengte</Object>
+      <Object Name="lblShowClosedHours" Type="Text">Toon Gesloten Uren</Object>
+      <Object Name="lblShowTeacherColumn" Type="Text">Toon Leraren Kolom</Object>
+      <Object Name="lblShowTimeWithTrack" Type="Text">Tijd bij Elke Baan</Object>
+			<Object Name="lblUseFadingColors" Type="Text">Gebruik Kleurenschaal</Object>
+
+      <Object Name="tpgDatabase" Type="Text">Database</Object>
+      <Object Name="lblDataProvider" Type="Text">Data Provider</Object>
+      <Object Name="lblDatabaseLocation" Type="Text">Database Locatie</Object>
+      <Object Name="lblDatabaseName" Type="Text">Database Naam</Object>
+      <Object Name="lblLoginMethod" Type="Text">Authenticatie Methode</Object>
+      <Object Name="lblLoginName" Type="Text">Inlog Naam</Object>
+      <Object Name="lblPassword" Type="Text">Wachtwoord</Object>
+      <Object Name="lblDatabaseVersion" Type="Text">Database Versie</Object>
+      <Object Name="lblBackupDatabase" Type="Text">Backup Database Folder</Object>
+      <Object Name="lblBackupPath" Type="Text">Dit moet een geldige locatie zijn op de PC of server waar de database zich bevindt</Object>
+      <Object Name="btnSaveSettingsDatabase" Type="Text">Opslaan</Object>
+      <Object Name="btnTestConnection" Type="Text">Test Connectie</Object>
+      <Object Name="btnCreateDatabase" Type="Text">Maak Database</Object>
+      <Object Name="btnCreateDemoData" Type="Text">Maak Demo Data</Object>
+      <Object Name="btnUseDefaults" Type="Text">Standaard</Object>
+      <Object Name="btnUpgradeDatabase" Type="Text">Update Database</Object>
+      <Object Name="btnRefreshDatabase" Type="Text">Ververs Database</Object>
+      <Object Name="btnBackupDatabase" Type="Text">Backup Database</Object>
+
+      <Object Name="tpgEmail" Type="Text">Email</Object>
+      <Object Name="rbtEmailUseSmtp" Type="Text">Gebruik SMTP</Object>
+      <Object Name="rbtEmailUseOutlook" Type="Text">Gebruik Outlook 2007</Object>
+      <Object Name="grpEmailSmtp" Type="Text">SMTP instellingen</Object>
+      <Object Name="lblSmtpServer" Type="Text">SMTP Server</Object>
+      <Object Name="chkSmtpCredentials" Type="Text">Gebruik Netwerk Credentials</Object>
+      <Object Name="lblSmtpServerUsername" Type="Text">SMTP Server Loginnaam</Object>
+      <Object Name="lblSmtpServerPassword" Type="Text">SMTP Server Wachtwoord</Object>
+      <Object Name="chkUseSslEncryption" Type="Text">Gebruik SSL/TLS Encryption</Object>
+      <Object Name="lblSmtpPortNumber" Type="Text">SMTP Poort Nummer</Object>
+      <Object Name="lblSmtpReply" Type="Text">"Reply To" Adres</Object>
+      <Object Name="btnSaveSettingsEmail" Type="Text">Opslaan</Object>
+
+      <Object Name="tpgLicense" Type="Text">Licentie</Object>
+      <Object Name="lblLicenseName" Type="Text">Licentie Naam</Object>
+      <Object Name="lblExpireDate" Type="Text">Verloop Datum</Object>
+      <Object Name="lblLicenseKey" Type="Text">Licentie Code</Object>
+      <Object Name="lblInstallKey" Type="Text">Installatie Code</Object>
+      <Object Name="btnValidateLicense" Type="Text">Valideren</Object>
+      <Object Name="btnSaveLicense" Type="Text">Opslaan</Object>
+      <Object Name="btnExitTrackManager" Type="Text">TrackManager Afsluiten</Object>
+
+      <Object Name="tpgLanguage" Type="Text">Taal</Object>
+      <Object Name="lblCurrentLanguage" Type="Text">Huidige Taal</Object>
+      <Object Name="btnSaveSettingsLanguage" Type="Text">Opslaan</Object>
+      <Object Name="lblLanguageDefault" Type="Text">Standaard Talen</Object>
+      <Object Name="lvwLanguage_colItemName" Type="List">Object Naam</Object>
+      <Object Name="lvwLanguage_colItemText" Type="List">Object text</Object>
+      <Object Name="lvwLanguage_colItemType" Type="List">Object Type</Object>
+      <Object Name="lblLanguageForm" Type="Text">Venster (Groep)</Object>
+      <Object Name="lblLanguageItem" Type="Text">Object Naam</Object>
+      <Object Name="lblLanguageText" Type="Text">Tekst</Object>
+      <Object Name="lblLanguageType" Type="Text">Type</Object>
+      <Object Name="btnClearLanguage" Type="Text">Wissen</Object>
+      <Object Name="btnAddLanguage" Type="Text">Toevoegen</Object>
+      <Object Name="btnDeleteLanguage" Type="Text">Verwijderen</Object>
+      <Object Name="btnEditLanguage" Type="Text">Bewerken</Object>
+      <Object Name="btnLanguageSaveAll" Type="Text">Taal Opslaan</Object>
+      <Object Name="btnLanguageLoad" Type="Text">Taal laden</Object>
+      <Object Name="btnLanguageImport" Type="Text">Importeer Taal</Object>
+      <Object Name="btnLanguageExport" Type="Text">Exporteer Taal</Object>
+
+      <Object Name="tpgButtons" Type="Text">Knoppen</Object>
+      <Object Name="btnButtonUp" Type="Text">Omhoog</Object>
+      <Object Name="btnButtonDown" Type="Text">Omlaag</Object>
+      <Object Name="btnButtonOrderSave" Type="Text">Opslaan</Object>
+      <Object Name="lvwButtons_btnAppRemove" Type="ListItem">Verwijder uit Lijst</Object>
+      <Object Name="lvwButtons_btnAppCreate" Type="ListItem">Afspraak Maken</Object>
+      <Object Name="lvwButtons_btnAppMove" Type="ListItem">Afspraak Verplaatsen</Object>
+      <Object Name="lvwButtons_btnAppDelete" Type="ListItem">Afspraak Verwijderen</Object>
+      <Object Name="lvwButtons_btnAppClear" Type="ListItem">Lijst Wissen</Object>
+    </Form>
+		<Form Name="frmGroups">
+			<Object Name="frmGroups" Type="Text">Groepen</Object>
+			<Object Name="btnClose" Type="Text">Sluiten</Object>
+			<Object Name="btnClearGroup" Type="Text">Wissen</Object>
+			<Object Name="btnAddGroup" Type="Text">Toevoegen</Object>
+			<Object Name="btnDeleteGroup" Type="Text">Verwijderen</Object>
+			<Object Name="btnEditGroup" Type="Text">Bewerken</Object>
+			<Object Name="lvwGroups_colGroupName" Type="List">Groep Naam</Object>
+			<Object Name="lvwGroups_colGroupNumber" Type="List">Groep Nummer</Object>
+		</Form>
+		<Form Name="frmClients">
+			<Object Name="frmClients" Type="Text">Klanten</Object>
+      <Object Name="lblGroupName" Type="Text">Groep Naam</Object>
+      <Object Name="lvwGroups_colgroupName" Type="List">Groep Naam</Object>
+      <Object Name="lvwGroups_colGroupNumber" Type="List">Groep Nummer</Object>
+      <Object Name="lblClientName" Type="Text">Klant Naam</Object>
+      <Object Name="lvwClients_colFirstName" Type="List">Voornaam</Object>
+      <Object Name="lvwClients_colMiddleName" Type="List">Tussenvoegsel</Object>
+      <Object Name="lvwClients_colFamilyName" Type="List">Achternaam</Object>
+      <Object Name="btnMoveClient" Type="Text">Verplaatsen naar Groep</Object>
+      <Object Name="lblRemarks" Type="Text">Opmerkingen</Object>
+      <Object Name="lblPrContact" Type="Text">Pr Contacten</Object>
+      <Object Name="btnAddClient" Type="Text">Toevoegen</Object>
+      <Object Name="btnUpdateClient" Type="Text">Toepassen</Object>
+      <Object Name="btnClose" Type="Text">Sluiten</Object>
+      <Object Name="lblFirstName" Type="Text">Voornaam</Object>
+      <Object Name="lblMiddleName" Type="Text">Tussenvoegsel</Object>
+      <Object Name="lblFamilyName" Type="Text">Achternaam</Object>
+      <Object Name="lblStreet" Type="Text">Straat</Object>
+      <Object Name="lblHouseNumber" Type="Text">Huisnummer</Object>
+      <Object Name="lblPostalCode" Type="Text">Post Code</Object>
+      <Object Name="lblCity" Type="Text">Woonplaats</Object>
+      <Object Name="lblCountry" Type="Text">Land</Object>
+      <Object Name="lblTelephone" Type="Text">Telefoon</Object>
+      <Object Name="lblFax" Type="Text">Fax</Object>
+      <Object Name="lblMobile" Type="Text">Mobiele Telefoon</Object>
+      <Object Name="lblEmail" Type="Text">Email Adres</Object>
+      <Object Name="lblDateOfBirth" Type="Text">Geboortedatum</Object>
+      <Object Name="lblBankaccount" Type="Text">Bankrekening</Object>
+      <Object Name="lblCreditcard" Type="Text">Credit Card</Object>
+      <Object Name="lblCreditCardCcv" Type="Text">Credit Card CCV Code</Object>
+      <Object Name="lblCreditCardValidThru" Type="Text">Geldig tot (MM/YYYY)</Object>
+      <Object Name="lblMailinglist" Type="Text">Meenemen in Email Lijst</Object>
+      <Object Name="lblCustom1" Type="Text">Custom 1</Object>
+      <Object Name="lblCustom2" Type="Text">Custom 2</Object>
+      <Object Name="lblCustom3" Type="Text">custom 3</Object>
+      <Object Name="lblCustom4" Type="Text">Custom 4</Object>
+      <Object Name="btnClearClient" Type="Text">Wissen</Object>
+			<Object Name="btnDeleteClient" Type="Text">Verwijderen</Object>
+    </Form>
+		<Form Name="frmLogins">
+			<Object Name="frmLogins" Type="Text">Beveiliging</Object>
+			<Object Name="btnClose" Type="Text">Sluiten</Object>
+			<Object Name="btnLoginClear" Type="Text">Wissen</Object>
+			<Object Name="btnLoginDelete" Type="Text">Verwijderen</Object>
+			<Object Name="btnLoginSave" Type="Text">Toepassen</Object>
+			<Object Name="btnLoginAdd" Type="Text">Toevoegen</Object>
+			<Object Name="chkLoginAdd" Type="Text">Logins Toevoegen</Object>
+			<Object Name="chkLoginChange" Type="Text">Logins Veranderen</Object>
+			<Object Name="chkLoginDelete" Type="Text">Logins Verwijderen</Object>
+			<Object Name="chkFinanceAdd" Type="Text">Facturen Toevoegen</Object>
+			<Object Name="chkFinanceChange" Type="Text">Facturen Veranderen</Object>
+			<Object Name="chkfinanceDelete" Type="Text">Facturen Verwijderen</Object>
+			<Object Name="chkSettingsAdd" Type="Text">Instellingen Toevoegen</Object>
+			<Object Name="chkSettingsChange" Type="Text">Instellingen Veranderen</Object>
+			<Object Name="chkSettingsDelete" Type="Text">Instellingen Verwijderen</Object>
+			<Object Name="chkGroupsDelete" Type="Text">Groepen Verwijderen</Object>
+			<Object Name="chkClientsDelete" Type="Text">Klanten Verwijderen</Object>
+			<Object Name="lblDateStop" Type="Text">Verloop Datum</Object>
+			<Object Name="lblDateStart" Type="Text">Start Datum</Object>
+			<Object Name="lblPassword" Type="Text">Wachtwoord</Object>
+			<Object Name="lblLoginName" Type="Text">Login Naam</Object>
+			<Object Name="chkEnabled" Type="Text">Geactiveerd</Object>
+			<Object Name="lvwLoginName_colLoginName" Type="List">Login Naam</Object>
+		</Form>
+		<Form Name="frmFinance">
+			<Object Name="frmFinance" Type="Text">Facturen</Object>
+			<Object Name="btncheckInvoices" Type="Text">Controleer Facturen</Object>
+			<Object Name="lblDue" Type="Text">Openstaand</Object>
+			<Object Name="lblPayed" Type="Text">Voldaan</Object>
+			<Object Name="lblBilled" Type="Text">Gefactureerd</Object>
+			<Object Name="lblPayment" Type="Text">Betaling</Object>
+			<Object Name="btnDetailsAdd" Type="Text">Regel Toevoegen</Object>
+			<Object Name="btnPaymentAdd" Type="Text">Toevoegen</Object>
+			<Object Name="btnPaymentDelete" Type="Text">Verwijderen</Object>
+			<Object Name="btnDetailsDelete" Type="Text">Verwijderen</Object>
+			<Object Name="btnDetailsSave" Type="Text">Regel Toepassen</Object>
+			<Object Name="lblInvoicePayments" Type="Text">Factuur Betalingen</Object>
+			<Object Name="lblInvoiceDetails" Type="Text">Factuur Regels</Object>
+			<Object Name="lblInvoices" Type="Text">Facturen</Object>
+			<Object Name="btnInvoicePay" Type="Text">Betaal Factuur</Object>
+			<Object Name="btnInvoiceDelete" Type="Text">Verwijderen</Object>
+			<Object Name="lblFinanceProduct" Type="Text">Product</Object>
+			<Object Name="lblClientName" Type="Text">Klant Naam</Object>
+			<Object Name="lblGroupName" Type="Text">Groep Naam</Object>
+			<Object Name="btnInvoiceAdd" Type="Text">Toevoegen</Object>
+			<Object Name="btnDetailsEdit" Type="Text">Regel Bewerken</Object>
+			<Object Name="lvwInvoices_colInvoiceDate" Type="List">Datum</Object>
+			<Object Name="lvwInvoices_colInvoiceClient" Type="List">Klant</Object>
+			<Object Name="lvwInvoices_colInvoiceLogin" Type="List">Geboekt Door</Object>
+			<Object Name="lvwInvoices_colInvoicePayed" Type="List">Betaald</Object>
+			<Object Name="lvwInvoiceLines_colLineClient" Type="List">Klant</Object>
+			<Object Name="lvwInvoiceLines_colLineLogin" Type="List">Geboekt Door</Object>
+			<Object Name="lvwInvoiceLines_colLineDescription" Type="List">Product</Object>
+			<Object Name="lvwInvoiceLines_colLineCount" Type="List">Aantal</Object>
+			<Object Name="lvwInvoiceLines_colLineAmount" Type="List">Bedrag</Object>
+			<Object Name="lvwInvoiceLines_colLineTax" Type="List">BTW</Object>
+			<Object Name="lvwPayments_colPayDate" Type="List">Datum</Object>
+			<Object Name="lvwPayments_colPayClient" Type="List">Betaald Door</Object>
+			<Object Name="lvwPayments_colPayLogin" Type="List">Geboekt Door</Object>
+			<Object Name="lvwPayments_colPayAmount" Type="List">Bedrag</Object>
+			<Object Name="lvwFinanceGroups_colGroupName" Type="List">Groep Naam</Object>
+			<Object Name="lvwFinanceGroups_colGroupNumber" Type="List">Groep Nummer</Object>
+			<Object Name="lvwFinanceClients_colFirstName" Type="List">Voornaam</Object>
+			<Object Name="lvwFinanceClients_colMiddleName" Type="List">Tussenvoegsel</Object>
+			<Object Name="lvwFinanceClients_colFamilyName" Type="List">Achternaam</Object>
+			<Object Name="lvwProduct_colProducts" Type="List">Product</Object>
+			<Object Name="lvwProduct_colCounts" Type="List">Aantal</Object>
+			<Object Name="lvwProduct_colAmounts" Type="List">Bedrag</Object>
+			<Object Name="lvwProduct_colTax" Type="List">BTW</Object>
+		</Form>
+    <Form Name="frmAppointmentChange">
+      <Object Name="frmAppointmentChange" Type="Text">Afspraak Wijzigen</Object>
+      <Object Name="lblClient" Type="Text">Klant</Object>
+      <Object Name="lblGroup" Type="Text">Groep</Object>
+      <Object Name="lblDate" Type="Text">Datum</Object>
+      <Object Name="lblTime" Type="Text">Tijd</Object>
+      <Object Name="lblTrack" Type="Text">Baan</Object>
+      <Object Name="lblTrackIndex" Type="Text">Baan Index</Object>
+      <Object Name="lblLessonType" Type="Text">Les Type</Object>
+      <Object Name="lblLevel" Type="Text">Niveau</Object>
+      <Object Name="lblExtraCount" Type="Text">Extra Les Aantal</Object>
+      <Object Name="chkUpdateFutureLevel" Type="Text">Wijzig het Niveau van alle toekomstige gelijkwaardige lessen</Object>
+      <Object Name="btnSaveAppointment" Type="Text">Opslaan</Object>
+      <Object Name="btnCancel" Type="Text">Annuleren</Object>
+    </Form>
+    <Form Name="Reports">
+      <Object Name="Lessons" Type="Report">Lessen</Object>
+      <Object Name="OpenBills" Type="Report">Open Facturen</Object>
+      <Object Name="Payments" Type="Report">Betalingen</Object>
+      <Object Name="Overbooked" Type="Report">Teveel Geboekt</Object>
+      <Object Name="Underbooked" Type="Report">Te Weinig Geboekt</Object>
+      <Object Name="Logfile" Type="Report">Logregels</Object>
+      <Object Name="EmailAddresses" Type="Report">Email Adressen</Object>
+      <Object Name="Overview" Type="Report">Overzicht Lessen</Object>
+      <Object Name="Appointments" Type="Report">Afspraken</Object>
+      <Object Name="Invoices" Type="Report">Facturen</Object>
+      <Object Name="Products" Type="Report">Producten</Object>
+      <Object Name="Children" Type="Report">Kinderen</Object>
+    </Form>
+  </Language>
+</TrackManager>
+

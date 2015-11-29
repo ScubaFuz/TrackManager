@@ -1,0 +1,8 @@
+﻿INSERT INTO [tbl_ReportFields] ([FK_ReportId],[FieldName],[FieldAlias],[FieldWidth],[FieldShow],[FieldType],[FieldDefault],[FieldOrder]) VALUES ((SELECT [PK_ReportId] FROM [dbo].[tbl_Reports] WHERE [ReportName] = 'Appointments'),'ClientName','Klant',25,1,'String',NULL,8)
+EXECUTE [dbo].[usp_LanguageHandle] @Action = 'Ins',@LanguageId = 0,@Language = 'NL',@LanguageForm = 'Reports',@LanguageItem = 'Invoices',@LanguageText = 'Facturen',@LanguageType = 'Report'
+EXECUTE [dbo].[usp_LanguageHandle] @Action = 'Ins',@LanguageId = 0,@Language = 'NL',@LanguageForm = 'Reports',@LanguageItem = 'Underbooked',@LanguageText = 'Te Weinig Geboekt',@LanguageType = 'Report'
+EXECUTE [dbo].[usp_LanguageHandle] @Action = 'Ins',@LanguageId = 0,@Language = 'NL',@LanguageForm = 'Reports',@LanguageItem = 'Products',@LanguageText = 'Producten',@LanguageType = 'Report'
+EXECUTE [dbo].[usp_LanguageHandle] @Action = 'Ins',@LanguageId = 0,@Language = 'NL',@LanguageForm = 'Reports',@LanguageItem = 'Children',@LanguageText = 'Kinderen',@LanguageType = 'Report'
+EXECUTE [dbo].[usp_LanguageHandle] @Action = 'Ins',@LanguageId = 0,@Language = 'NL',@LanguageForm = 'Properties',@LanguageItem = 'strReport',@LanguageText = 'Rapport',@LanguageType = 'Prop'
+INSERT INTO [tbl_ReportFields] ([FK_ReportId],[FieldName],[FieldAlias],[FieldWidth],[FieldShow],[FieldType],[FieldDefault],[FieldOrder]) VALUES ((SELECT [Pk_ReportId] FROM [dbo].[tbl_reports] WHERE [ReportName] = 'Overbooked'),'Difference','Verschil',10,1,'String',NULL,10)
+DELETE FROM [dbo].[tbl_ReportFields] WHERE [FieldName] = 'Shortage' AND [FK_ReportId] = (SELECT Pk_ReportId FROM tbl_reports WHERE ReportName = 'Overbooked')

@@ -1,0 +1,384 @@
+<?xml version="1.0" standalone="yes"?>
+<TrackManager>
+	<Language>
+		<Form Name="frmTrackManager">
+			<Object Name="mnuMainFile" Type="Menu">File</Object>
+			<Object Name="mnuMainFileLogOff" Type="Menu">Logoff</Object>
+			<Object Name="mnuMainFileReload" Type="Menu">Reload</Object>
+			<Object Name="mnuMainFileExit" Type="Menu">Exit TrackManager</Object>
+			<Object Name="mnuMainEdit" Type="Menu">Edit</Object>
+			<Object Name="mnuMainEditDay" Type="Menu">Lock / Unlock Day</Object>
+			<Object Name="mnuMainEditTrack" Type="Menu">Lock / Unlock Track</Object>
+			<Object Name="mnuMainEditHour" Type="Menu">Lock / Unlock Lesson</Object>
+			<Object Name="mnuMainEditScreen" Type="Menu">Save Screen position</Object>
+			<Object Name="mnuMainWindow" Type="Menu">Window</Object>
+			<Object Name="mnuMainWindowSettings" Type="Menu">Settings</Object>
+			<Object Name="mnuMainWindowSecurity" Type="Menu">Security</Object>
+			<Object Name="mnuMainHelp" Type="Menu">Help</Object>
+			<Object Name="mnuMainHelpManual" Type="Menu">Manual</Object>
+			<Object Name="mnuMainHelpAbout" Type="Menu">About TrackManager</Object>
+
+			<Object Name="lvwAppClients_colAppClient" Type="List">Client</Object>
+			<Object Name="lvwAppClients_colAppLessonType" Type="List">Lesson Type</Object>
+			<Object Name="lvwAppClients_colAppLessonCount" Type="List">Count</Object>
+
+			<Object Name="btnMemoSave" Type="Text">Save Memo</Object>
+			<Object Name="lblStatus" Type="Text">Status</Object>
+			<Object Name="grpAppDetails" Type="Text">Appointment Details</Object>
+			<Object Name="btnAppRemove" Type="Text">Remove from Appointment</Object>
+			<Object Name="btnAppClear" Type="Text">Clear List</Object>
+			<Object Name="btnAppDelete" Type="Text">Delete Appointment</Object>
+			<Object Name="btnAppMove" Type="Text">Move Appointment</Object>
+			<Object Name="btnAppCreate" Type="Text">Create Appointment</Object>
+			<Object Name="lblAppDetailsTrack" Type="Text">Track</Object>
+			<Object Name="lblAppDetailsTime" Type="Text">Time</Object>
+			<Object Name="lblAppDetailsDate" Type="Text">Date</Object>
+			<Object Name="grpCurrentSelection" Type="Text">Current Selection</Object>
+			<Object Name="lblCurrentSelectionClient" Type="Text">Client</Object>
+			<Object Name="lblCurrentSelectionGroup" Type="Text">Group</Object>
+
+			<Object Name="tpgTracks" Type="Text">Tracks</Object>
+			<Object Name="lblTracksBar" Type="Text">Bar</Object>
+			<Object Name="lblTrackTeacher" Type="Text">Teacher</Object>
+			<Object Name="lblTrackClient" Type="Text">Client</Object>
+
+			<Object Name="tpgGroups" Type="Text">Groups</Object>
+			<Object Name="lvwGroups_colGroupName" Type="List">Group Name</Object>
+			<Object Name="lvwGroups_colGroupNumber" Type="List">Group Number</Object>
+
+			<Object Name="grpGroupMembers" Type="Text">Group Members</Object>
+			<Object Name="lblGroupLessonsTotal" Type="Text">Total Count</Object>
+			<Object Name="lblGroupLessonsBilled" Type="Text">Billed</Object>
+			<Object Name="lblGroupClientLevel" Type="Text">Client Level</Object>
+			<Object Name="lblGroupExtraCount" Type="Text">Extra Count</Object>
+			<Object Name="lblGroupLessonCount" Type="Text">Lesson Count</Object>
+			<Object Name="lblGroupLessonType" Type="Text">Lesson Type</Object>
+			<Object Name="lblGroupsFullName" Type="Text">Client Name</Object>
+			<Object Name="btnGrpAppClear" Type="Text">Clear List</Object>
+			<Object Name="btnGrpAppRemove" Type="Text">Remove from Appointment</Object>
+			<Object Name="btnGrpAppAdd" Type="Text">Add to Appointment</Object>
+			<Object Name="btnGroupUpdateLevel" Type="Text">Save Client Settings</Object>
+			<Object Name="grpMainContact" Type="Text">Main Contact</Object>
+			<Object Name="btnGroupsMainContact" Type="Text">Set as Main Contact</Object>
+			<Object Name="btnGroupEditClient" Type="Text">Manage Clients</Object>
+			<Object Name="btnGroupManage" Type="Text">Manage Groups</Object>
+
+			<Object Name="tpgFinance" Type="Text">Finance</Object>
+			<Object Name="lvwFinanceGroups_colGroupName" Type="List">Group Name</Object>
+			<Object Name="lvwFinanceGroups_colGroupNumber" Type="List">Group Number</Object>
+			<Object Name="lvwFinanceClients_colFirstName" Type="List">First Name</Object>
+			<Object Name="lvwFinanceClients_colMiddleName" Type="List">Middle Name</Object>
+			<Object Name="lvwFinanceClients_colFamilyName" Type="List">Family Name</Object>
+			<Object Name="lvwDescription_colDescriptions" Type="List">Descriptions</Object>
+			<Object Name="lvwDescription_colCounts" Type="List">Count</Object>
+			<Object Name="lvwDescription_colAmounts" Type="List">Amount</Object>
+			<Object Name="lvwDescription_colTax" Type="List">Tax</Object>
+			<Object Name="lvwFinance_colDate" Type="List">Date</Object>
+			<Object Name="lvwFinance_colClient" Type="List">Client</Object>
+			<Object Name="lvwFinance_colLogin" Type="List">Login</Object>
+			<Object Name="lvwFinance_colDescription" Type="List">Description</Object>
+			<Object Name="lvwFinance_colCount" Type="List">Count</Object>
+			<Object Name="lvwFinance_colBilledAmount" Type="List">Billed</Object>
+			<Object Name="lvwFinance_colPayedAmount" Type="List">Payed</Object>
+			<Object Name="lvwFinance_colPayed" Type="List">Payed y/n</Object>
+			<Object Name="lvwFinance_colPayDate" Type="List">Last Payment</Object>
+
+			<Object Name="btnFinancePay" Type="Text">Pay Invoice</Object>
+			<Object Name="btnFinanceDelete" Type="Text">Delete Invoice</Object>
+			<Object Name="lblFinanceDescription" Type="Text">Description</Object>
+			<Object Name="lblClientName" Type="Text">Client Name</Object>
+			<Object Name="lblGroupName" Type="Text">Group Name</Object>
+			<Object Name="btnFinanceAdd" Type="Text">Add invoice</Object>
+			<Object Name="btnFinanceEdit" Type="Text">Manage Invoices</Object>
+			<Object Name="grpFinanceGroupPayments" Type="Text">Invoices</Object>
+			<Object Name="lblFinancePayDue" Type="Text">Amount Due</Object>
+			<Object Name="lblFinancePayTotal" Type="Text">Total</Object>
+
+			<Object Name="tpgReports" Type="Text">Reports</Object>
+			<Object Name="btnRepLessons" Type="Text">Lessons</Object>
+			<Object Name="lblRepLimitSelection" Type="Text">Limit to Selected:</Object>
+			<Object Name="rbnRepLimitSeason" Type="Text">Season</Object>
+			<Object Name="rbnRepLimitDay" Type="Text">Day</Object>
+			<Object Name="rbnRepLimitWeek" Type="Text">Week (from today)</Object>
+			<Object Name="rbnRepLimitMonth" Type="Text">Month (from today)</Object>
+			<Object Name="chkRepLimitTrack" Type="Text">Track</Object>
+			<Object Name="chkRepLimitGroup" Type="Text">Group Name / Nr</Object>
+			<Object Name="chkRepLimitClient" Type="Text">Client</Object>
+			<Object Name="chkRepLimitInvoice" Type="Text">Invoice</Object>
+			<Object Name="grpLimitType" Type="Text">Limit to Type</Object>
+			<Object Name="rbnRepLimitTypeBar" Type="Text">Bar</Object>
+			<Object Name="rbnRepLimitTypeTeacher" Type="Text">Teacher</Object>
+			<Object Name="rbnRepLimitTypeClient" Type="Text">Client</Object>
+			<Object Name="rbnRepLimitTypeAll" Type="Text">All</Object>
+			<Object Name="btnRepFinance" Type="Text">Finance</Object>
+			<Object Name="btnRepOpenBills" Type="Text">Open Bills</Object>
+			<Object Name="btnRepPayments" Type="Text">Payments</Object>
+
+			<Object Name="mnuRepFile" Type="Menu">File</Object>
+			<Object Name="mnuRepFileOpen" Type="Menu">Open</Object>
+			<Object Name="mnuRepFileSave" Type="Menu">Save</Object>
+			<Object Name="mnuRepFilePrint" Type="Menu">Print</Object>
+			<Object Name="mnuRepFilePrintPreview" Type="Menu">Print Preview</Object>
+			<Object Name="mnuRepFileNew" Type="Menu">New</Object>
+			<Object Name="mnuRepFileRefresh" Type="Menu">Refresh</Object>
+			<Object Name="mnuRepEdit" Type="Menu">Edit</Object>
+			<Object Name="mnuRepEditFont" Type="Menu">Font</Object>
+
+			<Object Name="tpgSearch" Type="Text">Search</Object>
+
+			<Object Name="lbl2CharacterMinimum" Type="Text">2 character minimum</Object>
+			<Object Name="lblSearchFirstName" Type="Text">First Name</Object>
+			<Object Name="lblSearchLastName" Type="Text">Last Name</Object>
+			<Object Name="lblSearchPostalCode" Type="Text">Postal Code</Object>
+			<Object Name="lblSearchCity" Type="Text">City</Object>
+			<Object Name="lblSearchGroupName" Type="Text">Group Name</Object>
+			<Object Name="lblSearchGroupID" Type="Text">Group Number</Object>
+			<Object Name="lblSearchEmail" Type="Text">Email</Object>
+			<Object Name="lblSearchPhone" Type="Text">Phone Number</Object>
+			<Object Name="lblSearchDayOfBirth" Type="Text">Day of Birth</Object>
+			<Object Name="grpMatchPerItem" Type="Text">Match per Item</Object>
+			<Object Name="rbnPartialMatchLeft" Type="Text">Partial Match Left</Object>
+			<Object Name="rbnPartialMatchAny" Type="Text">Partial Match Anywhere</Object>
+			<Object Name="rbnExactMatch" Type="Text">Exact Match</Object>
+			<Object Name="grpMatchNumber" Type="Text">Number of Matches</Object>
+			<Object Name="rbnMatchAll" Type="Text">Match All</Object>
+			<Object Name="rbnMatchAny" Type="Text">Match Any</Object>
+			<Object Name="lblSearchMaximum" Type="Text">Maximum Hits</Object>
+			<Object Name="btnSearch" Type="Text">Search</Object>
+			<Object Name="btnSearchClear" Type="Text">Clear</Object>
+
+			<Object Name="lvwSearchResult_colSearchName" Type="List">Name</Object>
+			<Object Name="lvwSearchResult_colSearchAddress" Type="List">Address</Object>
+			<Object Name="lvwSearchResult_colSearchPostalCode" Type="List">Postal Code</Object>
+			<Object Name="lvwSearchResult_colSearchCity" Type="List">City</Object>
+			<Object Name="lvwSearchResult_colSearchTelephone" Type="List">Phone</Object>
+			<Object Name="lvwSearchResult_colSearchMobile" Type="List">Mobile</Object>
+			<Object Name="lvwSearchResult_colSearchEmail" Type="List">Email</Object>
+			<Object Name="lvwSearchResult_colSearchDayOfBirth" Type="List">Day of Birth</Object>
+			<Object Name="lvwSearchResult_colSearchGroupName" Type="List">Group Name</Object>
+			<Object Name="lvwSearchResult_colSearchCountry" Type="List">Country</Object>
+			<Object Name="lvwSearchResult_colSearchGroupId" Type="List">Group Number</Object>
+
+			<Object Name="strGeneralError" Type="Prop">There was an undefined error.</Object>
+			<Object Name="strCheckLog" Type="Prop">Check the logfile for more information.</Object>
+			<Object Name="strCheckSettings" Type="Prop">please check your settings.</Object>
+			<Object Name="strWarning" Type="Prop">Warning</Object>
+			<Object Name="strAreYouSure" Type="Prop">Are you sure?</Object>
+			<Object Name="strContinue" Type="Prop">Do you want to continue?</Object>
+			<Object Name="strLogError" Type="Prop">There were errors connecting to the logfile.</Object>
+			<Object Name="strDataError" Type="Prop">There were errors connecting to the database.</Object>
+			<Object Name="strXmlError" Type="Prop">There were errors connecting to the XML datafile.</Object>
+			<Object Name="strPreconfigured" Type="Prop">Only preconfigured values are allowed for dropdown lists.</Object>
+			<Object Name="strNumeric" Type="Prop">Only numeric values are allowed.</Object>
+			<Object Name="strPermanentDelete" Type="Prop">This will delete the selected item (and subitems) permanently.</Object>
+			<Object Name="strDelete1" Type="Prop">You can only delete 1 item at the time.</Object>
+			<Object Name="strAllData" Type="Prop">Please enter all required data before pressing this button.</Object>
+			<Object Name="strSettingReload" Type="Prop">For most of these settings you need to reload TrackManager.</Object>
+			<Object Name="strTime" Type="Prop">Time</Object>
+			<Object Name="strBar" Type="Prop">Bar</Object>
+			<Object Name="strClient" Type="Prop">Client</Object>
+			<Object Name="strTeacher" Type="Prop">Teacher</Object>
+			<Object Name="strAdd" Type="Prop">Add</Object>
+			<Object Name="strUpdate" Type="Prop">Update</Object>
+			<Object Name="strYes" Type="Prop">Yes</Object>
+			<Object Name="strNo" Type="Prop">No</Object>
+			<Object Name="strGroupNotEmpty" Type="Prop">You can only delete a group that has no client members.</Object>
+			<Object Name="strInvoiceNotEmpty" Type="Prop">You can only delete an invoice that has no data.</Object>
+		</Form>
+		<Form Name="frmSettings">
+			<Object Name="tpgTracks" Type="Text">Tracks</Object>
+			<Object Name="btnClearTrack" Type="Text">Clear</Object>
+			<Object Name="btnAddTrack" Type="Text">Add</Object>
+			<Object Name="btnDeleteTrack" Type="Text">Delete</Object>
+			<Object Name="btnEditTrack" Type="Text">Edit</Object>
+			<Object Name="tpgLessonTypes" Type="Text">Lesson Types</Object>
+			<Object Name="btnClearLessonType" Type="Text">Clear</Object>
+			<Object Name="btnAddLessonType" Type="Text">Add</Object>
+			<Object Name="btnDeleteLessonType" Type="Text">Delete</Object>
+			<Object Name="btnEditLessonType" Type="Text">Edit</Object>
+			<Object Name="tpgLevels" Type="Text">Levels</Object>
+			<Object Name="btnClearLevel" Type="Text">Clear</Object>
+			<Object Name="btnAddLevel" Type="Text">Add</Object>
+			<Object Name="btnDeleteLevel" Type="Text">Delete</Object>
+			<Object Name="btnEditLevel" Type="Text">Edit</Object>
+			<Object Name="tpgDescriptions" Type="Text">Descriptions</Object>
+			<Object Name="btnClearDescription" Type="Text">Clear</Object>
+			<Object Name="btnAddDescription" Type="Text">Add</Object>
+			<Object Name="btnDeleteDescription" Type="Text">Delete</Object>
+			<Object Name="btnEditDescription" Type="Text">Edit</Object>
+			<Object Name="tpgPrContacts" Type="Text">Pr Contacts</Object>
+			<Object Name="btnClearPrContact" Type="Text">Clear</Object>
+			<Object Name="btnAddPrContact" Type="Text">Add</Object>
+			<Object Name="btnDeletePrContact" Type="Text">Delete</Object>
+			<Object Name="btnEditPrContact" Type="Text">Edit</Object>
+			<Object Name="tpgLogging" Type="Text">Logging</Object>
+			<Object Name="btnSaveSettingsLog" Type="Text">Save Settings</Object>
+			<Object Name="lblLogfileName" Type="Text">Logfile Name</Object>
+			<Object Name="lblLogfileLocation" Type="Text">Logfile Location</Object>
+			<Object Name="rbtLoggingLevel5" Type="Text">All (includes Database Queries)</Object>
+			<Object Name="lblLoggingLevel" Type="Text">Logging Level</Object>
+			<Object Name="rbtLoggingLevel1" Type="Text">Low (errors only)</Object>
+			<Object Name="rbtLoggingLevel2" Type="Text">Medium (includes program events)</Object>
+			<Object Name="rbtLoggingLevel3" Type="Text">Medium-High (Includes user events)</Object>
+			<Object Name="rbtLoggingLevel4" Type="Text">High (Everything except Database Queries)</Object>
+			<Object Name="rbtLoggingLevel0" Type="Text">Off (Program Startup and Security only)</Object>
+			<Object Name="tpgGeneral" Type="Text">General</Object>
+			<Object Name="lblSeasonStart" Type="Text">Season Start</Object>
+			<Object Name="lblSeasonLength" Type="Text">Season Length</Object>
+			<Object Name="tpgView" Type="Text">View</Object>
+			<Object Name="lblReadOnlyBackColor" Type="Text">Read Only Background</Object>
+			<Object Name="lblTimeFrame" Type="Text">Time Frame</Object>
+			<Object Name="lblDefFinanceRows" Type="Text">Default Finance rows</Object>
+			<Object Name="lblShowTimeWithTrack" Type="Text">Show Time With Track</Object>
+			<Object Name="btnSaveSettingsView" Type="Text">Save Settings</Object>
+			<Object Name="lblClientsPerTrack" Type="Text">Clients Per Track</Object>
+			<Object Name="lblClientsPerGroup" Type="Text">Default Clients per Group</Object>
+			<Object Name="lblOpeningHour" Type="Text">Opening Hour</Object>
+			<Object Name="lblClosingHour" Type="Text">Closing Hour</Object>
+			<Object Name="lblShowClosedHours" Type="Text">Show Closed Hours</Object>
+			<Object Name="lblOnHoursColor" Type="Text">On Hours color</Object>
+			<Object Name="lblOffHoursColor" Type="Text">Off Hours Color</Object>
+			<Object Name="lblLanguage" Type="Text">Language</Object>
+			<Object Name="lblShowTeacherColumn" Type="Text">Show Teacher Column</Object>
+			<Object Name="lblClientFieldWidth" Type="Text">Client Field Width</Object>
+			<Object Name="lblUseFadingColors" Type="Text">use Fading Colors</Object>
+			<Object Name="tpgDatabase" Type="Text">Database</Object>
+			<Object Name="btnSaveSettingsDatabase" Type="Text">Save Settings</Object>
+			<Object Name="btnUseDefaults" Type="Text">Use Defaults</Object>
+			<Object Name="lblLoginMethod" Type="Text">Authentication Method</Object>
+			<Object Name="lblLoginName" Type="Text">Login Name</Object>
+			<Object Name="lblPassword" Type="Text">Password</Object>
+			<Object Name="lblDatabaseName" Type="Text">Database Name</Object>
+			<Object Name="lblDatabaseLocation" Type="Text">Database Location</Object>
+			<Object Name="lblDataProvider" Type="Text">Data Provider</Object>
+			<Object Name="btnClose" Type="Text">Close</Object>
+			<Object Name="lvwTracks_colTrackName" Type="List">Track</Object>
+			<Object Name="lvwTracks_colTrackOffset" Type="List">Track Offset</Object>
+			<Object Name="lvwLessonTypes_colLessonTypeName" Type="List">Lesson Type</Object>
+			<Object Name="lvwLessonTypes_colLessonTypeColor" Type="List">Lesson Type Color</Object>
+			<Object Name="lvwLevels_colLevelName" Type="List">Level</Object>
+			<Object Name="lvwLevels_colLevelColor" Type="List">Level Color</Object>
+			<Object Name="lvwLevels_colLevelCount" Type="List">Level Count</Object>
+			<Object Name="lvwDescriptions_colDescription" Type="List">Description</Object>
+			<Object Name="lvwDescriptions_colDescriptionCount" Type="List">Count</Object>
+			<Object Name="lvwDescriptions_colDescriptionAmount" Type="List">Amount</Object>
+			<Object Name="lvwDescriptions_colTax" Type="List">Tax</Object>
+			<Object Name="lvwPrContacts_colPrContacts" Type="List">Pr Contacts</Object>
+		</Form>
+		<Form Name="frmGroups">
+			<Object Name="btnClose" Type="Text">Close</Object>
+			<Object Name="btnClearGroup" Type="Text">Clear</Object>
+			<Object Name="btnAddGroup" Type="Text">Add</Object>
+			<Object Name="btnDeleteGroup" Type="Text">Delete</Object>
+			<Object Name="btnEditGroup" Type="Text">Edit</Object>
+			<Object Name="lvwGroups_colGroupName" Type="List">Group Name</Object>
+			<Object Name="lvwGroups_colGroupNumber" Type="List">Group Number</Object>
+		</Form>
+		<Form Name="frmClients">
+			<Object Name="btnMoveClient" Type="Text">Move to different group</Object>
+			<Object Name="btnAddClient" Type="Text">Add</Object>
+			<Object Name="lblClientName" Type="Text">Client Name</Object>
+			<Object Name="lblGroupName" Type="Text">Group Name</Object>
+			<Object Name="lblMailinglist" Type="Text">Include in Mailinglist</Object>
+			<Object Name="lblMiddleName" Type="Text">Middle Name</Object>
+			<Object Name="lblCustom4" Type="Text">Custom 4</Object>
+			<Object Name="lblCustom3" Type="Text">custom 3</Object>
+			<Object Name="lblCustom2" Type="Text">Custom 2</Object>
+			<Object Name="lblCustom1" Type="Text">Custom 1</Object>
+			<Object Name="lblRemarks" Type="Text">Remarks</Object>
+			<Object Name="lblBankaccount" Type="Text">Bankaccount</Object>
+			<Object Name="lblDateOfBirth" Type="Text">Date of Birth</Object>
+			<Object Name="lblPrContact" Type="Text">Pr Contact</Object>
+			<Object Name="lblEmail" Type="Text">Email Address</Object>
+			<Object Name="lblMobile" Type="Text">Mobile</Object>
+			<Object Name="lblFax" Type="Text">Fax</Object>
+			<Object Name="lblTelephone" Type="Text">Telephone</Object>
+			<Object Name="lblCountry" Type="Text">Country</Object>
+			<Object Name="lblCity" Type="Text">City</Object>
+			<Object Name="lblPostalCode" Type="Text">Postal Code</Object>
+			<Object Name="lblHouseNumber" Type="Text">House Number</Object>
+			<Object Name="lblStreet" Type="Text">Street</Object>
+			<Object Name="lblFamilyName" Type="Text">Family Name</Object>
+			<Object Name="lblFirstName" Type="Text">First Name</Object>
+			<Object Name="btnClose" Type="Text">Close</Object>
+			<Object Name="btnClearClient" Type="Text">Clear</Object>
+			<Object Name="btnUpdateClient" Type="Text">Update</Object>
+			<Object Name="btnDeleteClient" Type="Text">Delete</Object>
+			<Object Name="lvwGroups_colgroupName" Type="List">Group Name</Object>
+			<Object Name="lvwGroups_colGroupNumber" Type="List">Group Number</Object>
+			<Object Name="lvwClients_colFirstName" Type="List">First Name</Object>
+			<Object Name="lvwClients_colMiddleName" Type="List">Middle Name</Object>
+			<Object Name="lvwClients_colFamilyName" Type="List">Family Name</Object>
+		</Form>
+		<Form Name="frmLogins">
+			<Object Name="btnClose" Type="Text">Close</Object>
+			<Object Name="btnLoginClear" Type="Text">Clear Fields</Object>
+			<Object Name="btnLoginDelete" Type="Text">Delete Login</Object>
+			<Object Name="btnLoginSave" Type="Text">Update Login</Object>
+			<Object Name="btnLoginAdd" Type="Text">Add Login</Object>
+			<Object Name="chkLoginAdd" Type="Text">Add Logins</Object>
+			<Object Name="chkLoginChange" Type="Text">Change Logins</Object>
+			<Object Name="chkLoginDelete" Type="Text">Delete Logins</Object>
+			<Object Name="chkFinanceAdd" Type="Text">Add Invoices</Object>
+			<Object Name="chkFinanceChange" Type="Text">Change Invoices</Object>
+			<Object Name="chkfinanceDelete" Type="Text">Delete Invoices</Object>
+			<Object Name="chkSettingsAdd" Type="Text">Add Settings</Object>
+			<Object Name="chkSettingsChange" Type="Text">Change Settings</Object>
+			<Object Name="chkSettingsDelete" Type="Text">Delete Settings</Object>
+			<Object Name="chkGroupsDelete" Type="Text">Delete Groups</Object>
+			<Object Name="chkClientsDelete" Type="Text">Delete Clients</Object>
+			<Object Name="lblDateStop" Type="Text">Expire Date</Object>
+			<Object Name="lblDateStart" Type="Text">Start Date</Object>
+			<Object Name="lblPassword" Type="Text">Password</Object>
+			<Object Name="lblLoginName" Type="Text">Login Name</Object>
+			<Object Name="chkEnabled" Type="Text">Enabled</Object>
+			<Object Name="lvwLoginName_colLoginName" Type="List">Login Name</Object>
+		</Form>
+		<Form Name="frmFinance">
+			<Object Name="btncheckInvoices" Type="Text">Check Invoices</Object>
+			<Object Name="lblDue" Type="Text">Due</Object>
+			<Object Name="lblPayed" Type="Text">Payed</Object>
+			<Object Name="lblBilled" Type="Text">Billed</Object>
+			<Object Name="lblPayment" Type="Text">Payment</Object>
+			<Object Name="btnDetailsAdd" Type="Text">Add Details</Object>
+			<Object Name="btnPaymentAdd" Type="Text">Add Payment</Object>
+			<Object Name="btnPaymentDelete" Type="Text">Delete Payment</Object>
+			<Object Name="btnDetailsDelete" Type="Text">Delete Details</Object>
+			<Object Name="btnDetailsSave" Type="Text">Update Details</Object>
+			<Object Name="lblInvoicePayments" Type="Text">Invoice Payments</Object>
+			<Object Name="lblInvoiceDetails" Type="Text">Invoice Details</Object>
+			<Object Name="lblInvoices" Type="Text">Invoices</Object>
+			<Object Name="btnInvoicePay" Type="Text">Pay Invoice</Object>
+			<Object Name="btnInvoiceDelete" Type="Text">Delete Invoice</Object>
+			<Object Name="lblFinanceDescription" Type="Text">Description</Object>
+			<Object Name="lblClientName" Type="Text">Client Name</Object>
+			<Object Name="lblGroupName" Type="Text">Group Name</Object>
+			<Object Name="btnInvoiceAdd" Type="Text">Add Invoice</Object>
+			<Object Name="btnDetailsEdit" Type="Text">Edit Details</Object>
+			<Object Name="lvwInvoices_colInvoiceDate" Type="List">Date</Object>
+			<Object Name="lvwInvoices_colInvoiceClient" Type="List">Client</Object>
+			<Object Name="lvwInvoices_colInvoiceLogin" Type="List">Booked By</Object>
+			<Object Name="lvwInvoices_colInvoicePayed" Type="List">Payed</Object>
+			<Object Name="lvwInvoiceLines_colLineClient" Type="List">Client</Object>
+			<Object Name="lvwInvoiceLines_colLineLogin" Type="List">Booked By</Object>
+			<Object Name="lvwInvoiceLines_colLineDescription" Type="List">Description</Object>
+			<Object Name="lvwInvoiceLines_colLineCount" Type="List">Count</Object>
+			<Object Name="lvwInvoiceLines_colLineAmount" Type="List">Amount</Object>
+			<Object Name="lvwInvoiceLines_colLineTax" Type="List">Tax</Object>
+			<Object Name="lvwPayments_colPayDate" Type="List">Date</Object>
+			<Object Name="lvwPayments_colPayClient" Type="List">Client</Object>
+			<Object Name="lvwPayments_colPayLogin" Type="List">Booked By</Object>
+			<Object Name="lvwPayments_colPayAmount" Type="List">Amount</Object>
+			<Object Name="lvwFinanceGroups_colGroupName" Type="List">Group Name</Object>
+			<Object Name="lvwFinanceGroups_colGroupNumber" Type="List">Client Name</Object>
+			<Object Name="lvwFinanceClients_colFirstName" Type="List">First Name</Object>
+			<Object Name="lvwFinanceClients_colMiddleName" Type="List">Middle Name</Object>
+			<Object Name="lvwFinanceClients_colFamilyName" Type="List">Family Name</Object>
+			<Object Name="lvwDescription_colDescriptions" Type="List">Description</Object>
+			<Object Name="lvwDescription_colCounts" Type="List">Count</Object>
+			<Object Name="lvwDescription_colAmounts" Type="List">Amount</Object>
+			<Object Name="lvwDescription_colTax" Type="List">Tax</Object>
+		</Form>
+	</Language>
+</TrackManager>
+

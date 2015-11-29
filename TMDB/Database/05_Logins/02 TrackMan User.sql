@@ -1,0 +1,1 @@
+CREATE USER [TrackMan] FOR LOGIN [TrackMan] WITH DEFAULT_SCHEMA=[dbo]

@@ -1,0 +1,56 @@
+Version 4.0.1.3
+Fixed: Pay Invoice button on Finance tab stopped functioning, due to added column open amount.
+Fixed: Search Tab clear button didn’t erase phone number.
+Fixed: Update database produced error in languages other than English.
+
+Version 4.0.1.2
+New: Added this version log
+New: Memofield with Reportstab active shows memo for currently selected Client.
+New: Added Credit Card information to Client window.
+New: Manual update is now possible. Auto-update reduced to once a week.
+Fixed: In Settings windows, tab License was renamed correctly in Dutch (Licentie).
+Fixed: expired license now gives LicenseWindow in stead of shutting down TrackManager.
+
+Version 4.0.0.30
+New: Finance tab now shows open amount per invoice.
+Enhanced: Replaced logo’s on Splash, windows icons and login screen. (We love it)
+Enhanced: Show previously selected items better when clicking on a different list in the Finance Form.
+Enhanced: Close About window when clicking anywhere on the screen.
+Fixed: Edit Appointment Screen doesn’t show on 64bit windows.
+
+Version 4.0.0.28
+New: Added option to show Client age in appointment tab, up to specified age (Settings).
+Enhanced: It is no longer possible to enter/save the Settings twice when entering Demo data.
+Enhanced: Show existing License info on the License tab in Settings, if available.
+Enhanced: “Limit to Type” Group screen on “Custom” tab is wider to better accommodate the text.
+Enhanced: Replaced “Description” with “Product” in the Finance window.
+Fixed: Tabs are wider than screen when Language of the system is English, due to larger calendar.
+Fixed: TM crashes when Track1 does not fit on the current window.
+
+Version 4.0.0.24
+Enhanced: Do not show Change Appointment screen for Teacher or Bar.
+Fixed: Removed popup “Table Found” when clicking “Show Client appointments” button.
+Fixed: Crash when selecting a report with attributes that do not yet exist. All selected attributes are now checked first.
+
+Version 4.0.0.22
+New:  Added option to remove log files/entries older than 1 day/week/month with auto delete.
+Fixed: When creating a new invoice for a group, update the total number of lessons bought for that group on the Groups tab.
+
+Version 4.0.0.20
+New: Added “Edit Appointment screen” with option to edit Lesson Level directly in calendar.
+New: Added place or reorder appointments on specific location on Track. (with move).
+New: Invoice Name & Invoice Number can now be provided by user (Settings window).
+Enhanced: Auto-check invoice after every change.
+Enhanced: Replaced text “Keep logs” with “Remove logs older than”.
+Fixed: Seasonend = seasonstart + seasonlenght => Seasonend = seasonstart + seasonlenght – 1 day.
+Fixed: Cannot move appointment with deviant start time.
+
+Version 4.0.0.0
+Complete rebuild with:
+ClickOnce application, installable over Internet
+Auto-Update (non-optional)
+Latest dotNet version (4.5)
+Latest SQL version (2012) Also supports SQL 2008, 2008R2
+
+
+
