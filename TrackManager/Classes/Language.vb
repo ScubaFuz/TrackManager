@@ -39,6 +39,7 @@
 	Private _strGroupNotEmpty As String = "You can only delete a group that has no client members"
     Private _strDeleteMax1Client As String = "You can only delete one appointment at a time"
     Private _strInvoiceNotEmpty As String = "You can only delete an invoice that has no data"
+    Private _strInvoicePayment As String = "You can only delete an invoice that has no payments"
     Private _strWarningDemoData As String = "This will add demo data to your currently active database"
     Private _strUpdateDatabase As String = "There is an update available for your database"
     Private _strEnterEmailAddress As String = "Please enter a valid Email Address"
@@ -368,6 +369,15 @@
         End Get
         Set(ByVal value As String)
             _strInvoiceNotEmpty = value
+        End Set
+    End Property
+
+    Public Property strInvoicePayment() As String
+        Get
+            Return _strInvoicePayment
+        End Get
+        Set(ByVal value As String)
+            _strInvoicePayment = value
         End Set
     End Property
 

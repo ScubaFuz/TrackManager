@@ -2724,6 +2724,16 @@ Public Class frmTrackManager
 
     Private Sub btnFinanceDelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFinanceDelete.Click
         If MessageBox.Show(lanStrings.strPermanentDelete & vbCrLf & lanStrings.strContinue, lanStrings.strWarning, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
+            Try
+                Dim dtsPayment As DataSet = InvoicePaymentsHandle("Get", 0, CurStatus.InvoiceID)
+                If dtsPayment.Tables(0).Rows.Count > 0 Then
+                    MessageBox.Show(lanStrings.strInvoicePayment)
+                    Exit Sub
+                End If
+            Catch ex As Exception
+
+            End Try
+
             If CurVar.DeleteEmptyInvoice = True Then
                 Try
                     Dim objData As DataSet = InvoiceLinesHandle("Get", 0, CurStatus.InvoiceID)

@@ -34,6 +34,7 @@
       <Object Name="strGroupNotEmpty" Type="Prop">Alleen groepen zonder leden kunnen verwijderd worden.</Object>
       <Object Name="strDeleteMax1Client" Type="Prop">U kunt slechts 1 afspraak tegelijk verwijderen.</Object>
       <Object Name="strInvoiceNotEmpty" Type="Prop">Alleen facturen zonder inhoud kunnen verwijderd worden.</Object>
+      <Object Name="strInvoicePayment" Type="Prop">Alleen facturen zonder betalingen kunnen verwijderd worden.</Object>
       <Object Name="strWarningDemoData" Type="Prop">Dit voegt demo data toe aan uw huidige actieve database.</Object>
       <Object Name="strUpdateDatabase" Type="Prop">Er is een update beschikbaar voor uw database.</Object>
       <Object Name="strEnterEmailAddress" Type="Prop">Voer een geldig Email Adres in.</Object>

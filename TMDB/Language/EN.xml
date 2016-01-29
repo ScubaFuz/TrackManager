@@ -34,6 +34,7 @@
       <Object Name="strGroupNotEmpty" Type="Prop">You can only delete a group that has no client members.</Object>
       <Object Name="strDeleteMax1Client" Type="Prop">You can only delete one appointment at a time.</Object>
       <Object Name="strInvoiceNotEmpty" Type="Prop">You can only delete an invoice that has no data.</Object>
+      <Object Name="strInvoicePayment" Type="Prop">You can only delete an invoice that has no payments.</Object>
       <Object Name="strWarningDemoData" Type="Prop">This will add demo data to your currently active database.</Object>
       <Object Name="strUpdateDatabase" Type="Prop">There is an update available for your database.</Object>
       <Object Name="strEnterEmailAddress" Type="Prop">Please enter a valid Email Address.</Object>

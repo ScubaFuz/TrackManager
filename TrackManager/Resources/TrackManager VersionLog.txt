@@ -1,3 +1,6 @@
+Version 4.2
+Enhanced: Only invoices without payments can be deleted.
+
 Version 4.1.7
 Fixed: Future dates are no longer allowed as birthdays in the Client window
 Fixed: Future Birtdays no longer cause an error in the calendar.
