@@ -302,6 +302,8 @@ Partial Class frmSettings
         Me.ofdScript = New System.Windows.Forms.OpenFileDialog()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chkArchiveEmail = New System.Windows.Forms.CheckBox()
+        Me.txtArchiveEmail = New System.Windows.Forms.TextBox()
         Me.tabSettings.SuspendLayout()
         Me.tpgGeneral.SuspendLayout()
         Me.grpShowOpenBills.SuspendLayout()
@@ -2171,6 +2173,8 @@ Partial Class frmSettings
         '
         'tpgEmail
         '
+        Me.tpgEmail.Controls.Add(Me.txtArchiveEmail)
+        Me.tpgEmail.Controls.Add(Me.chkArchiveEmail)
         Me.tpgEmail.Controls.Add(Me.grpEmailSmtp)
         Me.tpgEmail.Controls.Add(Me.rbtEmailUseOutlook)
         Me.tpgEmail.Controls.Add(Me.rbtEmailUseSmtp)
@@ -2981,6 +2985,23 @@ Partial Class frmSettings
         Me.ColumnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.ColumnHeader2.Width = 140
         '
+        'chkArchiveEmail
+        '
+        Me.chkArchiveEmail.AutoSize = True
+        Me.chkArchiveEmail.Location = New System.Drawing.Point(29, 267)
+        Me.chkArchiveEmail.Name = "chkArchiveEmail"
+        Me.chkArchiveEmail.Size = New System.Drawing.Size(293, 17)
+        Me.chkArchiveEmail.TabIndex = 95
+        Me.chkArchiveEmail.Text = "Send a copy of all email to the following archive address:"
+        Me.chkArchiveEmail.UseVisualStyleBackColor = True
+        '
+        'txtArchiveEmail
+        '
+        Me.txtArchiveEmail.Location = New System.Drawing.Point(372, 265)
+        Me.txtArchiveEmail.Name = "txtArchiveEmail"
+        Me.txtArchiveEmail.Size = New System.Drawing.Size(190, 20)
+        Me.txtArchiveEmail.TabIndex = 95
+        '
         'frmSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3294,4 +3315,6 @@ Partial Class frmSettings
     Friend WithEvents dtpClosingHour As System.Windows.Forms.DateTimePicker
     Friend WithEvents btnRefreshDatabase As System.Windows.Forms.Button
     Friend WithEvents chkDeleteMax1Client As System.Windows.Forms.CheckBox
+    Friend WithEvents txtArchiveEmail As TextBox
+    Friend WithEvents chkArchiveEmail As CheckBox
 End Class

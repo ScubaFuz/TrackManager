@@ -245,6 +245,10 @@
                         CurVar.SmtpPort = objData.Tables.Item(0).Rows(intRowCount).Item("ConfigValue")
                     Case "SmtpSsl"
                         CurVar.SmtpSsl = objData.Tables.Item(0).Rows(intRowCount).Item("ConfigValue")
+                    Case "ArchiveEmail"
+                        CurVar.ArchiveEmail = objData.Tables.Item(0).Rows(intRowCount).Item("ConfigValue")
+                    Case "ArchiveEmailAddress"
+                        CurVar.ArchiveEmailAddress = objData.Tables.Item(0).Rows(intRowCount).Item("ConfigValue")
                     Case "DateFormat"
                         CurVar.DateFormat = objData.Tables.Item(0).Rows(intRowCount).Item("ConfigValue")
                 End Select

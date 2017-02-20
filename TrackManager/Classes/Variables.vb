@@ -631,6 +631,8 @@
     Private _SmtpReply As String = ""
     Private _SmtpSsl As Boolean = 1
     Private _SmtpPort As Integer = 25
+    Private _ArchiveEmail As Boolean = False
+    Private _ArchiveEmailAddress As String = ""
 
     Public Property EmailMethod() As String
         Get
@@ -703,6 +705,25 @@
             _SmtpPort = Value
         End Set
     End Property
+
+    Public Property ArchiveEmail() As Boolean
+        Get
+            Return _ArchiveEmail
+        End Get
+        Set(ByVal Value As Boolean)
+            _ArchiveEmail = Value
+        End Set
+    End Property
+
+    Public Property ArchiveEmailAddress() As String
+        Get
+            Return _ArchiveEmailAddress
+        End Get
+        Set(ByVal Value As String)
+            _ArchiveEmailAddress = Value
+        End Set
+    End Property
+
 #End Region
 
 End Class

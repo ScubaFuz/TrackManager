@@ -924,6 +924,8 @@ Public Class frmSettings
         chkUseSslEncryption.Checked = CurVar.SmtpSsl
         txtSmtpPortNumber.Text = CurVar.SmtpPort
         txtSmtpReply.Text = CurVar.SmtpReply
+        chkArchiveEmail.Checked = CurVar.ArchiveEmail
+        txtArchiveEmail.Text = CurVar.ArchiveEmailAddress
 
         chkShowAge.Checked = CurVar.ShowAge
         chkShowAgeAfter.Checked = CurVar.ShowAgeAfter
@@ -1328,6 +1330,11 @@ Public Class frmSettings
     End Sub
 
     Private Sub btnSaveSettingsEmail_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSaveSettingsEmail.Click
+        If chkArchiveEmail.Checked = True And EmailAddressCheck(txtArchiveEmail.Text) = False Then
+            MessageBox.Show(lanStrings.strInvalidEmailAddress, "Archive Emailaddress", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Exit Sub
+        End If
+
         If rbtEmailUseSmtp.Checked = True Then
             CurVar.EmailMethod = "SMTP"
         Else
@@ -1340,6 +1347,8 @@ Public Class frmSettings
         CurVar.SmtpReply = txtSmtpReply.Text
         CurVar.SmtpPort = txtSmtpPortNumber.Text
         CurVar.SmtpSsl = chkUseSslEncryption.Checked
+        CurVar.ArchiveEmail = chkArchiveEmail.Checked
+        CurVar.ArchiveEmailAddress = txtArchiveEmail.Text
 
         SaveConfigSetting("General", "EmailMethod", CurVar.EmailMethod)
         SaveConfigSetting("General", "SmtpServer", CurVar.SmtpServer)
@@ -1349,6 +1358,8 @@ Public Class frmSettings
         SaveConfigSetting("General", "SmtpReply", CurVar.SmtpReply)
         SaveConfigSetting("General", "SmtpPort", CurVar.SmtpPort)
         SaveConfigSetting("General", "SmtpSsl", CurVar.SmtpSsl)
+        SaveConfigSetting("General", "ArchiveEmail", CurVar.ArchiveEmail)
+        SaveConfigSetting("General", "ArchiveEmailAddress", CurVar.ArchiveEmailAddress)
 
     End Sub
 

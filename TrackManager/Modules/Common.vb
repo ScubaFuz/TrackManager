@@ -1383,6 +1383,9 @@ Module Common
             .Body = strBody
             '.ReplyTo = New MailAddress(strReplyToAddrr, strReplyToName)
             .IsBodyHtml = True
+            If CurVar.ArchiveEmail = True Then
+                .Bcc.Add(CurVar.ArchiveEmailAddress)
+            End If
             If Not strAttachments.Equals(String.Empty) Then
                 Dim strFile As String
                 Dim strAttach() As String = strAttachments.Split(";")
@@ -1429,7 +1432,15 @@ Module Common
             newMail = fdMail.Items.Add(Outlook.OlItemType.olMailItem)
             newMail.Subject = strSubject
             'newMail.Body = strBody
-            newMail.To = strToAddress
+            Dim recTo As Outlook.Recipient = newMail.Recipients.Add(strToAddress)
+            recTo.Type = Outlook.OlMailRecipientType.olTo
+            'newMail.To = strToAddress
+            If CurVar.ArchiveEmail = True Then
+                Dim recBCC As Outlook.Recipient = newMail.Recipients.Add(CurVar.ArchiveEmailAddress)
+                recBCC.Type = Outlook.OlMailRecipientType.olBCC
+            End If
+            newMail.Recipients.ResolveAll()
+
             newMail.BodyFormat = Outlook.OlBodyFormat.olFormatHTML
             newMail.HTMLBody = strBody
             newMail.SaveSentMessageFolder = fdMail
