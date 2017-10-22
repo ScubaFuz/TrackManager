@@ -45,6 +45,10 @@ Partial Class frmAppointmentChange
         Me.lblTime = New System.Windows.Forms.Label()
         Me.txtHour = New System.Windows.Forms.TextBox()
         Me.txtMinute = New System.Windows.Forms.TextBox()
+        Me.lblRemarks = New System.Windows.Forms.Label()
+        Me.txtRemarks = New System.Windows.Forms.TextBox()
+        Me.btnSaveMemo = New System.Windows.Forms.Button()
+        Me.btnRevertMemo = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnSaveAppointment
@@ -235,11 +239,51 @@ Partial Class frmAppointmentChange
         Me.txtMinute.Size = New System.Drawing.Size(39, 20)
         Me.txtMinute.TabIndex = 22
         '
+        'lblRemarks
+        '
+        Me.lblRemarks.AutoSize = True
+        Me.lblRemarks.Location = New System.Drawing.Point(29, 341)
+        Me.lblRemarks.Name = "lblRemarks"
+        Me.lblRemarks.Size = New System.Drawing.Size(49, 13)
+        Me.lblRemarks.TabIndex = 70
+        Me.lblRemarks.Text = "Remarks"
+        '
+        'txtRemarks
+        '
+        Me.txtRemarks.Location = New System.Drawing.Point(30, 364)
+        Me.txtRemarks.Multiline = True
+        Me.txtRemarks.Name = "txtRemarks"
+        Me.txtRemarks.Size = New System.Drawing.Size(327, 67)
+        Me.txtRemarks.TabIndex = 69
+        Me.txtRemarks.Tag = "0"
+        '
+        'btnSaveMemo
+        '
+        Me.btnSaveMemo.Location = New System.Drawing.Point(180, 437)
+        Me.btnSaveMemo.Name = "btnSaveMemo"
+        Me.btnSaveMemo.Size = New System.Drawing.Size(75, 23)
+        Me.btnSaveMemo.TabIndex = 71
+        Me.btnSaveMemo.Text = "Save"
+        Me.btnSaveMemo.UseVisualStyleBackColor = True
+        '
+        'btnRevertMemo
+        '
+        Me.btnRevertMemo.Location = New System.Drawing.Point(282, 437)
+        Me.btnRevertMemo.Name = "btnRevertMemo"
+        Me.btnRevertMemo.Size = New System.Drawing.Size(75, 23)
+        Me.btnRevertMemo.TabIndex = 72
+        Me.btnRevertMemo.Text = "Revert"
+        Me.btnRevertMemo.UseVisualStyleBackColor = True
+        '
         'frmAppointmentChange
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(392, 369)
+        Me.ClientSize = New System.Drawing.Size(392, 482)
+        Me.Controls.Add(Me.btnRevertMemo)
+        Me.Controls.Add(Me.btnSaveMemo)
+        Me.Controls.Add(Me.lblRemarks)
+        Me.Controls.Add(Me.txtRemarks)
         Me.Controls.Add(Me.txtMinute)
         Me.Controls.Add(Me.txtHour)
         Me.Controls.Add(Me.lblTime)
@@ -291,4 +335,8 @@ Partial Class frmAppointmentChange
     Friend WithEvents lblTime As System.Windows.Forms.Label
     Friend WithEvents txtHour As System.Windows.Forms.TextBox
     Friend WithEvents txtMinute As System.Windows.Forms.TextBox
+    Friend WithEvents lblRemarks As Label
+    Friend WithEvents txtRemarks As TextBox
+    Friend WithEvents btnSaveMemo As Button
+    Friend WithEvents btnRevertMemo As Button
 End Class

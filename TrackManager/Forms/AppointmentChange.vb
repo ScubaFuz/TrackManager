@@ -2,6 +2,7 @@
 
     Private Sub AppointmentChange_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ClientSelect()
+        ClientMemoSelect()
         GroupSelect()
         DateSelect()
         TimeSelect()
@@ -21,6 +22,11 @@
     Private Sub ClientSelect()
         txtClient.Tag = CurStatus.ClientID
         txtClient.Text = ClientNameGet(CurStatus.ClientID)
+    End Sub
+
+    Private Sub ClientMemoSelect()
+        'txtClient.Tag = CurStatus.ClientID
+        txtRemarks.Text = ClientMemoGet(CurStatus.ClientID)
     End Sub
 
     Private Sub GroupSelect()
@@ -214,4 +220,13 @@
         Me.Dispose()
     End Sub
 
+    Private Sub btnSaveMemo_Click(sender As Object, e As EventArgs) Handles btnSaveMemo.Click
+        Dim strRemarks As String = txtRemarks.Text
+        If strRemarks.Length = 0 Then strRemarks = " "
+        ClientsHandle("Upd", CurStatus.GroupID, CurStatus.ClientID, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, txtRemarks.Text)
+    End Sub
+
+    Private Sub btnRevertMemo_Click(sender As Object, e As EventArgs) Handles btnRevertMemo.Click
+        ClientMemoSelect()
+    End Sub
 End Class

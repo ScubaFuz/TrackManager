@@ -38,42 +38,43 @@ AS
 -- 2.0		2013-09-22	BT		Replaced Delete with inactivate
 --								Replaced IF/OR with ISNULL
 -- 2.1		2014-11-23	BT		Added Age with FirstName on "Get"
+-- 2.2		2017-10-19	BT		Enabled update of a single field instead of all fields required.
 -- ****************************************************************************
 
 IF NOT @PrContactId > 0 SET @PrContactId = NULL
 
 IF @Action = 'Upd'
 	BEGIN
-		IF ISNULL(@GroupId,0) >0 AND ISNULL(@ClientId,0) > 0 AND ISNULL(@FirstName,'') <> ''
+		IF ISNULL(@GroupId,0) >0 AND ISNULL(@ClientId,0) > 0 --AND ISNULL(@FirstName,'') <> ''
 			BEGIN
 				UPDATE [dbo].[tbl_Clients]
-				SET [FirstName] = @FirstName
-					,[MiddleName] = @MiddleName
-					,[FamilyName] = @FamilyName
-					,[FK_GroupID] = @GroupID
-					,[PrimaryContact] = @PrimaryContact
-					,[Street] = @Street
-					,[HouseNumber] = @HouseNumber
-					,[PostalCode] = @PostalCode
-					,[City] = @City
-					,[Country] = @Country
-					,[TelePhone] = @TelePhone
-					,[Fax] = @Fax
-					,[Mobile] = @Mobile
-					,[Email] = @Email
-					,[MailingList] = @MailingList
-					,[FK_PrContactID] = @PrContactID
-					,[DayOfBirth] = @DayOfBirth
-					,[BankAccount] = @BankAccount
-					,[Remarks] = @Remarks
-					,[CustomField1] =@CustomField1
-					,[CustomField2] = @CustomField2
-					,[CustomField3] = @CustomField3
-					,[CustomField4] = @CustomField4
-					,[CreditCard] = @CreditCard
-					,[CreditCardCcv] = @CreditCardCcv
-					,[CreditCardExpire] = @CreditCardExpire
-				WHERE [PK_ClientID] =@ClientId
+				SET [FirstName] = COALESCE(@FirstName,[FirstName])
+					,[MiddleName] = COALESCE(@MiddleName,[MiddleName],[FirstName])
+					,[FamilyName] = COALESCE(@FamilyName,[FamilyName])
+					,[FK_GroupID] = COALESCE(@GroupID,[FK_GroupID])
+					,[PrimaryContact] = COALESCE(@PrimaryContact,[PrimaryContact])
+					,[Street] = COALESCE(@Street,[Street])
+					,[HouseNumber] = COALESCE(@HouseNumber,[HouseNumber])
+					,[PostalCode] = COALESCE(@PostalCode,[PostalCode])
+					,[City] = COALESCE(@City,[City])
+					,[Country] = COALESCE(@Country,[Country])
+					,[TelePhone] = COALESCE(@TelePhone,[TelePhone])
+					,[Fax] = COALESCE(@Fax,[Fax])
+					,[Mobile] = COALESCE(@Mobile,[Mobile])
+					,[Email] = COALESCE(@Email,[Email])
+					,[MailingList] = COALESCE(@MailingList,[MailingList])
+					,[FK_PrContactID] = COALESCE(@PrContactID,[FK_PrContactID])
+					,[DayOfBirth] = COALESCE(@DayOfBirth,[DayOfBirth])
+					,[BankAccount] = COALESCE(@BankAccount,[BankAccount])
+					,[Remarks] = COALESCE(@Remarks,[Remarks])
+					,[CustomField1] = COALESCE(@CustomField1,[CustomField1])
+					,[CustomField2] = COALESCE(@CustomField2,[CustomField2])
+					,[CustomField3] = COALESCE(@CustomField3,[CustomField3])
+					,[CustomField4] = COALESCE(@CustomField4,[CustomField4])
+					,[CreditCard] = COALESCE(@CreditCard,[CreditCard])
+					,[CreditCardCcv] = COALESCE(@CreditCardCcv,[CreditCardCcv])
+					,[CreditCardExpire] = COALESCE(@CreditCardExpire,[CreditCardExpire])
+				WHERE [PK_ClientID] = @ClientId
 			END
 	END
 

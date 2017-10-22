@@ -226,6 +226,10 @@ Public Class DBRef
             If verDatabase.CompareTo(verTM4202) = -1 Then
                 Return "4.2.0.2"
             End If
+            Dim verTM4211 As New Version("4.2.1.1")
+            If verDatabase.CompareTo(verTM4211) = -1 Then
+                Return "4.2.1.1"
+            End If
         Else
             'Return strVersion
         End If
@@ -629,6 +633,11 @@ Public Class DBRef
 
         If strVersion = "4.2.0.2" Then
             arrScripts(0, intCounter) = "04 dbo.usp_Report_Finance_Overbooked.sql"
+            arrScripts(1, intCounter) = "ALTER"
+        End If
+
+        If strVersion = "4.2.1.1" Then
+            arrScripts(0, intCounter) = "01 dbo.usp_ClientHandle.sql"
             arrScripts(1, intCounter) = "ALTER"
         End If
 

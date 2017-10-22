@@ -455,64 +455,68 @@
             Case "Add"
                 strQuery = ""
                 strQuery = " Exec usp_ClientHandle @Action = 'Ins', @GroupId = " & dblGroupId & ", @FirstName = '" & strFirstName & "'"
-                If strMiddleName.Length > 0 Then strQuery &= ", @MiddleName = '" & strMiddleName & "'"
-                If strFamilyName.Length > 0 Then strQuery &= ", @FamilyName = '" & strFamilyName & "'"
+                'If Not strFirstName Is Nothing AndAlso strFirstName.Length > 0 Then strQuery &= ", @FirstName = '" & strFirstName & "'"
+                If Not strMiddleName Is Nothing AndAlso strMiddleName.Length > 0 Then strQuery &= ", @MiddleName = '" & strMiddleName & "'"
+                If Not strFamilyName Is Nothing AndAlso strFamilyName.Length > 0 Then strQuery &= ", @FamilyName = '" & strFamilyName & "'"
                 If Not blnPrimaryContact = Nothing Then strQuery &= ", @PrimaryContact = " & blnPrimaryContact
-                If strStreet.Length > 0 Then strQuery &= ", @Street = '" & strStreet & "'"
-                If strHouseNumber.Length > 0 Then strQuery &= ", @HouseNumber = '" & strHouseNumber & "'"
-                If strPostalCode.Length > 0 Then strQuery &= ", @PostalCode = '" & strPostalCode & "'"
-                If strCity.Length > 0 Then strQuery &= ", @City = '" & strCity & "'"
-                If strCountry.Length > 0 Then strQuery &= ", @Country = '" & strCountry & "'"
-                If strTelephone.Length > 0 Then strQuery &= ", @TelePhone = '" & strTelephone & "'"
-                If strFax.Length > 0 Then strQuery &= ", @Fax = '" & strFax & "'"
-                If strMobile.Length > 0 Then strQuery &= ", @Mobile = '" & strMobile & "'"
-                If strEmail.Length > 0 Then strQuery &= ", @Email = '" & strEmail & "'"
-                strQuery &= ", @Mailinglist = " & blnMailinglist
+                If Not strStreet Is Nothing AndAlso strStreet.Length > 0 Then strQuery &= ", @Street = '" & strStreet & "'"
+                If Not strHouseNumber Is Nothing AndAlso strHouseNumber.Length > 0 Then strQuery &= ", @HouseNumber = '" & strHouseNumber & "'"
+                If Not strPostalCode Is Nothing AndAlso strPostalCode.Length > 0 Then strQuery &= ", @PostalCode = '" & strPostalCode & "'"
+                If Not strCity Is Nothing AndAlso strCity.Length > 0 Then strQuery &= ", @City = '" & strCity & "'"
+                If Not strCountry Is Nothing AndAlso strCountry.Length > 0 Then strQuery &= ", @Country = '" & strCountry & "'"
+                If Not strTelephone Is Nothing AndAlso strTelephone.Length > 0 Then strQuery &= ", @TelePhone = '" & strTelephone & "'"
+                If Not strFax Is Nothing AndAlso strFax.Length > 0 Then strQuery &= ", @Fax = '" & strFax & "'"
+                If Not strMobile Is Nothing AndAlso strMobile.Length > 0 Then strQuery &= ", @Mobile = '" & strMobile & "'"
+                If Not strEmail Is Nothing AndAlso strEmail.Length > 0 Then strQuery &= ", @Email = '" & strEmail & "'"
+                If Not blnMailinglist = Nothing Then strQuery &= ", @Mailinglist = " & blnMailinglist
                 If Not intPrContact = Nothing Then strQuery &= ", @PrContactID = " & intPrContact
-                If Not (strDayOfBirth = "19000101" Or strDayOfBirth = Today.Year & Format(Today.Month, "00") & Format(Today.Day, "00")) Then
+                If Not strDayOfBirth Is Nothing AndAlso Not (strDayOfBirth = "19000101" Or strDayOfBirth = Today.Year & Format(Today.Month, "00") & Format(Today.Day, "00")) Then
                     If strDayOfBirth.Length = 8 Then strQuery &= ", @DayOfBirth = '" & strDayOfBirth & "'"
                 End If
-                If strBankaccount.Length > 0 Then strQuery &= ", @Bankaccount = '" & strBankaccount & "'"
+                If Not strBankaccount Is Nothing AndAlso strBankaccount.Length > 0 Then strQuery &= ", @Bankaccount = '" & strBankaccount & "'"
 
-                If strCreditCard.Length > 0 Then strQuery &= ", @CreditCard = '" & strCreditCard & "'"
-                If strCreditCardCcv.Length > 0 Then strQuery &= ", @CreditCardCcv = '" & strCreditCardCcv & "'"
-                If strCreditCardExpire.Length > 0 Then strQuery &= ", @CreditCardExpire = '" & strCreditCardExpire & "'"
+                If Not strCreditCard Is Nothing AndAlso strCreditCard.Length > 0 Then strQuery &= ", @CreditCard = '" & strCreditCard & "'"
+                If Not strCreditCardCcv Is Nothing AndAlso strCreditCardCcv.Length > 0 Then strQuery &= ", @CreditCardCcv = '" & strCreditCardCcv & "'"
+                If Not strCreditCardExpire Is Nothing AndAlso strCreditCardExpire.Length > 0 Then strQuery &= ", @CreditCardExpire = '" & strCreditCardExpire & "'"
 
-                If strRemarks.Length > 0 Then strQuery &= ", @Remarks = '" & strRemarks & "'"
-                strQuery &= ", @CustomField1 = " & blnCustom1
-                strQuery &= ", @CustomField2 = " & blnCustom2
-                If strCustom3.Length > 0 Then strQuery &= ", @CustomField3 = '" & strCustom3 & "'"
-                If strCustom4.Length > 0 Then strQuery &= ", @CustomField4 = '" & strCustom4 & "'"
+                If Not strRemarks Is Nothing AndAlso strRemarks.Length > 0 Then strQuery &= ", @Remarks = '" & strRemarks & "'"
+                If Not blnCustom1 = Nothing Then strQuery &= ", @CustomField1 = " & blnCustom1
+                If Not blnCustom2 = Nothing Then strQuery &= ", @CustomField2 = " & blnCustom2
+                If Not strCustom3 Is Nothing AndAlso strCustom3.Length > 0 Then strQuery &= ", @CustomField3 = '" & strCustom3 & "'"
+                If Not strCustom4 Is Nothing AndAlso strCustom4.Length > 0 Then strQuery &= ", @CustomField4 = '" & strCustom4 & "'"
                 ClientsHandle = QueryDb(strQuery, False)
             Case "Upd"
                 strQuery = ""
-                strQuery = " Exec usp_ClientHandle @Action = 'Upd', @GroupId = " & dblGroupId & ", @ClientId = " & dblClientId & ", @FirstName = '" & strFirstName & "'"
-                If strMiddleName.Length > 0 Then strQuery &= ", @MiddleName = '" & strMiddleName & "'"
-                If strFamilyName.Length > 0 Then strQuery &= ", @FamilyName = '" & strFamilyName & "'"
+                strQuery = " Exec usp_ClientHandle @Action = 'Upd', @GroupId = " & dblGroupId & ", @ClientId = " & dblClientId
+                If Not strFirstName Is Nothing AndAlso strFirstName.Length > 0 Then strQuery &= ", @FirstName = '" & strFirstName & "'"
+                If Not strMiddleName Is Nothing AndAlso strMiddleName.Length > 0 Then strQuery &= ", @MiddleName = '" & strMiddleName & "'"
+                If Not strFamilyName Is Nothing AndAlso strFamilyName.Length > 0 Then strQuery &= ", @FamilyName = '" & strFamilyName & "'"
                 If Not blnPrimaryContact = Nothing Then strQuery &= ", @PrimaryContact = " & blnPrimaryContact
-                If strStreet.Length > 0 Then strQuery &= ", @Street = '" & strStreet & "'"
-                If strHouseNumber.Length > 0 Then strQuery &= ", @HouseNumber = '" & strHouseNumber & "'"
-                If strPostalCode.Length > 0 Then strQuery &= ", @PostalCode = '" & strPostalCode & "'"
-                If strCity.Length > 0 Then strQuery &= ", @City = '" & strCity & "'"
-                If strCountry.Length > 0 Then strQuery &= ", @Country = '" & strCountry & "'"
-                If strTelephone.Length > 0 Then strQuery &= ", @TelePhone = '" & strTelephone & "'"
-                If strFax.Length > 0 Then strQuery &= ", @Fax = '" & strFax & "'"
-                If strMobile.Length > 0 Then strQuery &= ", @Mobile = '" & strMobile & "'"
-                If strEmail.Length > 0 Then strQuery &= ", @Email = '" & strEmail & "'"
+                If Not strStreet Is Nothing AndAlso strStreet.Length > 0 Then strQuery &= ", @Street = '" & strStreet & "'"
+                If Not strHouseNumber Is Nothing AndAlso strHouseNumber.Length > 0 Then strQuery &= ", @HouseNumber = '" & strHouseNumber & "'"
+                If Not strPostalCode Is Nothing AndAlso strPostalCode.Length > 0 Then strQuery &= ", @PostalCode = '" & strPostalCode & "'"
+                If Not strCity Is Nothing AndAlso strCity.Length > 0 Then strQuery &= ", @City = '" & strCity & "'"
+                If Not strCountry Is Nothing AndAlso strCountry.Length > 0 Then strQuery &= ", @Country = '" & strCountry & "'"
+                If Not strTelephone Is Nothing AndAlso strTelephone.Length > 0 Then strQuery &= ", @TelePhone = '" & strTelephone & "'"
+                If Not strFax Is Nothing AndAlso strFax.Length > 0 Then strQuery &= ", @Fax = '" & strFax & "'"
+                If Not strMobile Is Nothing AndAlso strMobile.Length > 0 Then strQuery &= ", @Mobile = '" & strMobile & "'"
+                If Not strEmail Is Nothing AndAlso strEmail.Length > 0 Then strQuery &= ", @Email = '" & strEmail & "'"
+                If Not blnMailinglist = Nothing Then strQuery &= ", @Mailinglist = " & blnMailinglist
                 If Not intPrContact = Nothing Then strQuery &= ", @PrContactID = " & intPrContact
-                strQuery &= ", @Mailinglist = " & blnMailinglist
-                If Not (strDayOfBirth = "19000101" Or strDayOfBirth = Today.Year & Format(Today.Month, "00") & Format(Today.Day, "00")) Then
+                If Not strDayOfBirth Is Nothing AndAlso Not (strDayOfBirth = "19000101" Or strDayOfBirth = Today.Year & Format(Today.Month, "00") & Format(Today.Day, "00")) Then
                     If strDayOfBirth.Length = 8 Then strQuery &= ", @DayOfBirth = '" & strDayOfBirth & "'"
                 End If
-                If strBankaccount.Length > 0 Then strQuery &= ", @Bankaccount = '" & strBankaccount & "'"
-                If strCreditCard.Length > 0 Then strQuery &= ", @CreditCard = '" & strCreditCard & "'"
-                If strCreditCardCcv.Length > 0 Then strQuery &= ", @CreditCardCcv = '" & strCreditCardCcv & "'"
-                If strCreditCardExpire.Length > 0 Then strQuery &= ", @CreditCardExpire = '" & strCreditCardExpire & "'"
-                If strRemarks.Length > 0 Then strQuery &= ", @Remarks = '" & strRemarks & "'"
-                strQuery &= ", @CustomField1 = " & blnCustom1
-                strQuery &= ", @CustomField2 = " & blnCustom2
-                If strCustom3.Length > 0 Then strQuery &= ", @CustomField3 = '" & strCustom3 & "'"
-                If strCustom4.Length > 0 Then strQuery &= ", @CustomField4 = '" & strCustom4 & "'"
+                If Not strBankaccount Is Nothing AndAlso strBankaccount.Length > 0 Then strQuery &= ", @Bankaccount = '" & strBankaccount & "'"
+
+                If Not strCreditCard Is Nothing AndAlso strCreditCard.Length > 0 Then strQuery &= ", @CreditCard = '" & strCreditCard & "'"
+                If Not strCreditCardCcv Is Nothing AndAlso strCreditCardCcv.Length > 0 Then strQuery &= ", @CreditCardCcv = '" & strCreditCardCcv & "'"
+                If Not strCreditCardExpire Is Nothing AndAlso strCreditCardExpire.Length > 0 Then strQuery &= ", @CreditCardExpire = '" & strCreditCardExpire & "'"
+
+                If Not strRemarks Is Nothing AndAlso strRemarks.Length > 0 Then strQuery &= ", @Remarks = '" & strRemarks & "'"
+                If Not blnCustom1 = Nothing Then strQuery &= ", @CustomField1 = " & blnCustom1
+                If Not blnCustom2 = Nothing Then strQuery &= ", @CustomField2 = " & blnCustom2
+                If Not strCustom3 Is Nothing AndAlso strCustom3.Length > 0 Then strQuery &= ", @CustomField3 = '" & strCustom3 & "'"
+                If Not strCustom4 Is Nothing AndAlso strCustom4.Length > 0 Then strQuery &= ", @CustomField4 = '" & strCustom4 & "'"
                 ClientsHandle = QueryDb(strQuery, False)
             Case "Del"
                 ClientsHandle = QueryDb("Exec usp_ClientHandle @Action = 'Del', @ClientId = " & dblClientId, False)
@@ -536,7 +540,30 @@
 		Return ClientNameGet
 	End Function
 
-	Friend Sub PrimaryContactSet(ByVal dblGroupId As Double, ByVal dblClientId As Double)
+    Friend Function ClientMemoGet(ByVal dblClientId As Double) As String
+        Dim objData As DataSet = ClientsHandle("Get", 0, dblClientId)
+        ClientMemoGet = ""
+        For intRowCount = 0 To objData.Tables(0).Rows.Count - 1
+            If objData.Tables.Item(0).Rows(intRowCount).Item(0).GetType().ToString = "System.DBNull" Then
+                'MessageBox.Show("Cell Must be empty")
+            Else
+                If Not IsDBNull(objData.Tables.Item(0).Rows(intRowCount).Item("Remarks")) Then
+                    ClientMemoGet = objData.Tables.Item(0).Rows(intRowCount).Item("Remarks")
+                End If
+            End If
+        Next
+        Return ClientMemoGet
+    End Function
+
+    Public Function NotNull(Of T)(ByVal Value As T, ByVal DefaultValue As T) As T
+        If Value Is Nothing OrElse IsDBNull(Value) Then
+            Return DefaultValue
+        Else
+            Return Value
+        End If
+    End Function
+
+    Friend Sub PrimaryContactSet(ByVal dblGroupId As Double, ByVal dblClientId As Double)
 		QueryDb("Exec usp_PrimaryContactSet @GroupId = " & dblGroupId & ", @ClientId = " & dblClientId, False)
 	End Sub
 

@@ -36,14 +36,14 @@
     <UpdatePeriodically>true</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://trackmanager.nl/downloads/publish/publish32/</InstallUrl>
+    <InstallUrl>http://trackmanager.eu/fileadmin/downloads/publish/publish32/</InstallUrl>
     <ProductName>TrackManager</ProductName>
     <PublisherName>Thicor Services BV</PublisherName>
     <SuiteName>TrackManager</SuiteName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>13</ApplicationRevision>
-    <ApplicationVersion>4.2.0.13</ApplicationVersion>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>4.2.1.2</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -69,7 +69,7 @@
     <DocumentationFile>TrackManager.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>DA340F08857C9C76E398B1DA4AD84EEA85BC1DCB</ManifestCertificateThumbprint>
