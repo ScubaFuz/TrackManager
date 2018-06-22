@@ -22,7 +22,11 @@ SELECT dbo.udf_DateFormat(@DateStart,1) As StartDate
 FROM [dbo].[tbl_Invoice] inv
 INNER JOIN [dbo].[tbl_InvoiceLine] ivl
 	ON inv.[PK_InvoiceID] = ivl.[FK_InvoiceID]
+INNER JOIN [dbo].[vw_ClientGroups] clt
+	ON inv.[FK_ClientID] = clt.[PK_ClientID]
+	AND clt.ClientActive = 1
+	AND clt.GroupActive = 1
 WHERE inv.[Active] = 1
 	AND CAST(FLOOR(CAST(inv.[InvoiceDate] AS float)) AS datetime) BETWEEN @DateStart AND ISNULL(@DateStop,@DateStart)
 GROUP BY ivl.[Description]
-ORDER BY ProdCount,ilnAmount DESC
+ORDER BY ProdCount DESC,ilnAmount DESC

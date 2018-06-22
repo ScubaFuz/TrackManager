@@ -187,7 +187,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Database\02_Views\" />
+    <EmbeddedResource Include="Database\02_Views\01 dbo.vw_Appointments.sql" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Database\08 Updates\Update40020A.sql" />
@@ -322,6 +322,15 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Database\08 Updates\Copy of Update4160D.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\02_Views\01 dbo.vw_InvoicePayments.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\02_Views\01 dbo.vw_ClientGroups.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\02_Views\01 dbo.vw_InvoiceLines.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

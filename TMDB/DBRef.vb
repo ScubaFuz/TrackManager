@@ -48,9 +48,10 @@ Public Class DBRef
             arrScripts(AddOne()) = "04 dbo.tbl_InvoicePayment.sql"
         End If
         'Views
-        'arrScripts(AddOne()) = "dbo.VIEW_ADRESSEN_LERAREN.View.sql"
-        'arrScripts(AddOne()) = "dbo.VIEW_EMAILADRESSEN.View.sql"
-        'arrScripts(AddOne()) = "dbo.VIEW_ZOEK_EMAILADRES.View.sql"
+        arrScripts(AddOne()) = "01 dbo.vw_Appointments.sql"
+        arrScripts(AddOne()) = "01 dbo.vw_ClientGroups.sql"
+        arrScripts(AddOne()) = "01 dbo.vw_InvoiceLines.sql"
+        arrScripts(AddOne()) = "01 dbo.vw_InvoicePayments.sql"
 
         'Functions
         arrScripts(AddOne()) = "dbo.udf_DateFormat.sql"

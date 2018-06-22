@@ -49,7 +49,7 @@ IF @Action = 'Upd'
 			BEGIN
 				UPDATE [dbo].[tbl_Clients]
 				SET [FirstName] = COALESCE(@FirstName,[FirstName])
-					,[MiddleName] = COALESCE(@MiddleName,[MiddleName],[FirstName])
+					,[MiddleName] = COALESCE(@MiddleName,[MiddleName])
 					,[FamilyName] = COALESCE(@FamilyName,[FamilyName])
 					,[FK_GroupID] = COALESCE(@GroupID,[FK_GroupID])
 					,[PrimaryContact] = COALESCE(@PrimaryContact,[PrimaryContact])
