@@ -964,23 +964,31 @@ Public Class frmTrackManager
         Dim intClientCount As Integer = 0
         Dim strType As String = CurApp.Name.Replace("BoxArray", "")
         strType = strType.Replace("Client", "Track")
-        For Each cltClient In CurApp.Clients
-            If cltClient.Checked Then
-                If (strType = "Track" Or strType = "Teacher") And cltClient.LessonTypeID = 0 Then
-                    MessageBox.Show(lanStrings.strMissingLessontype)
-                    Exit Sub
-                End If
-                If strType = "Track" Then
-                    If AppointmentFinanceGet(cltClient.GroupID, cltClient.ID) > -1 Then
-                        If MessageBox.Show(lanStrings.strOverbookClient & vbCrLf & lanStrings.strClient & ": " & ClientNameGet(cltClient.ID) & "; " & lanStrings.strGroup & ": " & GroupNameGet(cltClient.GroupID) & vbCrLf & lanStrings.strContinue, lanStrings.strWarning, MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Cancel Then Exit Sub
+        Try
+            For Each cltClient In CurApp.Clients
+                If cltClient.Checked Then
+                    If (strType = "Track" Or strType = "Teacher") And cltClient.LessonTypeID = 0 Then
+                        'MessageBox.Show(lanStrings.strMissingLessontype)
+                        If MessageBox.Show(lanStrings.strMissingLessontype & vbCrLf & lanStrings.strClient & ": " & ClientNameGet(cltClient.ID) & "; " & lanStrings.strGroup & ": " & GroupNameGet(cltClient.GroupID) & vbCrLf & lanStrings.strContinue, lanStrings.strWarning, MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = DialogResult.Cancel Then Exit For
+                        Continue For
                     End If
+                    If strType = "Track" Then
+                        If AppointmentFinanceGet(cltClient.GroupID, cltClient.ID) > -1 Then
+                            Dim mbbResult As DialogResult
+
+                            mbbResult = MessageBox.Show(lanStrings.strOverbookClient & vbCrLf & lanStrings.strClient & ": " & ClientNameGet(cltClient.ID) & "; " & lanStrings.strGroup & ": " & GroupNameGet(cltClient.GroupID) & vbCrLf & lanStrings.strContinue, lanStrings.strWarning, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
+                            If mbbResult = Windows.Forms.DialogResult.Cancel Then Exit For
+                            If mbbResult = Windows.Forms.DialogResult.No Then Continue For
+                        End If
+                    End If
+                    AppointmentCreate(CurApp.Day, strType, cltClient.ID, CurApp.TrackId, CurApp.TrackIndex, cltClient.LessonTypeID, cltClient.LevelID, cltClient.LessonCount, cltClient.ExtraCount, CurUser.LoginID)
+                    cltClient.LessonCount += 1
+                    cltClient.TrackIndex = CurApp.TrackIndex
+                    intClientCount += 1
                 End If
-                AppointmentCreate(CurApp.Day, strType, cltClient.ID, CurApp.TrackId, CurApp.TrackIndex, cltClient.LessonTypeID, cltClient.LevelID, cltClient.LessonCount, cltClient.ExtraCount, CurUser.LoginID)
-                cltClient.LessonCount += 1
-                cltClient.TrackIndex = CurApp.TrackIndex
-                intClientCount += 1
-            End If
-        Next
+            Next
+        Catch
+        End Try
         If intClientCount > 0 Then
             CurApp.DayPrev = CurApp.Day
             CurApp.TrackIdPrev = CurApp.TrackId

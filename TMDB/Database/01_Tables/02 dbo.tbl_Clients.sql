@@ -8,7 +8,7 @@ CREATE TABLE [dbo].[tbl_Clients](
 	[FirstName] [nvarchar](50) NULL,
 	[MiddleName] [nvarchar](50) NULL,
 	[FamilyName] [nvarchar](50) NULL,
-	[ClientName]  AS ((COALESCE([FirstName],'')+COALESCE(' '+[MiddleName],''))+COALESCE(' '+[FamilyName],'')),
+	[ClientName]  AS (RTRIM(REPLACE((COALESCE([FirstName],'')+COALESCE(' '+[MiddleName],''))+COALESCE(' '+[FamilyName],''),'  ',' '))),
 	[FK_GroupID] [bigint] NULL,
 	[PrimaryContact] [bit] NOT NULL DEFAULT ((0)),
 	[Street] [nvarchar](50) NULL,

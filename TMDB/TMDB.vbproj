@@ -332,6 +332,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Database\02_Views\01 dbo.vw_InvoiceLines.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\07_Reports\06 Report_Lessons_Teacher Data.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\07_Reports\06 dbo.usp_Report_Lessons_Teacher.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\03_Functions\dbo.udf_LevelNameGet.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

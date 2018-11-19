@@ -447,7 +447,7 @@ Partial Class frmClients
         'chkCustom1
         '
         Me.chkCustom1.AutoSize = True
-        Me.chkCustom1.Location = New System.Drawing.Point(475, 494)
+        Me.chkCustom1.Location = New System.Drawing.Point(475, 525)
         Me.chkCustom1.Name = "chkCustom1"
         Me.chkCustom1.Size = New System.Drawing.Size(15, 14)
         Me.chkCustom1.TabIndex = 24
@@ -456,7 +456,7 @@ Partial Class frmClients
         'chkCustom2
         '
         Me.chkCustom2.AutoSize = True
-        Me.chkCustom2.Location = New System.Drawing.Point(475, 519)
+        Me.chkCustom2.Location = New System.Drawing.Point(475, 550)
         Me.chkCustom2.Name = "chkCustom2"
         Me.chkCustom2.Size = New System.Drawing.Size(15, 14)
         Me.chkCustom2.TabIndex = 25
@@ -465,7 +465,7 @@ Partial Class frmClients
         'chkMailinglist
         '
         Me.chkMailinglist.AutoSize = True
-        Me.chkMailinglist.Location = New System.Drawing.Point(475, 469)
+        Me.chkMailinglist.Location = New System.Drawing.Point(475, 500)
         Me.chkMailinglist.Name = "chkMailinglist"
         Me.chkMailinglist.Size = New System.Drawing.Size(15, 14)
         Me.chkMailinglist.TabIndex = 23

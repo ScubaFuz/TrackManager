@@ -61,6 +61,7 @@ Public Class DBRef
         arrScripts(AddOne()) = "dbo.udf_GetShowAge.sql"
         arrScripts(AddOne()) = "dbo.udf_FirstNameAge.sql"
         arrScripts(AddOne()) = "dbo.udf_LevelColorGet.sql"
+        arrScripts(AddOne()) = "dbo.udf_LevelNameGet.sql"
         arrScripts(AddOne()) = "dbo.udf_ValidEmail.sql"
         arrScripts(AddOne()) = "dbo.udf_Weekday.sql"
 
@@ -123,6 +124,7 @@ Public Class DBRef
         arrScripts(AddOne()) = "02 dbo.usp_Report_Finance_OpenBills.sql"
         arrScripts(AddOne()) = "03 dbo.usp_Report_Finance_Payments.sql"
         arrScripts(AddOne()) = "04 dbo.usp_Report_Finance_Overbooked.sql"
+        arrScripts(AddOne()) = "06 dbo.usp_Report_Lessons_Teacher.sql"
         arrScripts(AddOne()) = "11 dbo.usp_Report_Other_Logfile.sql"
         arrScripts(AddOne()) = "12 dbo.usp_Report_Clients_EmailAddresses.sql"
         arrScripts(AddOne()) = "13 dbo.usp_Report_Lessons_Overview.sql"
@@ -134,6 +136,7 @@ Public Class DBRef
             arrScripts(AddOne()) = "02 Report_Finance_OpenBills Data.sql"
             arrScripts(AddOne()) = "03 Report_Finance_Payments Data.sql"
             arrScripts(AddOne()) = "04 Report_Finance_Overbooked Data.sql"
+            arrScripts(AddOne()) = "06 Report_Lessons_Teacher Data.sql"
             arrScripts(AddOne()) = "11 Report_Other_Logfile Data.sql"
             arrScripts(AddOne()) = "12 Report_Clients_EmailAddresses Data.sql"
             arrScripts(AddOne()) = "13 Report_Lessons_Overview Data.sql"
@@ -230,6 +233,10 @@ Public Class DBRef
             Dim verTM4211 As New Version("4.2.1.1")
             If verDatabase.CompareTo(verTM4211) = -1 Then
                 Return "4.2.1.1"
+            End If
+            Dim verTM4215 As New Version("4.2.1.5")
+            If verDatabase.CompareTo(verTM4215) = -1 Then
+                Return "4.2.1.5"
             End If
         Else
             'Return strVersion
@@ -640,6 +647,15 @@ Public Class DBRef
         If strVersion = "4.2.1.1" Then
             arrScripts(0, intCounter) = "01 dbo.usp_ClientHandle.sql"
             arrScripts(1, intCounter) = "ALTER"
+        End If
+
+        If strVersion = "4.2.1.4" Then
+            arrScripts(0, AddOne()) = "dbo.udf_LevelNameGet.sql"
+            arrScripts(1, intCounter) = "CREATE"
+            arrScripts(0, AddOne()) = "06 Report_Lessons_Teacher Data.sql"
+            arrScripts(1, intCounter) = "INSERT"
+            arrScripts(0, intCounter) = "06 dbo.usp_Report_Lessons_Teacher.sql"
+            arrScripts(1, intCounter) = "CREATE"
         End If
 
         ReDim Preserve arrScripts(1, intCounter)

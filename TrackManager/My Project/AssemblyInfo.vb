@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Thicor TrackManager")> 
 <Assembly: AssemblyCompany("Thicor Services")> 
 <Assembly: AssemblyProduct("TrackManager")>
-<Assembly: AssemblyCopyright("Thicor Services BV ©  2008-2017")>
+<Assembly: AssemblyCopyright("Thicor Services BV ©  2008-2018")>
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("4.2.1.3")>
-<Assembly: AssemblyFileVersion("4.2.1.3")>
+<Assembly: AssemblyVersion("4.2.1.4")>
+<Assembly: AssemblyFileVersion("4.2.1.4")>
