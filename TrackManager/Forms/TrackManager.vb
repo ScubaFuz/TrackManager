@@ -33,7 +33,7 @@ Public Class frmTrackManager
     Private previouslvwProduct As ListViewItem 'To hold reference to previously selected TreeNode
 
     Private Sub frmTrackManager_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        ParseCommands()
+        If My.Application.CommandLineArgs.Count > 0 Then ParseCommands(My.Application.CommandLineArgs)
         Me.Hide()
         frmSplash.Show()
         Me.Text = CurVar.ApplicationName
@@ -64,7 +64,8 @@ Public Class frmTrackManager
         End While
 
         LoadLogSettings()
-        frmLoginForm.ShowDialog(Me)
+        If blnAutoLogon = True Then AutoLogon()
+        If blnLoginOK = False Then frmLoginForm.ShowDialog(Me)
         SecuritySet()
         LoadVersion()
         LoadViewSettings()
@@ -2298,14 +2299,18 @@ Public Class frmTrackManager
 
     Private Sub PrimarySelect()
         If CurStatus.GroupID > 0 Then
-            Dim objData2 As DataSet = ClientsHandle("Pri", CurStatus.GroupID, CurStatus.ClientID)
-            For intRowCount = 0 To objData2.Tables(0).Rows.Count - 1
-                If objData2.Tables.Item(0).Rows(intRowCount).Item(0).GetType().ToString = "System.DBNull" Then
-                    'MessageBox.Show("Cell Must be empty")
-                Else
-                    CurStatus.ClientID = objData2.Tables.Item(0).Rows(intRowCount).Item("PK_ClientId")
-                End If
-            Next
+            Try
+                Dim objData2 As DataSet = ClientsHandle("Pri", CurStatus.GroupID, CurStatus.ClientID)
+                For intRowCount = 0 To objData2.Tables(0).Rows.Count - 1
+                    If objData2.Tables.Item(0).Rows(intRowCount).Item(0).GetType().ToString = "System.DBNull" Then
+                        'MessageBox.Show("Cell Must be empty")
+                    Else
+                        CurStatus.ClientID = objData2.Tables.Item(0).Rows(intRowCount).Item("PK_ClientId")
+                    End If
+                Next
+            Catch ex As Exception
+                MessageBox.Show("Select a different group and try again")
+            End Try
         End If
     End Sub
 
@@ -2464,6 +2469,10 @@ Public Class frmTrackManager
             lvwGroups.TopItem = foundItem
         End If
 
+    End Sub
+
+    Private Sub btn_ReloadGroups_Click(sender As Object, e As EventArgs) Handles btn_ReloadGroups.Click
+        GroupsGet()
     End Sub
 
 #End Region
@@ -3591,6 +3600,7 @@ Public Class frmTrackManager
         If lvwSearchResult.SelectedItems.Count = 1 Then
             CurStatus.ClientID = lvwSearchResult.SelectedItems.Item(0).Tag
             CurStatus.GroupID = lvwSearchResult.SelectedItems.Item(0).SubItems(10).Text
+            QueryDb("[dbo].[usp_GroupHandle] @Action=NULL,@GroupID=" & CurStatus.GroupID, False)
             ShowCurStat()
         End If
 
@@ -3715,6 +3725,7 @@ Public Class frmTrackManager
         MessageBox.Show(MydbRef.GetScript(arrScripts(4)))
 
     End Sub
+
 
 
 #End Region

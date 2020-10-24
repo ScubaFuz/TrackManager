@@ -1,7 +1,8 @@
 DECLARE @ReportId int
-INSERT INTO [tbl_Reports] ([ReportName],[ReportType],[PrimaryMenu])VALUES('Maand Overzicht','S','Lessons')
-
+INSERT INTO [dbo].[tbl_Reports] ([ReportName],[ReportType],[PrimaryMenu],[SecondaryMenu],[ProcedureName],[Visible],[Active])
+VALUES('Maand Overzicht','S','Lessons','0','usp_Report_Lessons_Maand_Overzicht',1,1)
 SET @ReportId = IDENT_CURRENT('tbl_Reports')
+
 INSERT INTO [tbl_ReportArguments] ([FK_ReportId],[FK_ArgumentId],[IsOptional],[IsSelected]) SELECT @ReportId, [PK_ArgumentId] ,0,1 FROM [dbo].[tbl_Arguments] WHERE [ArgumentName] = '@DateStart'
 INSERT INTO [tbl_ReportArguments] ([FK_ReportId],[FK_ArgumentId],[IsOptional],[IsSelected]) SELECT @ReportId, [PK_ArgumentId] ,1,0 FROM [dbo].[tbl_Arguments] WHERE [ArgumentName] = '@DateStop'
 INSERT INTO [tbl_ReportArguments] ([FK_ReportId],[FK_ArgumentId],[IsOptional],[IsSelected]) SELECT @ReportId, [PK_ArgumentId] ,1,0 FROM [dbo].[tbl_Arguments] WHERE [ArgumentName] = '@ClientId'

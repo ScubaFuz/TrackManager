@@ -77,12 +77,19 @@ Partial Class frmFinance
         Me.btncheckInvoices = New System.Windows.Forms.Button()
         Me.txtGroupSearch = New System.Windows.Forms.TextBox()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnInvoicePay
         '
+        Me.btnInvoicePay.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnInvoicePay.Enabled = False
-        Me.btnInvoicePay.Location = New System.Drawing.Point(642, 59)
+        Me.btnInvoicePay.Location = New System.Drawing.Point(856, 60)
         Me.btnInvoicePay.Name = "btnInvoicePay"
         Me.btnInvoicePay.Size = New System.Drawing.Size(110, 23)
         Me.btnInvoicePay.TabIndex = 19
@@ -91,8 +98,9 @@ Partial Class frmFinance
         '
         'btnInvoiceDelete
         '
+        Me.btnInvoiceDelete.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnInvoiceDelete.Enabled = False
-        Me.btnInvoiceDelete.Location = New System.Drawing.Point(642, 88)
+        Me.btnInvoiceDelete.Location = New System.Drawing.Point(856, 89)
         Me.btnInvoiceDelete.Name = "btnInvoiceDelete"
         Me.btnInvoiceDelete.Size = New System.Drawing.Size(110, 23)
         Me.btnInvoiceDelete.TabIndex = 20
@@ -101,10 +109,12 @@ Partial Class frmFinance
         '
         'lvwProduct
         '
+        Me.lvwProduct.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lvwProduct.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colProducts, Me.colCounts, Me.colAmounts, Me.colTax})
         Me.lvwProduct.FullRowSelect = True
         Me.lvwProduct.GridLines = True
-        Me.lvwProduct.Location = New System.Drawing.Point(12, 313)
+        Me.lvwProduct.Location = New System.Drawing.Point(12, 20)
         Me.lvwProduct.MultiSelect = False
         Me.lvwProduct.Name = "lvwProduct"
         Me.lvwProduct.Size = New System.Drawing.Size(222, 121)
@@ -142,7 +152,7 @@ Partial Class frmFinance
         'lblFinanceProduct
         '
         Me.lblFinanceProduct.AutoSize = True
-        Me.lblFinanceProduct.Location = New System.Drawing.Point(12, 297)
+        Me.lblFinanceProduct.Location = New System.Drawing.Point(12, 4)
         Me.lblFinanceProduct.Name = "lblFinanceProduct"
         Me.lblFinanceProduct.Size = New System.Drawing.Size(44, 13)
         Me.lblFinanceProduct.TabIndex = 105
@@ -151,7 +161,7 @@ Partial Class frmFinance
         'lblClientName
         '
         Me.lblClientName.AutoSize = True
-        Me.lblClientName.Location = New System.Drawing.Point(12, 153)
+        Me.lblClientName.Location = New System.Drawing.Point(9, 9)
         Me.lblClientName.Name = "lblClientName"
         Me.lblClientName.Size = New System.Drawing.Size(64, 13)
         Me.lblClientName.TabIndex = 104
@@ -160,7 +170,7 @@ Partial Class frmFinance
         'lblGroupName
         '
         Me.lblGroupName.AutoSize = True
-        Me.lblGroupName.Location = New System.Drawing.Point(12, 9)
+        Me.lblGroupName.Location = New System.Drawing.Point(12, 10)
         Me.lblGroupName.Name = "lblGroupName"
         Me.lblGroupName.Size = New System.Drawing.Size(67, 13)
         Me.lblGroupName.TabIndex = 103
@@ -168,21 +178,25 @@ Partial Class frmFinance
         '
         'lvwFinanceClients
         '
+        Me.lvwFinanceClients.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lvwFinanceClients.FullRowSelect = True
         Me.lvwFinanceClients.GridLines = True
-        Me.lvwFinanceClients.Location = New System.Drawing.Point(12, 169)
+        Me.lvwFinanceClients.Location = New System.Drawing.Point(11, 25)
         Me.lvwFinanceClients.MultiSelect = False
         Me.lvwFinanceClients.Name = "lvwFinanceClients"
-        Me.lvwFinanceClients.Size = New System.Drawing.Size(222, 121)
+        Me.lvwFinanceClients.Size = New System.Drawing.Size(222, 254)
         Me.lvwFinanceClients.TabIndex = 2
         Me.lvwFinanceClients.UseCompatibleStateImageBehavior = False
         Me.lvwFinanceClients.View = System.Windows.Forms.View.Details
         '
         'lvwFinanceGroups
         '
+        Me.lvwFinanceGroups.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lvwFinanceGroups.FullRowSelect = True
         Me.lvwFinanceGroups.GridLines = True
-        Me.lvwFinanceGroups.Location = New System.Drawing.Point(12, 51)
+        Me.lvwFinanceGroups.Location = New System.Drawing.Point(12, 52)
         Me.lvwFinanceGroups.MultiSelect = False
         Me.lvwFinanceGroups.Name = "lvwFinanceGroups"
         Me.lvwFinanceGroups.Size = New System.Drawing.Size(222, 95)
@@ -192,8 +206,9 @@ Partial Class frmFinance
         '
         'btnInvoiceAdd
         '
+        Me.btnInvoiceAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnInvoiceAdd.Enabled = False
-        Me.btnInvoiceAdd.Location = New System.Drawing.Point(12, 493)
+        Me.btnInvoiceAdd.Location = New System.Drawing.Point(12, 200)
         Me.btnInvoiceAdd.Name = "btnInvoiceAdd"
         Me.btnInvoiceAdd.Size = New System.Drawing.Size(110, 23)
         Me.btnInvoiceAdd.TabIndex = 8
@@ -202,8 +217,9 @@ Partial Class frmFinance
         '
         'btnDetailsEdit
         '
+        Me.btnDetailsEdit.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnDetailsEdit.Enabled = False
-        Me.btnDetailsEdit.Location = New System.Drawing.Point(645, 169)
+        Me.btnDetailsEdit.Location = New System.Drawing.Point(856, 25)
         Me.btnDetailsEdit.Name = "btnDetailsEdit"
         Me.btnDetailsEdit.Size = New System.Drawing.Size(110, 23)
         Me.btnDetailsEdit.TabIndex = 21
@@ -212,14 +228,17 @@ Partial Class frmFinance
         '
         'lvwPayments
         '
+        Me.lvwPayments.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lvwPayments.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colPayDate, Me.colPayClient, Me.colPayLogin, Me.colPayAmount})
         Me.lvwPayments.FullRowSelect = True
         Me.lvwPayments.GridLines = True
         Me.lvwPayments.HideSelection = False
-        Me.lvwPayments.Location = New System.Drawing.Point(240, 313)
+        Me.lvwPayments.Location = New System.Drawing.Point(240, 20)
         Me.lvwPayments.MultiSelect = False
         Me.lvwPayments.Name = "lvwPayments"
-        Me.lvwPayments.Size = New System.Drawing.Size(399, 121)
+        Me.lvwPayments.Size = New System.Drawing.Size(613, 121)
         Me.lvwPayments.TabIndex = 14
         Me.lvwPayments.UseCompatibleStateImageBehavior = False
         Me.lvwPayments.View = System.Windows.Forms.View.Details
@@ -252,7 +271,7 @@ Partial Class frmFinance
         'lblInvoicePayments
         '
         Me.lblInvoicePayments.AutoSize = True
-        Me.lblInvoicePayments.Location = New System.Drawing.Point(240, 297)
+        Me.lblInvoicePayments.Location = New System.Drawing.Point(240, 4)
         Me.lblInvoicePayments.Name = "lblInvoicePayments"
         Me.lblInvoicePayments.Size = New System.Drawing.Size(91, 13)
         Me.lblInvoicePayments.TabIndex = 113
@@ -261,7 +280,7 @@ Partial Class frmFinance
         'lblInvoiceDetails
         '
         Me.lblInvoiceDetails.AutoSize = True
-        Me.lblInvoiceDetails.Location = New System.Drawing.Point(240, 153)
+        Me.lblInvoiceDetails.Location = New System.Drawing.Point(239, 9)
         Me.lblInvoiceDetails.Name = "lblInvoiceDetails"
         Me.lblInvoiceDetails.Size = New System.Drawing.Size(77, 13)
         Me.lblInvoiceDetails.TabIndex = 112
@@ -270,7 +289,7 @@ Partial Class frmFinance
         'lblInvoices
         '
         Me.lblInvoices.AutoSize = True
-        Me.lblInvoices.Location = New System.Drawing.Point(240, 9)
+        Me.lblInvoices.Location = New System.Drawing.Point(240, 10)
         Me.lblInvoices.Name = "lblInvoices"
         Me.lblInvoices.Size = New System.Drawing.Size(47, 13)
         Me.lblInvoices.TabIndex = 111
@@ -278,14 +297,17 @@ Partial Class frmFinance
         '
         'lvwInvoiceLines
         '
+        Me.lvwInvoiceLines.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lvwInvoiceLines.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colLineClient, Me.colLineLogin, Me.colLineProduct, Me.colLineCount, Me.colLineAmount, Me.colLineTax})
         Me.lvwInvoiceLines.FullRowSelect = True
         Me.lvwInvoiceLines.GridLines = True
         Me.lvwInvoiceLines.HideSelection = False
-        Me.lvwInvoiceLines.Location = New System.Drawing.Point(240, 169)
+        Me.lvwInvoiceLines.Location = New System.Drawing.Point(240, 25)
         Me.lvwInvoiceLines.MultiSelect = False
         Me.lvwInvoiceLines.Name = "lvwInvoiceLines"
-        Me.lvwInvoiceLines.Size = New System.Drawing.Size(399, 121)
+        Me.lvwInvoiceLines.Size = New System.Drawing.Size(613, 254)
         Me.lvwInvoiceLines.TabIndex = 13
         Me.lvwInvoiceLines.UseCompatibleStateImageBehavior = False
         Me.lvwInvoiceLines.View = System.Windows.Forms.View.Details
@@ -331,13 +353,16 @@ Partial Class frmFinance
         '
         'lvwInvoices
         '
+        Me.lvwInvoices.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lvwInvoices.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colInvoiceDate, Me.colInvoiceClient, Me.colInvoiceLogin, Me.colInvoicePayed})
         Me.lvwInvoices.FullRowSelect = True
         Me.lvwInvoices.GridLines = True
-        Me.lvwInvoices.Location = New System.Drawing.Point(240, 25)
+        Me.lvwInvoices.Location = New System.Drawing.Point(240, 26)
         Me.lvwInvoices.MultiSelect = False
         Me.lvwInvoices.Name = "lvwInvoices"
-        Me.lvwInvoices.Size = New System.Drawing.Size(399, 121)
+        Me.lvwInvoices.Size = New System.Drawing.Size(613, 121)
         Me.lvwInvoices.TabIndex = 12
         Me.lvwInvoices.UseCompatibleStateImageBehavior = False
         Me.lvwInvoices.View = System.Windows.Forms.View.Details
@@ -367,14 +392,16 @@ Partial Class frmFinance
         '
         'txtProduct
         '
-        Me.txtProduct.Location = New System.Drawing.Point(12, 440)
+        Me.txtProduct.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txtProduct.Location = New System.Drawing.Point(12, 147)
         Me.txtProduct.Name = "txtProduct"
         Me.txtProduct.Size = New System.Drawing.Size(222, 20)
         Me.txtProduct.TabIndex = 4
         '
         'txtCount
         '
-        Me.txtCount.Location = New System.Drawing.Point(12, 466)
+        Me.txtCount.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txtCount.Location = New System.Drawing.Point(12, 173)
         Me.txtCount.Name = "txtCount"
         Me.txtCount.Size = New System.Drawing.Size(67, 20)
         Me.txtCount.TabIndex = 5
@@ -382,7 +409,8 @@ Partial Class frmFinance
         '
         'txtProductAmount
         '
-        Me.txtProductAmount.Location = New System.Drawing.Point(85, 466)
+        Me.txtProductAmount.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txtProductAmount.Location = New System.Drawing.Point(85, 173)
         Me.txtProductAmount.Name = "txtProductAmount"
         Me.txtProductAmount.Size = New System.Drawing.Size(67, 20)
         Me.txtProductAmount.TabIndex = 6
@@ -390,16 +418,18 @@ Partial Class frmFinance
         '
         'cbxTax
         '
+        Me.cbxTax.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.cbxTax.FormattingEnabled = True
-        Me.cbxTax.Location = New System.Drawing.Point(158, 466)
+        Me.cbxTax.Location = New System.Drawing.Point(158, 173)
         Me.cbxTax.Name = "cbxTax"
         Me.cbxTax.Size = New System.Drawing.Size(76, 21)
         Me.cbxTax.TabIndex = 7
         '
         'btnDetailsSave
         '
+        Me.btnDetailsSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnDetailsSave.Enabled = False
-        Me.btnDetailsSave.Location = New System.Drawing.Point(128, 522)
+        Me.btnDetailsSave.Location = New System.Drawing.Point(128, 229)
         Me.btnDetailsSave.Name = "btnDetailsSave"
         Me.btnDetailsSave.Size = New System.Drawing.Size(110, 23)
         Me.btnDetailsSave.TabIndex = 11
@@ -408,8 +438,9 @@ Partial Class frmFinance
         '
         'btnDetailsDelete
         '
+        Me.btnDetailsDelete.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnDetailsDelete.Enabled = False
-        Me.btnDetailsDelete.Location = New System.Drawing.Point(645, 198)
+        Me.btnDetailsDelete.Location = New System.Drawing.Point(856, 54)
         Me.btnDetailsDelete.Name = "btnDetailsDelete"
         Me.btnDetailsDelete.Size = New System.Drawing.Size(110, 23)
         Me.btnDetailsDelete.TabIndex = 22
@@ -418,8 +449,9 @@ Partial Class frmFinance
         '
         'btnPaymentDelete
         '
+        Me.btnPaymentDelete.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnPaymentDelete.Enabled = False
-        Me.btnPaymentDelete.Location = New System.Drawing.Point(645, 342)
+        Me.btnPaymentDelete.Location = New System.Drawing.Point(859, 49)
         Me.btnPaymentDelete.Name = "btnPaymentDelete"
         Me.btnPaymentDelete.Size = New System.Drawing.Size(110, 23)
         Me.btnPaymentDelete.TabIndex = 24
@@ -428,8 +460,9 @@ Partial Class frmFinance
         '
         'btnPaymentAdd
         '
+        Me.btnPaymentAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnPaymentAdd.Enabled = False
-        Me.btnPaymentAdd.Location = New System.Drawing.Point(645, 313)
+        Me.btnPaymentAdd.Location = New System.Drawing.Point(859, 20)
         Me.btnPaymentAdd.Name = "btnPaymentAdd"
         Me.btnPaymentAdd.Size = New System.Drawing.Size(110, 23)
         Me.btnPaymentAdd.TabIndex = 23
@@ -438,8 +471,9 @@ Partial Class frmFinance
         '
         'btnDetailsAdd
         '
+        Me.btnDetailsAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnDetailsAdd.Enabled = False
-        Me.btnDetailsAdd.Location = New System.Drawing.Point(128, 493)
+        Me.btnDetailsAdd.Location = New System.Drawing.Point(128, 200)
         Me.btnDetailsAdd.Name = "btnDetailsAdd"
         Me.btnDetailsAdd.Size = New System.Drawing.Size(110, 23)
         Me.btnDetailsAdd.TabIndex = 9
@@ -448,7 +482,8 @@ Partial Class frmFinance
         '
         'txtPayAmount
         '
-        Me.txtPayAmount.Location = New System.Drawing.Point(566, 518)
+        Me.txtPayAmount.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txtPayAmount.Location = New System.Drawing.Point(566, 225)
         Me.txtPayAmount.Name = "txtPayAmount"
         Me.txtPayAmount.Size = New System.Drawing.Size(73, 20)
         Me.txtPayAmount.TabIndex = 18
@@ -456,8 +491,9 @@ Partial Class frmFinance
         '
         'lblPayment
         '
+        Me.lblPayment.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblPayment.AutoSize = True
-        Me.lblPayment.Location = New System.Drawing.Point(465, 521)
+        Me.lblPayment.Location = New System.Drawing.Point(465, 228)
         Me.lblPayment.Name = "lblPayment"
         Me.lblPayment.Size = New System.Drawing.Size(48, 13)
         Me.lblPayment.TabIndex = 126
@@ -465,8 +501,9 @@ Partial Class frmFinance
         '
         'txtDue
         '
+        Me.txtDue.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txtDue.Enabled = False
-        Me.txtDue.Location = New System.Drawing.Point(566, 492)
+        Me.txtDue.Location = New System.Drawing.Point(566, 199)
         Me.txtDue.Name = "txtDue"
         Me.txtDue.Size = New System.Drawing.Size(73, 20)
         Me.txtDue.TabIndex = 17
@@ -474,8 +511,9 @@ Partial Class frmFinance
         '
         'txtPayed
         '
+        Me.txtPayed.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txtPayed.Enabled = False
-        Me.txtPayed.Location = New System.Drawing.Point(566, 466)
+        Me.txtPayed.Location = New System.Drawing.Point(566, 173)
         Me.txtPayed.Name = "txtPayed"
         Me.txtPayed.Size = New System.Drawing.Size(73, 20)
         Me.txtPayed.TabIndex = 16
@@ -483,8 +521,9 @@ Partial Class frmFinance
         '
         'txtBilled
         '
+        Me.txtBilled.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txtBilled.Enabled = False
-        Me.txtBilled.Location = New System.Drawing.Point(566, 440)
+        Me.txtBilled.Location = New System.Drawing.Point(566, 147)
         Me.txtBilled.Name = "txtBilled"
         Me.txtBilled.Size = New System.Drawing.Size(73, 20)
         Me.txtBilled.TabIndex = 15
@@ -492,8 +531,9 @@ Partial Class frmFinance
         '
         'lblBilled
         '
+        Me.lblBilled.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblBilled.AutoSize = True
-        Me.lblBilled.Location = New System.Drawing.Point(465, 443)
+        Me.lblBilled.Location = New System.Drawing.Point(465, 150)
         Me.lblBilled.Name = "lblBilled"
         Me.lblBilled.Size = New System.Drawing.Size(32, 13)
         Me.lblBilled.TabIndex = 130
@@ -501,8 +541,9 @@ Partial Class frmFinance
         '
         'lblPayed
         '
+        Me.lblPayed.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblPayed.AutoSize = True
-        Me.lblPayed.Location = New System.Drawing.Point(465, 469)
+        Me.lblPayed.Location = New System.Drawing.Point(465, 176)
         Me.lblPayed.Name = "lblPayed"
         Me.lblPayed.Size = New System.Drawing.Size(37, 13)
         Me.lblPayed.TabIndex = 131
@@ -510,8 +551,9 @@ Partial Class frmFinance
         '
         'lblDue
         '
+        Me.lblDue.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblDue.AutoSize = True
-        Me.lblDue.Location = New System.Drawing.Point(465, 495)
+        Me.lblDue.Location = New System.Drawing.Point(465, 202)
         Me.lblDue.Name = "lblDue"
         Me.lblDue.Size = New System.Drawing.Size(27, 13)
         Me.lblDue.TabIndex = 132
@@ -519,8 +561,9 @@ Partial Class frmFinance
         '
         'btncheckInvoices
         '
+        Me.btncheckInvoices.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btncheckInvoices.Enabled = False
-        Me.btncheckInvoices.Location = New System.Drawing.Point(12, 522)
+        Me.btncheckInvoices.Location = New System.Drawing.Point(12, 229)
         Me.btncheckInvoices.Name = "btncheckInvoices"
         Me.btncheckInvoices.Size = New System.Drawing.Size(110, 23)
         Me.btncheckInvoices.TabIndex = 10
@@ -529,68 +572,101 @@ Partial Class frmFinance
         '
         'txtGroupSearch
         '
-        Me.txtGroupSearch.Location = New System.Drawing.Point(12, 25)
+        Me.txtGroupSearch.Location = New System.Drawing.Point(12, 26)
         Me.txtGroupSearch.Name = "txtGroupSearch"
         Me.txtGroupSearch.Size = New System.Drawing.Size(222, 20)
         Me.txtGroupSearch.TabIndex = 133
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(642, 25)
+        Me.btnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnClose.Location = New System.Drawing.Point(856, 26)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(110, 23)
         Me.btnClose.TabIndex = 134
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.btnClose)
+        Me.Panel1.Controls.Add(Me.lvwInvoices)
+        Me.Panel1.Controls.Add(Me.txtGroupSearch)
+        Me.Panel1.Controls.Add(Me.lvwFinanceGroups)
+        Me.Panel1.Controls.Add(Me.lblGroupName)
+        Me.Panel1.Controls.Add(Me.btnInvoiceDelete)
+        Me.Panel1.Controls.Add(Me.btnInvoicePay)
+        Me.Panel1.Controls.Add(Me.lblInvoices)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(978, 150)
+        Me.Panel1.TabIndex = 135
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.btncheckInvoices)
+        Me.Panel2.Controls.Add(Me.lvwPayments)
+        Me.Panel2.Controls.Add(Me.lblDue)
+        Me.Panel2.Controls.Add(Me.btnInvoiceAdd)
+        Me.Panel2.Controls.Add(Me.lblPayed)
+        Me.Panel2.Controls.Add(Me.lblFinanceProduct)
+        Me.Panel2.Controls.Add(Me.lblBilled)
+        Me.Panel2.Controls.Add(Me.lvwProduct)
+        Me.Panel2.Controls.Add(Me.txtBilled)
+        Me.Panel2.Controls.Add(Me.lblInvoicePayments)
+        Me.Panel2.Controls.Add(Me.txtPayed)
+        Me.Panel2.Controls.Add(Me.txtProduct)
+        Me.Panel2.Controls.Add(Me.txtDue)
+        Me.Panel2.Controls.Add(Me.txtCount)
+        Me.Panel2.Controls.Add(Me.lblPayment)
+        Me.Panel2.Controls.Add(Me.txtProductAmount)
+        Me.Panel2.Controls.Add(Me.txtPayAmount)
+        Me.Panel2.Controls.Add(Me.cbxTax)
+        Me.Panel2.Controls.Add(Me.btnDetailsAdd)
+        Me.Panel2.Controls.Add(Me.btnDetailsSave)
+        Me.Panel2.Controls.Add(Me.btnPaymentAdd)
+        Me.Panel2.Controls.Add(Me.btnPaymentDelete)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel2.Location = New System.Drawing.Point(0, 437)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(978, 256)
+        Me.Panel2.TabIndex = 136
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.lvwFinanceClients)
+        Me.Panel3.Controls.Add(Me.btnDetailsDelete)
+        Me.Panel3.Controls.Add(Me.lvwInvoiceLines)
+        Me.Panel3.Controls.Add(Me.lblInvoiceDetails)
+        Me.Panel3.Controls.Add(Me.btnDetailsEdit)
+        Me.Panel3.Controls.Add(Me.lblClientName)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel3.Location = New System.Drawing.Point(0, 150)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(978, 287)
+        Me.Panel3.TabIndex = 137
+        '
         'frmFinance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(764, 553)
-        Me.Controls.Add(Me.btnClose)
-        Me.Controls.Add(Me.txtGroupSearch)
-        Me.Controls.Add(Me.btncheckInvoices)
-        Me.Controls.Add(Me.lblDue)
-        Me.Controls.Add(Me.lblPayed)
-        Me.Controls.Add(Me.lblBilled)
-        Me.Controls.Add(Me.txtBilled)
-        Me.Controls.Add(Me.txtPayed)
-        Me.Controls.Add(Me.txtDue)
-        Me.Controls.Add(Me.lblPayment)
-        Me.Controls.Add(Me.txtPayAmount)
-        Me.Controls.Add(Me.btnDetailsAdd)
-        Me.Controls.Add(Me.btnPaymentAdd)
-        Me.Controls.Add(Me.btnPaymentDelete)
-        Me.Controls.Add(Me.btnDetailsDelete)
-        Me.Controls.Add(Me.btnDetailsSave)
-        Me.Controls.Add(Me.cbxTax)
-        Me.Controls.Add(Me.txtProductAmount)
-        Me.Controls.Add(Me.txtCount)
-        Me.Controls.Add(Me.txtProduct)
-        Me.Controls.Add(Me.lvwPayments)
-        Me.Controls.Add(Me.lblInvoicePayments)
-        Me.Controls.Add(Me.lblInvoiceDetails)
-        Me.Controls.Add(Me.lblInvoices)
-        Me.Controls.Add(Me.lvwInvoiceLines)
-        Me.Controls.Add(Me.lvwInvoices)
-        Me.Controls.Add(Me.btnInvoicePay)
-        Me.Controls.Add(Me.btnInvoiceDelete)
-        Me.Controls.Add(Me.lvwProduct)
-        Me.Controls.Add(Me.lblFinanceProduct)
-        Me.Controls.Add(Me.lblClientName)
-        Me.Controls.Add(Me.lblGroupName)
-        Me.Controls.Add(Me.lvwFinanceClients)
-        Me.Controls.Add(Me.lvwFinanceGroups)
-        Me.Controls.Add(Me.btnInvoiceAdd)
-        Me.Controls.Add(Me.btnDetailsEdit)
+        Me.ClientSize = New System.Drawing.Size(978, 693)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Panel2)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmFinance"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Finance"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnInvoicePay As System.Windows.Forms.Button
@@ -647,4 +723,7 @@ Partial Class frmFinance
     Friend WithEvents btncheckInvoices As System.Windows.Forms.Button
     Friend WithEvents txtGroupSearch As System.Windows.Forms.TextBox
     Friend WithEvents btnClose As System.Windows.Forms.Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel3 As Panel
 End Class

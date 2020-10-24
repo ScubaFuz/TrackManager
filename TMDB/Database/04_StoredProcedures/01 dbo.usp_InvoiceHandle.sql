@@ -58,6 +58,7 @@ IF @Action = 'Ins'
 				   ,@LoginId
 				   ,@Payed)
 		SET @ReturnId = IDENT_CURRENT('tbl_Invoice')
+		Return @ReturnId
 	END
 
 IF @Action = 'Upd'

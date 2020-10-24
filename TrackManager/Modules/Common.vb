@@ -38,12 +38,16 @@ Module Common
     Friend intTimeStart As Integer
     Friend intTimeStop As Integer
 
-	Friend strReport As String = "Track Manager " & vbTab & " version: " & Application.ProductVersion
+    Friend blnAutoLogon As Boolean = False
+    Friend strUserName As String
+    Friend strPassword As String
+    Friend blnLoginOK As Boolean = False
+
+    Friend strReport As String = "Track Manager " & vbTab & " version: " & Application.ProductVersion
 
 
-    Friend Sub ParseCommands()
+    Friend Sub ParseCommands(StringCollection As System.Collections.ObjectModel.ReadOnlyCollection(Of String))
         Dim intLength As Integer = 0
-        If My.Application.CommandLineArgs.Contains("/debug") Then DebugMode = True
         For i As Integer = 0 To My.Application.CommandLineArgs.Count - 1
             intLength = My.Application.CommandLineArgs.Item(i).ToString.Length
             If intLength > 5 Then
@@ -54,10 +58,126 @@ Module Common
             End If
         Next
 
+        For Each Command As String In StringCollection
+            Dim intPosition As Integer = Command.IndexOf(":")
+            Dim strInput As String = ""
+            If intPosition < 0 Then
+                intPosition = Command.Length
+            Else
+                strInput = Command.Substring(intPosition + 1, Command.Length - (intPosition + 1))
+            End If
+            Dim strCommand As String = Command.ToLower.Substring(0, intPosition)
+            Select Case strCommand
+                Case "/name"
+                    CurVar.ApplicationName = CurVar.ApplicationName & " " & strInput
+                Case "/debug"
+                    DebugMode = True
+                    'Case "/control"
+                    '    CurStatus.Status = CurrentStatus.StatusList.ControlSearch
+                Case "/autologon"
+                    blnAutoLogon = True
+                Case "/user"
+                    strUserName = strInput
+                Case "/password"
+                    strPassword = strInput
+
+                Case "/?"
+                    'ShowHelp
+                    'CurStatus.QuitApplication = True
+                    Console.WriteLine(" TrackManager Command Line Help.")
+                    Console.WriteLine(" /? ; This help screen")
+                    Console.WriteLine("     Do not use <> with values.")
+                    Console.WriteLine(" /Debug ; Show or log extra processing information.")
+                    Console.WriteLine(" /AutoLogon ; Enable AutoLogon.")
+                    Console.WriteLine(" /User:<Value> ; Use AutoLogon with the provided username.")
+                    Console.WriteLine(" /Password:<Value> ; Use AutoLogon with the provided password.")
+                    Console.WriteLine(" ")
+                    Console.WriteLine(" Additinal help may be found in the manual at TrackManager.eu.")
+                    Console.WriteLine(" ")
+            End Select
+
+        Next
+
 
     End Sub
 
-	Friend Sub SetDefaults()
+    Friend Sub AutoLogon()
+        Dim objData As DataSet = LoginsHandle("Get", 0, strUserName)
+        If objData.Tables(0).Rows.Count = 0 Then
+            blnLoginOK = False
+            Exit Sub
+        Else
+            If objData.Tables.Count = 0 Then
+                blnLoginOK = False
+                Exit Sub
+            End If
+            If objData.Tables.Item(0).Rows(0).Item(0).GetType().ToString = "System.DBNull" Then
+                'MessageBox.Show("Cell Must be empty")
+                blnLoginOK = False
+                Exit Sub
+            Else
+                If psEncrypt(strPassword) = objData.Tables.Item(0).Rows(0).Item("LoginPassword") Then
+                    CurUser.LoginID = objData.Tables.Item(0).Rows(0).Item("PK_LoginId")
+                    CurUser.LoginName = objData.Tables.Item(0).Rows(0).Item("LoginName")
+                    CurUser.LogonTime = Now
+                    CurUser.DateStart = objData.Tables.Item(0).Rows(0).Item("DateStart")
+                    If objData.Tables.Item(0).Rows(0).Item("DateStop").GetType().ToString = "System.DBNull" Then
+                        CurUser.DateStop = Now.AddDays(1)
+                    Else
+                        CurUser.DateStop = objData.Tables.Item(0).Rows(0).Item("DateStop")
+                    End If
+                    CurUser.Enabled = objData.Tables.Item(0).Rows(0).Item("Enabled")
+                    CurUser.SecurityAdd = objData.Tables.Item(0).Rows(0).Item("Security_Add")
+                    CurUser.SecurityChange = objData.Tables.Item(0).Rows(0).Item("Security_Change")
+                    CurUser.SecurityDelete = objData.Tables.Item(0).Rows(0).Item("Security_Delete")
+                    CurUser.SettingsAdd = objData.Tables.Item(0).Rows(0).Item("Settings_Add")
+                    CurUser.SettingsChange = objData.Tables.Item(0).Rows(0).Item("Settings_Change")
+                    CurUser.SettingsDelete = objData.Tables.Item(0).Rows(0).Item("Settings_Delete")
+                    CurUser.FinanceAdd = objData.Tables.Item(0).Rows(0).Item("Finance_Add")
+                    CurUser.FinanceChange = objData.Tables.Item(0).Rows(0).Item("Finance_Change")
+                    CurUser.FinanceDelete = objData.Tables.Item(0).Rows(0).Item("Finance_Delete")
+                    CurUser.GroupsDelete = objData.Tables.Item(0).Rows(0).Item("Groups_Delete")
+                    CurUser.ClientsDelete = objData.Tables.Item(0).Rows(0).Item("Clients_Delete")
+                    blnLoginOK = True
+                Else
+                    blnLoginOK = False
+                    Exit Sub
+                End If
+            End If
+        End If
+        If CurUser.Enabled = False Or CurUser.DateStop < Today Or CurUser.DateStart > Today Then
+            blnLoginOK = False
+            Exit Sub
+        End If
+
+        If DebugMode Then
+            MessageBox.Show(
+            "LoginID = " & CurUser.LoginID & vbCrLf &
+            "LoginName = " & CurUser.LoginName & vbCrLf &
+            "LogonTime = " & CurUser.LogonTime & vbCrLf &
+            "DateStart = " & CurUser.DateStart & vbCrLf &
+            "DateStop = " & CurUser.DateStop & vbCrLf &
+            "Enabled = " & CurUser.Enabled & vbCrLf &
+            "SecurityAdd = " & CurUser.SecurityAdd & vbCrLf &
+            "SecurityChange = " & CurUser.SecurityChange & vbCrLf &
+            "SecurityDelete = " & CurUser.SecurityDelete & vbCrLf &
+            "SettingsAdd = " & CurUser.SettingsAdd & vbCrLf &
+            "SettingsChange = " & CurUser.SettingsChange & vbCrLf &
+            "SettingsDelete = " & CurUser.SettingsDelete & vbCrLf &
+            "FinanceAdd = " & CurUser.FinanceAdd & vbCrLf &
+            "FinanceChange = " & CurUser.FinanceChange & vbCrLf &
+            "FinanceDelete = " & CurUser.FinanceDelete & vbCrLf &
+            "GroupsDelete = " & CurUser.GroupsDelete & vbCrLf &
+            "ClientsDelete = " & CurUser.ClientsDelete)
+        End If
+        If CurUser.DateStop > Now.AddDays(1) Then CurUser.DateStop = Now.AddDays(1)
+        If blnLoginOK = True Then
+            WriteLog("Logged on user: " & CurUser.LoginName, 1)
+        End If
+
+    End Sub
+
+    Friend Sub SetDefaults()
         RegHandle.RegistryPath = "Software\Thicor\TrackManager\4.0"
 
 		TxtHandle.InputFile = "TrackManData.xml"

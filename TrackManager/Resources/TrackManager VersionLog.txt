@@ -1,4 +1,5 @@
 Version 4.2
+New: AutoLogon enabled with username and password formt he command line.
 Enhanced: Only invoices without payments can be deleted.
 
 Version 4.1.7

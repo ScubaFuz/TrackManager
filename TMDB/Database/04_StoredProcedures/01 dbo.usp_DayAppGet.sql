@@ -21,7 +21,7 @@ AS
 DECLARE @intShowAge INT , @GroupID bigint
 SELECT  @intShowAge = dbo.udf_GetShowAge()
 
-SELECT app.[PK_AppointmentId]
+SELECT DISTINCT app.[PK_AppointmentId]
 	,app.[AppDate]
 	,app.[AppType]
 	,isnull(app.[FK_ClientId],0) as [FK_ClientId]

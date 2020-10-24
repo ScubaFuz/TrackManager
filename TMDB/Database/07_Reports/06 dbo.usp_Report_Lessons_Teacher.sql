@@ -26,16 +26,25 @@ WHERE app.Active = 1
 	AND CAST(FLOOR(CAST(app.[AppDate] AS float)) AS datetime) BETWEEN @DateStart AND ISNULL(@DateStop,@DateStart)
 	AND @ClientId = app.[FK_ClientId]
 	AND [AppType] = 'Teacher'
+), ClientApp AS (
+SELECT FK_ClientId, max(LessonCount) As LessonCount FROM (
+SELECT FK_ClientId, LessonCount
+FROM [dbo].[udf_GetCLientAppCount](@DateStart)
+UNION
+SELECT FK_ClientId, InvoiceLessons AS LessonCount
+FROM [dbo].[udf_GetCLientInvCount](@DateStart)) Q
+GROUP BY FK_ClientId
 )
 SELECT ROW_NUMBER() OVER(ORDER BY app.AppDate, trk.TrackName, grp.GroupName) AS RowNumber
 	, left(dbo.udf_Weekday(app.AppDate, @Language) ,2) + ' ' + dbo.udf_DateFormat(app.AppDate,1) AS AppDate
-	, isnull(trk.TrackName,'') AS TrackName
-	, isnull(grp.GroupName,'') AS GroupName
-	, isnull(grp.PK_GroupId,0) AS GroupId
-	, isnull(clt.ClientName,'') AS ClientName
+	, isnull(trk.TrackName,'')		AS TrackName
+	, isnull(grp.GroupName,'')		AS GroupName
+	, isnull(grp.PK_GroupId,0)		AS GroupId
+	, isnull(clt.ClientName,'')		AS ClientName
 	, DATEDIFF(YEAR,clt.DayOfBirth,GetDate()) - CASE WHEN (MONTH(clt.DayOfBirth) > MONTH(GetDate())) OR (MONTH(clt.DayOfBirth) = MONTH(GetDate()) AND DAY(clt.DayOfBirth) >= DAY(GetDate())) THEN 1 ELSE 0 END AS Age
-	, isnull(lts.LessonTypeName,'') AS LessonTypeName
-	, isnull(app.LessonCount,'') AS LessonCount
+	, isnull(lts.LessonTypeName,'')	AS LessonTypeName
+	, CAST(isnull(app.LessonCount,'') AS nvarchar(5)) + CASE WHEN cap.LessonCount IS NOT NULL THEN N' / ' + CAST(cap.LessonCount AS nvarchar(5)) ELSE N'' END
+									AS LessonCount
 	, isnull(dbo.udf_LevelnameGet(app.LessonCount + app.ExtraCount),'') AS LevelName
 FROM  dbo.tbl_Appointment app
 INNER JOIN Teacher
@@ -49,8 +58,13 @@ LEFT OUTER JOIN dbo.tbl_Tracks trk
 	ON app.FK_TrackId = trk.PK_TrackID 
 INNER JOIN dbo.tbl_Groups grp
 	ON clt.FK_GroupID = grp.PK_GroupID
+LEFT OUTER JOIN ClientApp cap
+	ON clt.PK_ClientID = cap.FK_ClientId
 WHERE app.Active = 1
 	AND CAST(FLOOR(CAST(app.AppDate AS float)) AS datetime) BETWEEN @DateStart AND ISNULL(@DateStop,@DateStart)
 	AND ISNULL(@trackId,0) IN (trk.PK_TrackId,0,-1)
 	AND app.AppType = 'Track'
 ORDER BY app.AppDate, trk.TrackName, grp.GroupName;
+GO
+
+

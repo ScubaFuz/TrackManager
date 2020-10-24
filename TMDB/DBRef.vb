@@ -58,6 +58,9 @@ Public Class DBRef
         arrScripts(AddOne()) = "dbo.udf_EmailDomain.sql"
         arrScripts(AddOne()) = "dbo.udf_EmailPrefix.sql"
         arrScripts(AddOne()) = "dbo.udf_GetAge.sql"
+        arrScripts(AddOne()) = "dbo.udf_GetClientAppCount.sql"
+        arrScripts(AddOne()) = "dbo.udf_GetClientInvCount.sql"
+        arrScripts(AddOne()) = "dbo.udf_GetSeason.sql"
         arrScripts(AddOne()) = "dbo.udf_GetShowAge.sql"
         arrScripts(AddOne()) = "dbo.udf_FirstNameAge.sql"
         arrScripts(AddOne()) = "dbo.udf_LevelColorGet.sql"
@@ -129,6 +132,7 @@ Public Class DBRef
         arrScripts(AddOne()) = "12 dbo.usp_Report_Clients_EmailAddresses.sql"
         arrScripts(AddOne()) = "13 dbo.usp_Report_Lessons_Overview.sql"
         arrScripts(AddOne()) = "15 dbo.usp_Report_Lessons_Appointments.sql"
+        arrScripts(AddOne()) = "17 dbo.usp_Report_Finance_Products.sql"
 
         'Report Data
         If blnIncludeTables = True Then
@@ -141,6 +145,7 @@ Public Class DBRef
             arrScripts(AddOne()) = "12 Report_Clients_EmailAddresses Data.sql"
             arrScripts(AddOne()) = "13 Report_Lessons_Overview Data.sql"
             arrScripts(AddOne()) = "15 Report_Lessons_Appointments Data.sql"
+            arrScripts(AddOne()) = "17 Report_Finance_Products Data.sql"
         End If
 
         ReDim Preserve arrScripts(intCounter)
@@ -151,7 +156,9 @@ Public Class DBRef
 
     Public Function GetVersion(ByVal strVersion As String) As String
 
+        If String.IsNullOrEmpty(strVersion) Then Return Nothing
         Dim verDatabase As New Version(strVersion)
+
         If verDatabase.CompareTo(My.Application.Info.Version) = -1 Then
             'Upgrade database
             Dim verTM4001 As New Version("4.0.0.1")
@@ -649,12 +656,18 @@ Public Class DBRef
             arrScripts(1, intCounter) = "ALTER"
         End If
 
-        If strVersion = "4.2.1.4" Then
+        If strVersion = "4.2.1.5" Then
+            arrScripts(0, intCounter) = "dbo.udf_GetSeason.sql"
+            arrScripts(1, intCounter) = "CREATE"
+            arrScripts(0, AddOne()) = "dbo.udf_GetClientAppCount.sql"
+            arrScripts(1, intCounter) = "CREATE"
+            arrScripts(0, AddOne()) = "dbo.udf_GetClientInvCount.sql"
+            arrScripts(1, intCounter) = "CREATE"
             arrScripts(0, AddOne()) = "dbo.udf_LevelNameGet.sql"
             arrScripts(1, intCounter) = "CREATE"
             arrScripts(0, AddOne()) = "06 Report_Lessons_Teacher Data.sql"
             arrScripts(1, intCounter) = "INSERT"
-            arrScripts(0, intCounter) = "06 dbo.usp_Report_Lessons_Teacher.sql"
+            arrScripts(0, AddOne()) = "06 dbo.usp_Report_Lessons_Teacher.sql"
             arrScripts(1, intCounter) = "CREATE"
         End If
 

@@ -15,7 +15,7 @@
 
     Private Sub btnOK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOK.Click
         If txtLoginName.Text = "ScubaFuz2008" And psEncrypt(txtPassword.Text) = "qalhXpdDZ/YVpj8QEW8gFqQNsHkWfFmD" Then
-            'You are admin
+            'This is the resque admin account login in case all passwords have been lost. Disable if you require extra security.
             CurUser.LoginID = 1
             CurUser.LoginName = "Admin"
             CurUser.LogonTime = Now
@@ -102,23 +102,23 @@
         End If
 
         If DebugMode Then
-            MessageBox.Show( _
-            "LoginID = " & CurUser.LoginID & vbCrLf & _
-            "LoginName = " & CurUser.LoginName & vbCrLf & _
-            "LogonTime = " & CurUser.LogonTime & vbCrLf & _
-            "DateStart = " & CurUser.DateStart & vbCrLf & _
-            "DateStop = " & CurUser.DateStop & vbCrLf & _
-            "Enabled = " & CurUser.Enabled & vbCrLf & _
-            "SecurityAdd = " & CurUser.SecurityAdd & vbCrLf & _
-            "SecurityChange = " & CurUser.SecurityChange & vbCrLf & _
-            "SecurityDelete = " & CurUser.SecurityDelete & vbCrLf & _
-            "SettingsAdd = " & CurUser.SettingsAdd & vbCrLf & _
-            "SettingsChange = " & CurUser.SettingsChange & vbCrLf & _
-            "SettingsDelete = " & CurUser.SettingsDelete & vbCrLf & _
-            "FinanceAdd = " & CurUser.FinanceAdd & vbCrLf & _
-            "FinanceChange = " & CurUser.FinanceChange & vbCrLf & _
-            "FinanceDelete = " & CurUser.FinanceDelete & vbCrLf & _
-            "GroupsDelete = " & CurUser.GroupsDelete & vbCrLf & _
+            MessageBox.Show(
+            "LoginID = " & CurUser.LoginID & vbCrLf &
+            "LoginName = " & CurUser.LoginName & vbCrLf &
+            "LogonTime = " & CurUser.LogonTime & vbCrLf &
+            "DateStart = " & CurUser.DateStart & vbCrLf &
+            "DateStop = " & CurUser.DateStop & vbCrLf &
+            "Enabled = " & CurUser.Enabled & vbCrLf &
+            "SecurityAdd = " & CurUser.SecurityAdd & vbCrLf &
+            "SecurityChange = " & CurUser.SecurityChange & vbCrLf &
+            "SecurityDelete = " & CurUser.SecurityDelete & vbCrLf &
+            "SettingsAdd = " & CurUser.SettingsAdd & vbCrLf &
+            "SettingsChange = " & CurUser.SettingsChange & vbCrLf &
+            "SettingsDelete = " & CurUser.SettingsDelete & vbCrLf &
+            "FinanceAdd = " & CurUser.FinanceAdd & vbCrLf &
+            "FinanceChange = " & CurUser.FinanceChange & vbCrLf &
+            "FinanceDelete = " & CurUser.FinanceDelete & vbCrLf &
+            "GroupsDelete = " & CurUser.GroupsDelete & vbCrLf &
             "ClientsDelete = " & CurUser.ClientsDelete)
         End If
         If blnLoginOK = False And intLoginCount = 3 Then Application.Exit()
@@ -130,7 +130,7 @@
         '		Me.Close()
     End Sub
 
-	Private Sub btnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancel.Click
+    Private Sub btnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancel.Click
 		Application.Exit()
 		'Me.Close()
 	End Sub

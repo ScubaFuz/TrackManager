@@ -77,6 +77,7 @@ Partial Class frmTrackManager
         Me.txtMainContactAddress = New System.Windows.Forms.TextBox()
         Me.txtMainContactName = New System.Windows.Forms.TextBox()
         Me.grpGroupDetails = New System.Windows.Forms.GroupBox()
+        Me.btn_ReloadGroups = New System.Windows.Forms.Button()
         Me.txtGroupSearch = New System.Windows.Forms.TextBox()
         Me.lvwGroups = New System.Windows.Forms.ListView()
         Me.btnGroupEditClient = New System.Windows.Forms.Button()
@@ -674,7 +675,6 @@ Partial Class frmTrackManager
         Me.spcGroups.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.spcGroups.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
         Me.spcGroups.Location = New System.Drawing.Point(3, 3)
         Me.spcGroups.Name = "spcGroups"
         '
@@ -851,6 +851,7 @@ Partial Class frmTrackManager
         Me.grpGroupDetails.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grpGroupDetails.Controls.Add(Me.btn_ReloadGroups)
         Me.grpGroupDetails.Controls.Add(Me.txtGroupSearch)
         Me.grpGroupDetails.Controls.Add(Me.lvwGroups)
         Me.grpGroupDetails.Controls.Add(Me.btnGroupEditClient)
@@ -861,6 +862,16 @@ Partial Class frmTrackManager
         Me.grpGroupDetails.TabIndex = 14
         Me.grpGroupDetails.TabStop = False
         '
+        'btn_ReloadGroups
+        '
+        Me.btn_ReloadGroups.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_ReloadGroups.Image = Global.TrackManager.My.Resources.Resources.reload16
+        Me.btn_ReloadGroups.Location = New System.Drawing.Point(185, 16)
+        Me.btn_ReloadGroups.Name = "btn_ReloadGroups"
+        Me.btn_ReloadGroups.Size = New System.Drawing.Size(27, 23)
+        Me.btn_ReloadGroups.TabIndex = 26
+        Me.btn_ReloadGroups.UseVisualStyleBackColor = True
+        '
         'txtGroupSearch
         '
         Me.txtGroupSearch.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -868,7 +879,7 @@ Partial Class frmTrackManager
         Me.txtGroupSearch.Location = New System.Drawing.Point(6, 16)
         Me.txtGroupSearch.Margin = New System.Windows.Forms.Padding(2)
         Me.txtGroupSearch.Name = "txtGroupSearch"
-        Me.txtGroupSearch.Size = New System.Drawing.Size(206, 20)
+        Me.txtGroupSearch.Size = New System.Drawing.Size(174, 20)
         Me.txtGroupSearch.TabIndex = 25
         '
         'lvwGroups
@@ -1109,7 +1120,6 @@ Partial Class frmTrackManager
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.spcFinance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.spcFinance.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
         Me.spcFinance.Location = New System.Drawing.Point(3, 9)
         Me.spcFinance.Name = "spcFinance"
         '
@@ -3244,5 +3254,5 @@ Partial Class frmTrackManager
     Friend WithEvents cbxRepClient As System.Windows.Forms.ComboBox
     Friend WithEvents mnuMainEditClearAllLocks As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents chkListClient As System.Windows.Forms.CheckBox
-
+    Friend WithEvents btn_ReloadGroups As Button
 End Class
