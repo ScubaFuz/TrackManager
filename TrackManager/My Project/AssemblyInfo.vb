@@ -9,10 +9,10 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("TrackManager")> 
-<Assembly: AssemblyDescription("Thicor TrackManager")> 
-<Assembly: AssemblyCompany("Thicor Services")> 
+<Assembly: AssemblyDescription("Thicor TrackManager")>
+<Assembly: AssemblyCompany("Thicor")>
 <Assembly: AssemblyProduct("TrackManager")>
-<Assembly: AssemblyCopyright("Thicor Services BV ©  2008-2018")>
+<Assembly: AssemblyCopyright("Thicor ©  2008-2020")>
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("4.2.2.0")>
-<Assembly: AssemblyFileVersion("4.2.2.0")>
+<Assembly: AssemblyVersion("4.3.3.1")>
+<Assembly: AssemblyFileVersion("4.3.3.1")>

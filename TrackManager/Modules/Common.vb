@@ -1515,24 +1515,73 @@ Module Common
             End If
         End With
 
-        Dim smtp As New System.Net.Mail.SmtpClient(CurVar.SmtpServer)
-        smtp.EnableSsl = CurVar.SmtpSsl
-        smtp.Port = CurVar.SmtpPort
-        If CurVar.SmtpCredentials = True Then
-            smtp.UseDefaultCredentials = True
-        Else
-            smtp.UseDefaultCredentials = False
-            smtp.Credentials = New System.Net.NetworkCredential(CurVar.SmtpUser, psDecrypt(CurVar.SmtpPassword))
-        End If
-        'smtp.Host = CurVar.SmtpServer
-        smtp.Send(insMail)
+        Using smtp As New System.Net.Mail.SmtpClient(CurVar.SmtpServer)
+            smtp.EnableSsl = CurVar.SmtpSsl
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network
+            smtp.Port = CurVar.SmtpPort
+            If CurVar.SmtpCredentials = True Then
+                smtp.UseDefaultCredentials = True
+            Else
+                smtp.UseDefaultCredentials = False
+                smtp.Credentials = New NetworkCredential(CurVar.SmtpUser, psDecrypt(CurVar.SmtpPassword))
+            End If
+            'smtp.Host = CurVar.SmtpServer
+            smtp.Send(insMail)
+        End Using
 
     End Sub
 
-    Public Sub SendOutlook(ByVal strToAddress As String, _
-                        ByVal strToName As String, _
-                        ByVal strSubject As String, _
-                        ByVal strBody As String, _
+    Public Sub SmtpMail(ByVal strFromAddress As String,
+                        ByVal strFromName As String,
+                        ByVal strToAddress As String,
+                        ByVal strToName As String,
+                        ByVal strReplyToAddrr As String,
+                        ByVal strReplyToName As String,
+                        ByVal strSubject As String,
+                        ByVal strBody As String,
+                        ByVal strAttachments As String)
+        Dim insMail As New MailMessage(New MailAddress(strFromAddress, strFromName), New MailAddress(strToAddress, strToName))
+        With insMail
+            .Subject = strSubject
+            .Body = strBody
+            '.ReplyTo = New MailAddress(strReplyToAddrr, strReplyToName)
+            .IsBodyHtml = True
+            If CurVar.ArchiveEmail = True Then
+                .Bcc.Add(CurVar.ArchiveEmailAddress)
+            End If
+            If Not strAttachments.Equals(String.Empty) Then
+                Dim strFile As String
+                Dim strAttach() As String = strAttachments.Split(";")
+                For Each strFile In strAttach
+                    .Attachments.Add(New Attachment(strFile.Trim()))
+                Next
+            End If
+        End With
+
+        '#Disable Warning BC40000 ' Type or member is obsolete
+        '        Dim smtp As System.Web.Mail.SmtpMail
+        '#Enable Warning BC40000 ' Type or member is obsolete
+        '        smtp. = strFromAddress
+
+        '        sendmail(CurVar.SmtpServer)
+        '        smtp.EnableSsl = CurVar.SmtpSsl
+        '        smtp.DeliveryMethod = SmtpDeliveryMethod.Network
+        '        smtp.Port = CurVar.SmtpPort
+        '        If CurVar.SmtpCredentials = True Then
+        '            smtp.UseDefaultCredentials = True
+        '        Else
+        '            smtp.UseDefaultCredentials = False
+        '            smtp.Credentials = New NetworkCredential(CurVar.SmtpUser, psDecrypt(CurVar.SmtpPassword))
+        '        End If
+        '        'smtp.Host = CurVar.SmtpServer
+        '        smtp.Send(insMail)
+
+    End Sub
+
+    Public Sub SendOutlook(ByVal strToAddress As String,
+                        ByVal strToName As String,
+                        ByVal strSubject As String,
+                        ByVal strBody As String,
                         ByVal strAttachments As String)
         Try
             Dim ol As New Outlook.Application()

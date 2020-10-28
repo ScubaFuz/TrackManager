@@ -3255,23 +3255,25 @@ Public Class frmTrackManager
         strBody = Replace(strBody, "</body>", "<br>" & "Report " & CurStatus.ReportName & ", Startdate: " & calTrackMan.SelectionStart.Date.ToLongDateString & "</body>" & vbCrLf)
 
         Try
-            If CurVar.EmailMethod = "SMTP" Then
-                SendSMTP(CurVar.SmtpReply, _
-                         strLicenseName, _
-                         strEmail, _
-                         strRecepientName, _
-                         CurVar.SmtpReply, _
-                         strLicenseName, _
-                         CurStatus.ReportName, _
-                         strBody, _
+            If CurVar.EmailMethod = "SMTP" And CurVar.SmtpPort <> 465 Then
+                SendSMTP(CurVar.SmtpReply,
+                         strLicenseName,
+                         strEmail,
+                         strRecepientName,
+                         CurVar.SmtpReply,
+                         strLicenseName,
+                         CurStatus.ReportName,
+                         strBody,
                          "")
+            ElseIf CurVar.EmailMethod = "SMTP" And CurVar.SmtpPort = 465 Then
 
+                MessageBox.Show("Port 465 is not supported. Choose a mailserver with TLS and port 587 instead")
             Else
-                SendOutlook(strEmail, _
-                         strRecepientName, _
-                         CurStatus.ReportName, _
-                         strBody, _
-                         "")
+                SendOutlook(strEmail,
+                            strRecepientName,
+                            CurStatus.ReportName,
+                            strBody,
+                            "")
 
             End If
             SetStatus("Mail Message Sent to: " & strEmail)
